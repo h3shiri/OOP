@@ -79,7 +79,11 @@ public class Library{
 		return false;
 	}
 
-	/** a utility function that locates the book's ID in the array of books */
+	/** 
+	* a utility function that locates the book's ID in the array of books 
+	* @param book - a book to be located
+	* @return location of the book (int).
+	*/
 	int locateBookId(Book book)
 	{
 		int index = 0;
@@ -106,6 +110,7 @@ public class Library{
 		else if (!present)
 		{
 			shelf[numOfBooksInLib] = book;
+			shelf[numOfBooksInLib].returnBook();
 			booksIds[numOfBooksInLib] = numOfBooksInLib;
 			int temp = numOfBooksInLib;
 			numOfBooksInLib++;
