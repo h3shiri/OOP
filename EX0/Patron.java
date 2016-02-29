@@ -47,7 +47,7 @@ public class Patron {
 	 * last name is "Bobby", this method will return the String "Ricky Bobby".
 	 */
 	String stringRepresentation(){
-		String res = (firstName + lastName);
+		String res = (firstName +" "+lastName);
 		return res;
 	}
 

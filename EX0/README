@@ -1,0 +1,34 @@
+h3shiri
+206098311
+Shiri Heffetz
+
+====================================
+= README for ex0 Book,Patron and Library =
+====================================
+Building an API with the given requierments.
+
+==================
+=  Description:  =
+==================
+We have implemented 3 seperated classes, one for each object.
+The library contaigns the managments of books and patrons.
+
+==================
+=  Design:  =
+==================
+
+
+=============================
+=  List of submitted files: =
+=============================
+
+README - this file.
+Book.java
+Patron.java
+Library.java
+
+======================
+=  Special Comments  =
+======================
+Extra comments are inside the classes in order to make to code readability
+better to the naked eye.

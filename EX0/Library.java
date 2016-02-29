@@ -149,11 +149,13 @@ public class Library{
 	 * @return true if the book with the given id is available, false otherwise.
 	 */
 	boolean isBookAvailable(int bookId){
-		int borrowerId = shelf[bookId].getCurrentBorrowerId();
+		if ((bookId >= maxBookCapacity) || (bookId < 0))
+			return false;
+		int borrowerId = (shelf[bookId].getCurrentBorrowerId());
 		if (borrowerId == failure)
 			return true;
 		else
-			return true;
+			return false;
 	}
 
 	/**
@@ -162,7 +164,7 @@ public class Library{
 	 * -1 otherwise.
 	 */
 	int registerPatronToLibrary(Patron patron){
-		if (numOfBooksInLib > maxPatronCapacity)
+		if ((numOfPatronsInLib >= maxPatronCapacity))
 			return failure;
 		else{
 			patronsIds[numOfPatronsInLib] = numOfPatronsInLib;
@@ -250,14 +252,24 @@ public class Library{
 		if ((numOfBooksInLib == 0) || !(isPatronIdValid(patronId)))
 			return null;
 		int[] valuesOfBooks;
-		valuesOfBooks = new int[numOfBooksInLib];
+		int numOfAvailableBooks = 0;
+		for (int i=0; i<numOfBooksInLib;i++){
+			if (isBookAvailable(getBookId(shelf[i])))
+				numOfAvailableBooks++;
+		}
+		if (numOfAvailableBooks == 0)
+			return null;
+		
+		valuesOfBooks = new int[numOfAvailableBooks];
 		for(int i=0; i<numOfBooksInLib;i++){
-			Book book = shelf[i];
-			valuesOfBooks[i] = patrons[patronId].getBookScore(book);
+			if (isBookAvailable(getBookId(shelf[i]))){
+				valuesOfBooks[i] = patrons[patronId].getBookScore(shelf[i]);
+			}
 		}
-			int index = findMaxValue(valuesOfBooks);
-			return shelf[index];
-		}
+		int index = findMaxValue(valuesOfBooks);
+		return shelf[index];
+	}
+
 	/** 
 	 * A utillity function to find the index of the maximum element in a given array.
 	 * @param myIntArray - An array of integers.
