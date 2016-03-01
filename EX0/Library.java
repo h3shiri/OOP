@@ -25,13 +25,11 @@ public class Library{
 	/** an array of the number of books each patron borrowed */
 	int[] numOfBorrowed;
 
-	// TODO: set it outside of constructor
-	/** magic number of failure in routine process*/
-	int failure;
+	/** magic number significant for an unseccessful process*/
+	int failure = -1;
 	/** magic number for empty int in the array */
-	int emptyInt; 
+	int emptyInt = -7; 
 
-	// TODO: set it outside of constructor
 	/** current number of books in the library*/
 	int numOfBooksInLib;
 
@@ -56,8 +54,6 @@ public class Library{
 		numOfBorrowed = new int[maxPatronCapacity];
 		numOfBooksInLib = 0;
 		numOfPatronsInLib = 0;
-		failure = -1;
-		emptyInt = -7;
 		setAsEmptyIntArray(booksIds);
 		setAsEmptyIntArray(numOfBorrowed);
 		setAsEmptyIntArray(patronsIds);

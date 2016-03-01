@@ -16,8 +16,9 @@ The library contaigns the managments of books and patrons.
 ==================
 =  Design:  =
 ==================
-
-
+We have allowed few extra data members in order to kepp tracks
+of all the parameters in the library..etc
+Except that we sticked tight to the API design given to us.
 =============================
 =  List of submitted files: =
 =============================
