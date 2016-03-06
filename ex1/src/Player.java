@@ -1,7 +1,6 @@
 import java.util.Random;
 import java.util.Scanner;
 
-
 /**
  * The Player class represents a player in the Nim game, producing Moves as a response to a Board state. Each player 
  * is initialized with a type, either human or one of several computer strategies, which defines the move he 
@@ -144,19 +143,31 @@ public class Player {
 		// in case we we picked the stick in the end.
 		if (difference == 0)
 			return new Move(rowToPlay, leftStickSelection, leftStickSelection);
-		// A magic number that indicates the success of marking a selection of sticks (using markStickSequence method in Board).
-		int success = 0;
+
+		boolean success = false;
 		Move move = new Move(1,1,1);
 		// arbitrary initial value different then success
-		int marker = -7; 
-		while (marker != success){
+		while (!success){
 			int rightStickSelection = (myRandom.nextInt(difference) + leftStickSelection);
 			move = new Move(rowToPlay, leftStickSelection, rightStickSelection);
-			marker = board.markStickSequence(move);
-			// checking whether we found the valid move.
+			success = checkValidityOfMove(board, move);
 		}
 		return move;
 	}
+	boolean checkValidityOfMove(Board board, Move move){
+		int left = move.getLeftBound();
+		int right = move.getRightBound();
+		int row = move.getRow();
+		boolean res = true;
+		for(int i = left; i<right+1; i++){
+			if (!(board.isStickUnmarked(row, i))){
+				res = false;
+				break;
+			}
+		}
+		return res;
+	}
+
 	/** 
 	 * A utility function that checks whether a row is empty of unmakred sticks not.
 	 * @return true in case there an availabe stick false otherwise.
@@ -182,9 +193,40 @@ public class Player {
 	 * Interact with the user to produce his move.
 	 */
 	private Move produceHumanMove(Board board){
-		/* You need to implement this method */
-		return new Move(1,1,1);
-	}
+		int OPTION_I = 1;
+		int OPTION_II = 2;
+		// TODO: check the messages format.
+		// arbitrary choice before selecting the real return value.
+		Move move = new Move(1,1,1);
+
+		boolean validSelection = false;
+		while(!validSelection){
+			String initialMsg = "Press 1 to display the board. Press 2 make a move:";
+			System.out.println(initialMsg);
+			int userInput = scanner.nextInt();
+			if (userInput == OPTION_I)
+				System.out.println(board);
+			else if (userInput == OPTION_II){
+				// TODO: check whether they excpect me to verify its a valid move on the board?
+				String ROW_MSG = "Enter the row number:";
+				System.out.println(ROW_MSG);
+				int row = scanner.nextInt();
+				String LEFT_STICK_MSG = "Enter the index of the leftmost stick:";
+				System.out.println(LEFT_STICK_MSG);
+				int leftStick = scanner.nextInt();
+				String RIGHT_STICK_MSG = "Enter the index of the rightmost stick:";
+				System.out.println(RIGHT_STICK_MSG);
+				int rightStick = scanner.nextInt();
+				move = new Move(row, leftStick, rightStick);
+				validSelection = true;
+			}
+			else{
+				String ERROR_MSG = "Unsupported command";
+				System.out.println(ERROR_MSG);
+			}
+			}
+		return move;	
+		}
 	
 	/*
 	 * Uses a winning heuristic for the Nim game to produce a move.
@@ -318,13 +360,16 @@ public class Player {
 		return new Move(lastRow,lastLeft,lastLeft);		
 	}
 	// TODO: remove garbage main
-	// public static void main(String[] args) {
-	// 	Board board = new Board();
-	// 	Scanner scanner = new Scanner(System.in);
-	// 	Player player = new Player(1, 1, scanner);
-	// 	for(int i=0;i<10;i++){
-	// 		Move move = player.produceMove(board);
-	// 		System.out.println(move);
+	public static void main(String[] args) {
+		Board board = new Board();
+		Scanner scanner = new Scanner(System.in);
+		// Player player = new Player(1, 1, scanner);
+		// Player player = new Player(4, 1, scanner);
+		for(int i=0;i<10;i++){
+			Move move = player.produceMove(board);
+			int d = board.markStickSequence(move);
+			System.out.println(move);
 		}
+		System.out.println(board);
 	}
 }
