@@ -21,7 +21,8 @@ public class Player {
 	/** The constant integer representing the Human player type. */
 	public static final int HUMAN = 4;
 	
-	private static final int BINARY_LENGTH = 4;	//Used by produceHeuristicMove() for binary representation of board rows.
+	private static final int BINARY_LENGTH = 4;	
+	//Used by produceHeuristicMove() for binary representation of board rows.
 	
 	private final int playerType;
 	private final int playerId;
@@ -99,7 +100,7 @@ public class Player {
 		switch(playerType){
 		
 			case RANDOM:
-				return produceRandomMove(board);				
+				return produceRandomMove(board);
 				    
 			case SMART: 
 				return produceSmartMove(board);
@@ -116,19 +117,65 @@ public class Player {
 				return null;			
 		}
 	}
-	
-	/*
+	/**
 	 * Produces a random move.
+	 * @param board - the board we play on.
+	 * @return A legal Move object.
 	 */
 	private Move produceRandomMove(Board board){
-		/* You need to implement this method */
+		Random myRandom = new Random();
+		int numOfRows = board.getNumberOfRows();
+		// select a random row to play
+		int rowToPlay = (myRandom.nextInt(numOfRows)+1);
+		// check it isn't empty
+		boolean validRow = rowHasAvailableSticks(board, rowToPlay);
+		while (!(validRow)){
+			rowToPlay = (myRandom.nextInt(numOfRows)+1);
+			validRow = rowHasAvailableSticks(board, rowToPlay);
+		}
+		int rowLength = board.getRowLength(rowToPlay);
+		boolean choice = false;
+		int leftStickSelection = 1;
+		while (!choice){
+			leftStickSelection = (myRandom.nextInt(rowLength)+1);
+			choice = board.isStickUnmarked(rowToPlay, leftStickSelection);
+		}
+		int difference = (rowLength - leftStickSelection);
+		// in case we we picked the stick in the end.
+		if (difference == 0)
+			return new Move(rowToPlay, leftStickSelection, leftStickSelection);
+		// A magic number that indicates the success of marking a selection of sticks (using markStickSequence method in Board).
+		int success = 0;
+		Move move = new Move(1,1,1);
+		// arbitrary initial value different then success
+		int marker = -7; 
+		while (marker != success){
+			int rightStickSelection = (myRandom.nextInt(difference) + leftStickSelection);
+			move = new Move(rowToPlay, leftStickSelection, rightStickSelection);
+			marker = board.markStickSequence(move);
+			// checking whether we found the valid move.
+		}
+		return move;
 	}
-	
+	/** 
+	 * A utility function that checks whether a row is empty of unmakred sticks not.
+	 * @return true in case there an availabe stick false otherwise.
+	 */
+	private boolean rowHasAvailableSticks(Board board, int row){
+		int rowLength = board.getRowLength(row);
+		for(int i=1; i<rowLength+1;i++){
+			if (board.isStickUnmarked(row, i))
+				return true;
+		}
+		return false;
+	}
+
 	/*
 	 * Produce some intelligent strategy to produce a move
 	 */
 	private Move produceSmartMove(Board board){
 		/* You need to implement this method */
+		return new Move(1,1,1);
 	}
 	
 	/*
@@ -136,6 +183,7 @@ public class Player {
 	 */
 	private Move produceHumanMove(Board board){
 		/* You need to implement this method */
+		return new Move(1,1,1);
 	}
 	
 	/*
@@ -187,7 +235,6 @@ public class Player {
 						}
 						lastOneRow = k+1;
 						lastOneLeft = i;
-						
 						numOnes = 0;
 					}
 				}
@@ -270,6 +317,14 @@ public class Player {
 		//If we reached here, it means that the board is already symmetric, and then we simply mark one stick from the last sequence we saw:
 		return new Move(lastRow,lastLeft,lastLeft);		
 	}
-	
-	
+	// TODO: remove garbage main
+	// public static void main(String[] args) {
+	// 	Board board = new Board();
+	// 	Scanner scanner = new Scanner(System.in);
+	// 	Player player = new Player(1, 1, scanner);
+	// 	for(int i=0;i<10;i++){
+	// 		Move move = player.produceMove(board);
+	// 		System.out.println(move);
+		}
+	}
 }
