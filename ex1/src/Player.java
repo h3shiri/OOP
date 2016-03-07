@@ -251,8 +251,10 @@ public class Player {
 		int rows = board.getNumberOfRows();
 		int targetRow = 0; // shall be selected shortly
 		for (int row=1; row <rows+1; row++){
-			if (rowHasAvailableSticks(board, row))
+			if (rowHasAvailableSticks(board, row)) {
 				targetRow = row;
+				break;
+			}
 		}
 		boolean slice = false;
 		int marker = 0;
@@ -266,9 +268,10 @@ public class Player {
 
 		/** Some pre processing of the connected componnents */
 		for(int index = 1; index < board.getRowLength(targetRow)+1; index++){
-			if((board.isStickUnmarked(targetRow, index)) && (marker == 0))
+			if((board.isStickUnmarked(targetRow, index)) && (marker == 0)) {
 				marker = index;
 				f1Marker = index;
+			}
 			if ((index > temp) && (marker != 0) && (!board.isStickUnmarked(targetRow, index)))
 				slice = true;
 			if ((slice) && (board.isStickUnmarked(targetRow, index))){
@@ -276,7 +279,7 @@ public class Player {
 				f2Marker = marker;
 				f1Closer = temp;
 				slice = false;
-				int diff = (temp - index + 1);
+				int diff = (f1Closer - f1Marker + 1);
 				lengthOfFirstSequence = diff;
 			}
 			if (board.isStickUnmarked(targetRow, index))
@@ -286,23 +289,23 @@ public class Player {
 			/** we have only one continious stream of 1's when f2Marker is still set as Zero. */
 				if ((board.isStickUnmarked(targetRow, index))){
 					if(f2Marker == 0){
-						f1Closer = index;
-						lengthOfFirstSequence = (f1Marker - f1Closer + 1);
+						f1Closer = temp;
+						lengthOfFirstSequence = (f1Closer - f1Marker + 1);
 					}
 					else{
-						f2Closer = index;
-						lengthOfSecondSequence = (f2Marker - f2Closer + 1);
+						f2Closer = temp;
+						lengthOfSecondSequence = (f2Closer - f2Marker + 1);
 					}
 				}
 				else {
 					if(f2Marker == 0){
-						f1Closer = index;
-						lengthOfFirstSequence = (f1Marker - f1Closer + 1);
+						f1Closer = temp;
+						lengthOfFirstSequence = (f1Closer - f1Marker + 1);
 					}
 
 					else{
-						f2Closer = index;
-						lengthOfSecondSequence = (f2Marker - f2Closer + 1);
+						f2Closer = temp;
+						lengthOfSecondSequence = (f2Closer - f2Marker + 1);
 					}
 				}
 			}		
@@ -339,7 +342,7 @@ public class Player {
 			if (userInput == OPTION_I)
 				System.out.println(board);
 			else if (userInput == OPTION_II){
-				// TODO: check whether they excpect me to verify its a valid move on the board?
+				// TODO: check whether they expect me to verify its a valid move on the board?
 				String ROW_MSG = "Enter the row number:";
 				System.out.println(ROW_MSG);
 				int row = scanner.nextInt();
@@ -476,7 +479,7 @@ public class Player {
 		and then we simply mark one stick from the last sequence we saw:*/
 		return new Move(lastRow,lastLeft,lastLeft);		
 	}
-	// TODO: remove garbage main
+//	// TODO: remove garbage main
 	public static void main(String[] args) {
 		Board board = new Board();
 		Scanner scanner = new Scanner(System.in);
