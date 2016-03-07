@@ -154,6 +154,13 @@ public class Player {
 		}
 		return move;
 	}
+	
+	/**
+	 * testing whether a given move is legal
+	 * @param board - the relevant board
+	 * @param move - the spesific move we check.
+	 * @return true in case of validity false otherwise.
+	 */
 	boolean checkValidityOfMove(Board board, Move move){
 		int left = move.getLeftBound();
 		int right = move.getRightBound();
@@ -170,6 +177,8 @@ public class Player {
 
 	/** 
 	 * A utility function that checks whether a row is empty of unmakred sticks not.
+	 * @param board - the relevant board.
+	 * @param row - the relvant row.
 	 * @return true in case there an availabe stick false otherwise.
 	 */
 	private boolean rowHasAvailableSticks(Board board, int row){
@@ -360,16 +369,16 @@ public class Player {
 		return new Move(lastRow,lastLeft,lastLeft);		
 	}
 	// TODO: remove garbage main
-	public static void main(String[] args) {
-		Board board = new Board();
-		Scanner scanner = new Scanner(System.in);
-		// Player player = new Player(1, 1, scanner);
-		// Player player = new Player(4, 1, scanner);
-		for(int i=0;i<10;i++){
-			Move move = player.produceMove(board);
-			int d = board.markStickSequence(move);
-			System.out.println(move);
-		}
-		System.out.println(board);
-	}
+	// public static void main(String[] args) {
+	// 	Board board = new Board();
+	// 	Scanner scanner = new Scanner(System.in);
+	// 	// Player player = new Player(1, 1, scanner);
+	// 	// Player player = new Player(4, 1, scanner);
+	// 	for(int i=0;i<10;i++){
+	// 		Move move = player.produceMove(board);
+	// 		int d = board.markStickSequence(move);
+	// 		System.out.println(move);
+	// 	}
+	// 	System.out.println(board);
+	// }
 }
