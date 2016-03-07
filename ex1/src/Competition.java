@@ -17,10 +17,9 @@ public class Competition {
 	/** A selction of useful counters */
 	private int numOfWinsPlayer1 = 0;
 	private int numOfWinsPlayer2 = 0;
-	private int currentPlayer;
-	private int previousPlayer;
-	private int numOfGames;
-	private int currentBoard;
+	private Player currentPlayer;
+	private Player previousPlayer;
+	private Board currentBoard;
 
 	/** 
 	 * Receives two Player objects, representing the two competing opponents,
@@ -35,9 +34,9 @@ public class Competition {
 		this.displayMessage = displayMessage;
 	}
 	
-	/** A utillity func to set the number of games */
-	private void setNumOfGames (int numOfGames){
-		this.numOfGames = numOfGames;
+	/** A utility function setting the current board*/
+	private void setNewBoard(Board board){
+		currentBoard = board;
 	}
 
 	/** 
@@ -94,8 +93,65 @@ public class Competition {
 		}
 	}
 
-	public void playMultiple(int numRounds){
+	/** 
+	 * A utillity function that runs a single match.
+	 * @param board - A fresh board to play upon.
+	 * @param player1 - the first player (Player object).
+	 * @param player2 - the second player (Player object).
+	 * @param displayMessage - a boolean indicator whether the messages should be displayed.
+	 */
+	private void playAMatch(Board board, Player player1, Player player2, boolean displayMessage){
+		int numOfSticksLeft = board.getNumberOfUnmarkedSticks();
+		currentPlayer = player1;
+		previousPlayer = player2;
+		String WEL_MSG = "Welcome to the sticks game!";
+		if(displayMessage)
+				System.out.println(WEL_MSG);
+		while(numOfSticksLeft > 0){
+			String TURN_MSG = "Player "+currentPlayer.getPlayerId()+", it is your turn!";
+			if(displayMessage)
+				System.out.println(TURN_MSG);
+			int success = 0;
+			int checkMove = -7; // arabitrary number different then success
+			while(checkMove != success){
+				Move currentMove = currentPlayer.produceMove(board);
+				checkMove = board.markStickSequence(currentMove);
+				if((checkMove != success) && displayMessage){
+					String ERROR_MSG = "Invalid move. Enter another:";
+					System.out.println(ERROR_MSG);
+				}
+				else if((checkMove == success) && displayMessage) {
+					String MOVE_MSG = "Player "+currentPlayer.getPlayerId()+
+					" made the move: "+currentMove.toString();
+					System.out.println(MOVE_MSG);
+				}
+			}
+			Player temp = currentPlayer;
+			currentPlayer = previousPlayer;
+			previousPlayer = temp;
+			numOfSticksLeft = board.getNumberOfUnmarkedSticks();
+		}
+		int res = currentPlayer.getPlayerId();
+		if(res == 1)
+			numOfWinsPlayer1++;
+		else
+			numOfWinsPlayer2++;
+		String END_MSG = "Player "+currentPlayer.getPlayerId()+" won!";
+		if(displayMessage)
+			System.out.println(END_MSG);
+	}
 
+	/**
+	 * Run the game for the given number of rounds.
+	 * @param numberOfRounds - number of rounds to play.
+	 */
+	public void playMultiple(int numRounds){
+		for(int i=0; i<numRounds; i++){
+			playAMatch(currentBoard, player1, player2, displayMessage);
+			currentBoard = new Board();
+		}
+		String END_MATCH_MSG = "The results are "+numOfWinsPlayer1+":"+numOfWinsPlayer2;
+		System.out.println(END_MATCH_MSG);
 	}
 
 
@@ -115,7 +171,8 @@ public class Competition {
 		Player player1 = new Player(p1Type, 1, scanner1);
 		Scanner scanner2 = new Scanner(System.in);
 		Player player2 = new Player(p2Type, 2, scanner2);
-		boolean display = true;
+		/** whether to display the messages or not */
+		boolean display = false;
 		Competition competition = new Competition(player1, player2, display);
 		int rounds = parseNumberOfGames(args);
 		String p1StrRepr = player1.getTypeName();
@@ -123,8 +180,9 @@ public class Competition {
 		String START_MSG = "Starting a Nim competition of "+rounds+" "+"rounds between a "+p1StrRepr+
 		" player and a "+p2StrRepr+" player.";
 		System.out.println(START_MSG);
+		Board board = new Board();
+		competition.setNewBoard(board);
 		competition.playMultiple(rounds);
-
 
 		// System.out.println(board);
 		// Move move = new Move(2,1,7);
