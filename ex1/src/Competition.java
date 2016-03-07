@@ -112,9 +112,12 @@ public class Competition {
 			if(displayMessage)
 				System.out.println(TURN_MSG);
 			int success = 0;
-			int checkMove = -7; // arabitrary number different then success
+			int checkMove = -7; // arbitrary number different then success
 			while(checkMove != success){
 				Move currentMove = currentPlayer.produceMove(board);
+//				// TODO : Remove ugly prints
+//				System.out.println(currentMove);
+//				System.out.println(board);
 				checkMove = board.markStickSequence(currentMove);
 				if((checkMove != success) && displayMessage){
 					String ERROR_MSG = "Invalid move. Enter another:";
@@ -134,8 +137,9 @@ public class Competition {
 		int res = currentPlayer.getPlayerId();
 		if(res == 1)
 			numOfWinsPlayer1++;
-		else
+		else {
 			numOfWinsPlayer2++;
+		}
 		String END_MSG = "Player "+currentPlayer.getPlayerId()+" won!";
 		if(displayMessage)
 			System.out.println(END_MSG);
@@ -143,7 +147,7 @@ public class Competition {
 
 	/**
 	 * Run the game for the given number of rounds.
-	 * @param numberOfRounds - number of rounds to play.
+	 * @param numRounds - number of rounds to play.
 	 */
 	public void playMultiple(int numRounds){
 		for(int i=0; i<numRounds; i++){
@@ -184,18 +188,6 @@ public class Competition {
 		competition.setNewBoard(board);
 		competition.playMultiple(rounds);
 
-		// System.out.println(board);
-		// Move move = new Move(2,1,7);
-		// board.markStickSequence(move);
-		// System.out.println(board);
-		// Scanner scanner = new Scanner(System.in);
-		// Player player1 = new Player(Player.HEURISTIC, 1, scanner);
-		// Move player1_move = player1.produceMove(board);
-		// board.markStickSequence(player1_move);
-		// player1_move = player1.produceMove(board);
-		// board.markStickSequence(player1_move);
-		// System.out.println(board);
-		
 	}	
 	
 }
