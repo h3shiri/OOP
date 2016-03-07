@@ -176,7 +176,7 @@ public class Player {
 	}
 
 	/** 
-	 * A utility function that checks whether a row is empty of unmakred sticks not.
+	 * A utility function that checks whether a row is empty of unmakred sticks.
 	 * @param board - the relevant board.
 	 * @param row - the relvant row.
 	 * @return true in case there an availabe stick false otherwise.
@@ -190,14 +190,56 @@ public class Player {
 		return false;
 	}
 
-	/*
-	 * Produce some intelligent strategy to produce a move
+	/**
+	 * Produce some intelligent strategy to produce a move.
+	 * we use various euristics to select a move.
+	 * @param board - A the current board object.
+	 * @return a valid move.
 	 */
 	private Move produceSmartMove(Board board){
-		/* You need to implement this method */
-		return new Move(1,1,1);
+		if(firstEuristic(board)){
+
+		}
+
+		return produceRandomMove(board);
 	}
 	
+	/** In the case of only one row with continious junk*/
+	private boolean firstEuristic(Board board){
+		int rows = board.getNumberOfRows();
+		int numOfAvailableRows = rows;
+		int targetRow = 0; // shall be selected shortly
+		for (int row=1; row <rows+1; row++){
+			if (rowHasAvailableSticks(board, row))
+				targetRow = row;
+			else
+				numOfAvailableRows--;
+		}
+		// checks if we have only one available row to select.
+		if((numOfAvailableRows == 1) && (board.getNumberOfUnmarkedSticks()>1)){
+			//check for a cotinious sequences
+			boolean slice = false;
+			int numOfContiniousSequences = 1;
+			int marker = 0;
+			int temp = 1;
+			for(int index = 1; index < board.getRowLength(targetRow)+1; index++){
+				if((board.isStickUnmarked(targetRow, index)) && (marker == 0))
+					marker = index;
+				if (board.isStickUnmarked(targetRow, index))
+					temp = index;
+				if ((index > temp) && (marker != 0) && (!board.isStickUnmarked(targetRow, index)))
+					slice = true;
+				if ((slice) && (board.isStickUnmarked(targetRow, index))){
+					numOfContiniousSequences++;
+					marker = index;
+					slice = false;
+				}
+			}
+			if (numOfContiniousSequences <= 2)
+				return true;
+		}
+		return false;	
+	}
 	/*
 	 * Interact with the user to produce his move.
 	 */
@@ -296,28 +338,20 @@ public class Player {
 				binarySum[bitIndex] = (binarySum[bitIndex]+bins[k][bitIndex])%2;
 			}
 		}
-		
-		
 		//We only have single sticks
 		if(higherThenOne==0){
 			return new Move(lastOneRow,lastOneLeft,lastOneLeft);
 		}
-		
 		//We are at a finishing state				
 		if(higherThenOne<=1){
-			
 			if(totalOnes == 0){
 				return new Move(lastRow,lastLeft,lastLeft+(lastSize-1) - 1);
 			} else {
 				return new Move(lastRow,lastLeft,lastLeft+(lastSize-1)-(1-totalOnes%2));
 			}
-			
 		}
-		
 		for(bitIndex = 0;bitIndex<BINARY_LENGTH-1;bitIndex++){
-			
 			if(binarySum[bitIndex]>0){
-				
 				int finalSum = 0,eraseRow = 0,eraseSize = 0,numRemove = 0;
 				for(int k=0;k<numRows;k++){
 					
@@ -334,38 +368,31 @@ public class Player {
 								} else {
 									finalSum = finalSum - (int)Math.pow(2,BINARY_LENGTH-b2-1);
 								}
-								
-							}
-							
+							}	
 						}
 						break;
 					}
 				}
-				
 				numRemove = eraseSize - finalSum;
-				
 				//Now we find that part and remove from it the required piece
 				int numOnes=0,i=0;
 				while(numOnes<eraseSize){
-
 					if(board.isStickUnmarked(eraseRow,i+1)){
 						numOnes++;
 					} else {
 						numOnes=0;
 					}
 					i++;
-					
 				}
 				return new Move(eraseRow,i-numOnes+1,i-numOnes+numRemove);
 			}
 		}
-		
 		//If we reached here, and the board is not symmetric, then we only need to erase a single stick
 		if(binarySum[BINARY_LENGTH-1]>0){
 			return new Move(lastOneRow,lastOneLeft,lastOneLeft);
 		}
-		
-		//If we reached here, it means that the board is already symmetric, and then we simply mark one stick from the last sequence we saw:
+		/**If we reached here, it means that the board is already symmetric, 
+		and then we simply mark one stick from the last sequence we saw:*/
 		return new Move(lastRow,lastLeft,lastLeft);		
 	}
 	// TODO: remove garbage main
@@ -373,12 +400,14 @@ public class Player {
 	// 	Board board = new Board();
 	// 	Scanner scanner = new Scanner(System.in);
 	// 	// Player player = new Player(1, 1, scanner);
-	// 	// Player player = new Player(4, 1, scanner);
+	// 	Player player = new Player(4, 1, scanner);
 	// 	for(int i=0;i<10;i++){
 	// 		Move move = player.produceMove(board);
 	// 		int d = board.markStickSequence(move);
 	// 		System.out.println(move);
+	// 		boolean trail = player.firstEuristic(board);
+	// 		System.out.println("check 1st Euristic:"+trail);
 	// 	}
 	// 	System.out.println(board);
-	// }
+	}
 }
