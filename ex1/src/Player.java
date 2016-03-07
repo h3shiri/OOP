@@ -198,13 +198,14 @@ public class Player {
 	 */
 	private Move produceSmartMove(Board board){
 		if(firstEuristic(board)){
-
+			Move move = produceWithFirstU(board);
+			return move;
 		}
 
 		return produceRandomMove(board);
 	}
 	
-	/** In the case of only one row with continious junk*/
+	/** In the case of only one row with various unmakrd sticks */
 	private boolean firstEuristic(Board board){
 		int rows = board.getNumberOfRows();
 		int numOfAvailableRows = rows;
@@ -240,6 +241,87 @@ public class Player {
 		}
 		return false;	
 	}
+
+	/** 
+	 * producing an intellegent move given only one vald row and up to 2 connected compponnents.
+	 * @param board - the current board
+	 * @return a legal move. 
+	 */
+	private Move produceWithFirstU(Board board){
+		int rows = board.getNumberOfRows();
+		int targetRow = 0; // shall be selected shortly
+		for (int row=1; row <rows+1; row++){
+			if (rowHasAvailableSticks(board, row))
+				targetRow = row;
+		}
+		boolean slice = false;
+		int marker = 0;
+		int temp = 1;
+		int lengthOfFirstSequence = 0;
+		int lengthOfSecondSequence = 0;
+		int f1Marker = 0;
+		int f1Closer = 0;
+		int f2Marker = 0;
+		int f2Closer = 0;
+
+		/** Some pre processing of the connected componnents */
+		for(int index = 1; index < board.getRowLength(targetRow)+1; index++){
+			if((board.isStickUnmarked(targetRow, index)) && (marker == 0))
+				marker = index;
+				f1Marker = index;
+			if ((index > temp) && (marker != 0) && (!board.isStickUnmarked(targetRow, index)))
+				slice = true;
+			if ((slice) && (board.isStickUnmarked(targetRow, index))){
+				marker = index;
+				f2Marker = marker;
+				f1Closer = temp;
+				slice = false;
+				int diff = (temp - index + 1);
+				lengthOfFirstSequence = diff;
+			}
+			if (board.isStickUnmarked(targetRow, index))
+				temp = index;
+			//In case we reached the end of the line we check various cases.
+			if (index == board.getRowLength(targetRow)){
+			/** we have only one continious stream of 1's when f2Marker is still set as Zero. */
+				if ((board.isStickUnmarked(targetRow, index))){
+					if(f2Marker == 0){
+						f1Closer = index;
+						lengthOfFirstSequence = (f1Marker - f1Closer + 1);
+					}
+					else{
+						f2Closer = index;
+						lengthOfSecondSequence = (f2Marker - f2Closer + 1);
+					}
+				}
+				else {
+					if(f2Marker == 0){
+						f1Closer = index;
+						lengthOfFirstSequence = (f1Marker - f1Closer + 1);
+					}
+
+					else{
+						f2Closer = index;
+						lengthOfSecondSequence = (f2Marker - f2Closer + 1);
+					}
+				}
+			}		
+		}
+		/** We have all the data on the potential two sequences */
+		Move res = new Move(1,1,1); // dummy init value
+		if (lengthOfSecondSequence == 0)
+			res = new Move(targetRow, f1Marker, (f1Closer-1));
+		else if(lengthOfSecondSequence == 1)
+			res = new Move(targetRow, f1Marker, f1Closer);
+		else if (lengthOfFirstSequence > lengthOfSecondSequence) {
+			int diff = (lengthOfFirstSequence - lengthOfSecondSequence);
+			res = new Move(targetRow, f1Marker, (f1Marker+diff-1));
+		}
+		else
+			res = new Move(targetRow, f2Marker, f2Closer);
+
+	return res;
+	}
 	/*
 	 * Interact with the user to produce his move.
 	 */
@@ -249,7 +331,6 @@ public class Player {
 		// TODO: check the messages format.
 		// arbitrary choice before selecting the real return value.
 		Move move = new Move(1,1,1);
-
 		boolean validSelection = false;
 		while(!validSelection){
 			String initialMsg = "Press 1 to display the board. Press 2 make a move:";
@@ -396,18 +477,23 @@ public class Player {
 		return new Move(lastRow,lastLeft,lastLeft);		
 	}
 	// TODO: remove garbage main
-	// public static void main(String[] args) {
-	// 	Board board = new Board();
-	// 	Scanner scanner = new Scanner(System.in);
-	// 	// Player player = new Player(1, 1, scanner);
-	// 	Player player = new Player(4, 1, scanner);
-	// 	for(int i=0;i<10;i++){
-	// 		Move move = player.produceMove(board);
-	// 		int d = board.markStickSequence(move);
-	// 		System.out.println(move);
-	// 		boolean trail = player.firstEuristic(board);
-	// 		System.out.println("check 1st Euristic:"+trail);
-	// 	}
-	// 	System.out.println(board);
+	public static void main(String[] args) {
+		Board board = new Board();
+		Scanner scanner = new Scanner(System.in);
+		Scanner scanner2 = new Scanner(System.in);
+		// Player player = new Player(1, 1, scanner);
+		Player player = new Player(4, 1, scanner);
+		Player player2 = new Player(3,2, scanner2);
+		for(int i=0;i<15;i++){
+			Move move = player.produceMove(board);
+			int d = board.markStickSequence(move);
+			// System.out.println(move);
+			boolean trail = player.firstEuristic(board);
+			System.out.println("check 1st Euristic:"+trail);
+			Move move2 = player2.produceMove(board);
+			System.out.println(move2);
+			int d2 = board.markStickSequence(move2);
+		}
+		System.out.println(board);
 	}
 }
