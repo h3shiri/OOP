@@ -480,23 +480,23 @@ public class Player {
 		return new Move(lastRow,lastLeft,lastLeft);		
 	}
 //	// TODO: remove garbage main
-	public static void main(String[] args) {
-		Board board = new Board();
-		Scanner scanner = new Scanner(System.in);
-		Scanner scanner2 = new Scanner(System.in);
-		// Player player = new Player(1, 1, scanner);
-		Player player = new Player(4, 1, scanner);
-		Player player2 = new Player(3,2, scanner2);
-		for(int i=0;i<15;i++){
-			Move move = player.produceMove(board);
-			int d = board.markStickSequence(move);
-			// System.out.println(move);
-			boolean trail = player.firstEuristic(board);
-			System.out.println("check 1st Euristic:"+trail);
-			Move move2 = player2.produceMove(board);
-			System.out.println(move2);
-			int d2 = board.markStickSequence(move2);
-		}
-		System.out.println(board);
-	}
+	// public static void main(String[] args) {
+	// 	Board board = new Board();
+	// 	Scanner scanner = new Scanner(System.in);
+	// 	Scanner scanner2 = new Scanner(System.in);
+	// 	// Player player = new Player(1, 1, scanner);
+	// 	Player player = new Player(4, 1, scanner);
+	// 	Player player2 = new Player(3,2, scanner2);
+	// 	for(int i=0;i<15;i++){
+	// 		Move move = player.produceMove(board);
+	// 		int d = board.markStickSequence(move);
+	// 		// System.out.println(move);
+	// 		boolean trail = player.firstEuristic(board);
+	// 		System.out.println("check 1st Euristic:"+trail);
+	// 		Move move2 = player2.produceMove(board);
+	// 		System.out.println(move2);
+	// 		int d2 = board.markStickSequence(move2);
+	// 	}
+	// 	System.out.println(board);
+	// }
 }
