@@ -336,32 +336,38 @@ public class Player {
 		Move move = new Move(1,1,1);
 		boolean validSelection = false;
 		while(!validSelection){
-			String initialMsg = "Press 1 to display the board. Press 2 make a move:";
+			String initialMsg = "Press 1 to display the board. Press 2 to make a move:";
 			System.out.println(initialMsg);
-			int userInput = scanner.nextInt();
-			if (userInput == OPTION_I)
-				System.out.println(board);
-			else if (userInput == OPTION_II){
-				// TODO: check whether they expect me to verify its a valid move on the board?
-				String ROW_MSG = "Enter the row number:";
-				System.out.println(ROW_MSG);
-				int row = scanner.nextInt();
-				String LEFT_STICK_MSG = "Enter the index of the leftmost stick:";
-				System.out.println(LEFT_STICK_MSG);
-				int leftStick = scanner.nextInt();
-				String RIGHT_STICK_MSG = "Enter the index of the rightmost stick:";
-				System.out.println(RIGHT_STICK_MSG);
-				int rightStick = scanner.nextInt();
-				move = new Move(row, leftStick, rightStick);
-				validSelection = true;
-			}
-			else{
-				String ERROR_MSG = "Unsupported command";
-				System.out.println(ERROR_MSG);
-			}
-			}
-		return move;	
+				if (!scanner.hasNextInt()) {
+					String ERROR_MSG = "Unsupported command";
+					System.out.println(ERROR_MSG);
+					continue;
+				}
+				int userInput = scanner.nextInt();
+				if (userInput == OPTION_I)
+					System.out.println(board);
+				else if (userInput == OPTION_II){
+					// TODO: check whether they expect me to verify its a valid move on the board?
+					String ROW_MSG = "Enter the row number:";
+					System.out.println(ROW_MSG);
+					int row = scanner.nextInt();
+					String LEFT_STICK_MSG = "Enter the index of the leftmost stick:";
+					System.out.println(LEFT_STICK_MSG);
+					int leftStick = scanner.nextInt();
+					String RIGHT_STICK_MSG = "Enter the index of the rightmost stick:";
+					System.out.println(RIGHT_STICK_MSG);
+					int rightStick = scanner.nextInt();
+					move = new Move(row, leftStick, rightStick);
+					validSelection = true;
+				}
+				else{
+					String ERROR_MSG = "Unsupported command";
+					System.out.println(ERROR_MSG);
+				}
+			
 		}
+		return move;	
+	}
 	
 	/*
 	 * Uses a winning heuristic for the Nim game to produce a move.

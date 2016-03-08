@@ -108,7 +108,7 @@ public class Competition {
 		if(displayMessage)
 				System.out.println(WEL_MSG);
 		while(numOfSticksLeft > 0){
-			String TURN_MSG = "Player "+currentPlayer.getPlayerId()+", it is your turn!";
+			String TURN_MSG = "Player "+currentPlayer.getPlayerId()+", it is now your turn!";
 			if(displayMessage)
 				System.out.println(TURN_MSG);
 			int success = 0;
@@ -173,10 +173,13 @@ public class Competition {
 		int p2Type = parsePlayer2Type(args);
 		Scanner scanner1 = new Scanner(System.in);
 		Player player1 = new Player(p1Type, 1, scanner1);
-		Scanner scanner2 = new Scanner(System.in);
-		Player player2 = new Player(p2Type, 2, scanner2);
+		// Scanner scanner2 = new Scanner(System.in);
+		Player player2 = new Player(p2Type, 2, scanner1);
 		/** whether to display the messages or not */
-		boolean display = false;
+		boolean display = true;
+		if((player1.getPlayerType() != player1.HUMAN) && (player2.getPlayerType() != player2.HUMAN)){
+			display = false;
+		}
 		Competition competition = new Competition(player1, player2, display);
 		int rounds = parseNumberOfGames(args);
 		String p1StrRepr = player1.getTypeName();
