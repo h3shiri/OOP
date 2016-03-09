@@ -1,0 +1,40 @@
+h3shiri
+206098311
+Shiri Heffetz
+
+====================================
+= README for ex1 the Nim game =
+====================================
+Building a Nim game and creating a competition between various players.
+
+==================
+=  Description:  =
+==================
+We have implemented 3 seperated classes, one for each object.
+Competition is the main driver, manages the rounds between the players and
+keeps scores.
+==================
+=  Design:  =
+==================
+We have allowed few extra data members in order to kepp tracks
+of all the parameters in the Competion, such as players's scores, last player..etc
+Except that I have implemented all the public classes acording to the API.
+Moreover, in the Smart player I have chosen to focus on the case of only one non-empty
+line. Then if possible we preform a winning move accordingly, otherwise we attempt
+to single out a connected componnent.
+
+=============================
+=  List of submitted files: =
+=============================
+
+README - this file.
+Competition.java - the central manager of the competition.
+Board.java - the board class, has all the internal methods of interacting with it.
+Move.java - a basic class for a single move on the board.
+Player.java - contains all the various player and their strategies.
+
+======================
+=  Special Comments  =
+======================
+Extra comments are inside the classes in order to make to code readability
+better to the naked eye.

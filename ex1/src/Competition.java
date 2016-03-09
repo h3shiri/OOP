@@ -115,9 +115,6 @@ public class Competition {
 			int checkMove = -7; // arbitrary number different then success
 			while(checkMove != success){
 				Move currentMove = currentPlayer.produceMove(board);
-//				// TODO : Remove ugly prints
-//				System.out.println(currentMove);
-//				System.out.println(board);
 				checkMove = board.markStickSequence(currentMove);
 				if((checkMove != success) && displayMessage){
 					String ERROR_MSG = "Invalid move. Enter another:";
@@ -167,13 +164,11 @@ public class Competition {
 	 * (3) The number of rounds to be played in the competition.
 	 * @param args an array of string representations of the three input arguments, as detailed above.
 	 */
-	// TODO: clean the main function..etc
 	public static void main(String[] args) {
 		int p1Type = parsePlayer1Type(args);
 		int p2Type = parsePlayer2Type(args);
 		Scanner scanner1 = new Scanner(System.in);
 		Player player1 = new Player(p1Type, 1, scanner1);
-		// Scanner scanner2 = new Scanner(System.in);
 		Player player2 = new Player(p2Type, 2, scanner1);
 		/** whether to display the messages or not */
 		boolean display = true;
