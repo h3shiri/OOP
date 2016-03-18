@@ -40,7 +40,7 @@ public class SpaceWars{
     private ArrayList<ShotPhysics> shots;
     
     /** 
-     * An array that specifies the number of time each spaceship has died in
+     * An array that specifies the number of times each spaceship has died in
      * the game.
      */
     private int[] deathCount;
