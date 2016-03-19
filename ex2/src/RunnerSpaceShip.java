@@ -19,9 +19,9 @@ public class RunnerSpaceShip extends SpaceShip{
      */
     public Image getImage() {
         if (shieldsCondition) {
-        	return GameGui.ENEMY_SPACESHIP_IMAGE_SHIELD;
+        	return GameGUI.ENEMY_SPACESHIP_IMAGE_SHIELD;
         }
         else
-        	return GameGui.ENEMY_SPACESHIP_IMAGE;
+        	return GameGUI.ENEMY_SPACESHIP_IMAGE;
     }
 }

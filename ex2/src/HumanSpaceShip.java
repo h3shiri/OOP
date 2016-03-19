@@ -2,56 +2,45 @@
 import java.awt.Image;
 import oop.ex2.*;
 
-public class HumanSpaceShip implements SpaceShip{
+public class HumanSpaceShip extends SpaceShip{
 
     /**
-     * Does the actions of this ship for this round.
      * This is called once per round by the SpaceWars game driver.
-     *
+     * Preforms various tasks, depending on the player input.
      * @param game the game object to which this ship belongs.
      */
     public void doAction(SpaceWars game){
+        GameGUI gui = game.getGUI();
+        boolean up = gui.isUpPressed();
+        boolean left = gui.isLeftPressed();
+        boolean right = gui.isRightPressed();
+        boolean fire = gui.isShotPressed();
+        boolean tele = gui.isTeleportPressed();
+        boolean shield = gui.isShieldsPressed();
+        int direction;
+        if(right && (!left)){
+            direction = -1;
+        }
+        else if (left && (!right)) {
+            direction = 1;
+        }
+        else
+            direction = 0;
+        /** we established all the movement parameters and actions */
+        if(tele)
+            teleport();
+        physics.move(up, direction);
 
-    }
+        if(shield)
+            shieldOn();
+        else
+            shieldsCondition = false;
+        if (fire)
+            fire(game);
+        if(!shieldsCondition)
+            currentEnergyLevel++;
 
-    /**
-     * This method is called every time a collision with this ship occurs
-     */
-    public void collidedWithAnotherShip(){
-
-    }
-
-    /**
-     * This method is called whenever a ship has died. It resets the ship's
-     * attributes, and starts it at a new random position.
-     */
-    public void reset(){
-
-    }
-
-    /**
-     * Checks if this ship is dead.
-     *
-     * @return true if the ship is dead. false otherwise.
-     */
-    public boolean isDead(){
-        return false;
-    }
-
-    /**
-     * Gets the physics object that controls this ship.
-     *
-     * @return the physics object that controls the ship.
-     */
-    public SpaceShipPhysics getPhysics(){
-        return null;
-    }
-
-    /**
-     * This method is called by the SpaceWars game object when ever this ship
-     * gets hit by a shot.
-     */
-    public void gotHit(){
+            
 
     }
 
@@ -63,29 +52,10 @@ public class HumanSpaceShip implements SpaceShip{
      * @return the image of this ship.
      */
     public Image getImage(){
-
+        if(shieldsCondition)
+            return GameGUI.SPACESHIP_IMAGE_SHIELD;
+        else
+            return GameGUI.SPACESHIP_IMAGE;
     }
 
-    /**
-     * Attempts to fire a shot.
-     *
-     * @param game the game object.
-     */
-    public void fire(SpaceWars game){
-
-    }
-
-    /**
-     * Attempts to turn on the shield.
-     */
-    public void shieldOn(){
-
-    }
-
-    /**
-     * Attempts to teleport.
-     */
-    public void teleport(){
-
-    }
 }
