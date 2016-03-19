@@ -10,6 +10,7 @@ public class HumanSpaceShip extends SpaceShip{
      * @param game the game object to which this ship belongs.
      */
     public void doAction(SpaceWars game){
+        rechargeGuns();
         GameGUI gui = game.getGUI();
         boolean up = gui.isUpPressed();
         boolean left = gui.isLeftPressed();

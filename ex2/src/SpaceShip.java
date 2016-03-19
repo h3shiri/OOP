@@ -19,23 +19,16 @@ public abstract class SpaceShip{
     protected int currentEnergyLevel;
     protected int healthLevel;
     protected boolean shieldsCondition;
+    protected int canonCollingPeriod = 8;
+    protected int tempShotCounter = 0;
 
     protected SpaceShip(){
         healthLevel = initialHealthLevel;
-        physics = new SpaceShipPhysics();
+        this.physics = new SpaceShipPhysics();
         maximumEnergy = initialMaximumEnergy;
         currentEnergyLevel = initialEnergyLevel; 
         shieldsCondition = false;
     }
-    // TODO: do I even need this function, who manages the colloisions?
-    // /** 
-    //  * when colliding with another ship while the shields are up 
-    //  */
-    // protected void bashing(){
-    //     int increaseDose = 18;
-    //     maximumEnergy += increaseDose;
-    //     currentEnergyLevel += increaseDose;
-    // }
 
     /**
      * Does the actions of this ship for this round.
@@ -125,21 +118,30 @@ public abstract class SpaceShip{
      */
     public void fire(SpaceWars game){
         int weaponsCost = 19;
-        if (currentEnergyLevel > weaponsCost){
+        if ((currentEnergyLevel > weaponsCost) && (tempShotCounter == 0)) {
             game.addShot(getPhysics());
             currentEnergyLevel -= weaponsCost;
+            tempShotCounter++;
         }
+    }
+    /**
+     * re-charging the guns so the re-coil would only lasts 7 turns.
+     */
+    protected void rechargeGuns(){
+        if(tempShotCounter != 0)
+            tempShotCounter = ((tempShotCounter+1) % canonCollingPeriod);
     }
 
     /**
      * Attempts to turn on the shield.
      */
     public void shieldOn(){
-        // TODO: check the cost of turnning on
+        // TODO: check the cost of turning on
         int costPerRound = 3;
-        if (currentEnergyLevel > costPerRound)
+        if (currentEnergyLevel > costPerRound) {
             shieldsCondition = true;
             currentEnergyLevel -= costPerRound;
+        }
     }
 
     /**
@@ -149,7 +151,7 @@ public abstract class SpaceShip{
 //        TODO: fix teleportation..issues.
         int costOfTele = 140;
         if (currentEnergyLevel > costOfTele){
-            physics = new SpaceShipPhysics();
+            this.physics = new SpaceShipPhysics();
             currentEnergyLevel -= costOfTele;
         }
     }

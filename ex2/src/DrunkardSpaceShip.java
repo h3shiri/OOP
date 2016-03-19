@@ -16,22 +16,25 @@ public class DrunkardSpaceShip extends SpaceShip{
      * @param game the game object to which this ship belongs.
      */
     public void doAction(SpaceWars game) {
+    	rechargeGuns();
     	int moduloBase = 8;
     	boolean up = false;
-        if(!((firstCounter + secondCounter) % moduloBase == 0)){
+        if(!(((firstCounter + secondCounter) % moduloBase) == 0)){
         	secondCounter = ((secondCounter+1) % moduloBase);
         	if (firstCounter > 2)
         		up = true;
         	int right = -1;
         	physics.move(up, right);
-        	firstCounter = (firstCounter+1 % moduloBase);
+        	firstCounter = ((firstCounter+1) % moduloBase);
         }
         firstCounter++;
         secondCounter++;
         if ((firstCounter % 3) == 0)
         	fire(game);
-        if ((secondCounter % 5) == 0)
+        if ((secondCounter % 20) == 0)
         	shieldOn();
+        if(!shieldsCondition)
+            currentEnergyLevel++;
     }
 
     /** 

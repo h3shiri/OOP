@@ -325,14 +325,15 @@ public class Player {
 
 	return res;
 	}
-	/*
+	/**
 	 * Interact with the user to produce his move.
+	 * @param board - the current board position.
+	 * @return A move selected by the player.
 	 */
 	private Move produceHumanMove(Board board){
 		int OPTION_I = 1;
 		int OPTION_II = 2;
-		// TODO: check the messages format.
-		// arbitrary choice before selecting the real return value.
+		/** arbitrary choice before selecting the real return value. */
 		Move move = new Move(1,1,1);
 		boolean validSelection = false;
 		while(!validSelection){
@@ -348,7 +349,6 @@ public class Player {
 				if (userInput == OPTION_I)
 					System.out.println(board);
 				else if (userInput == OPTION_II){
-					// TODO: check whether they expect me to verify its a valid move on the board?
 					String ROW_MSG = "Enter the row number:";
 					System.out.println(ROW_MSG);
 					int row = scanner.nextInt();
@@ -371,8 +371,10 @@ public class Player {
 		return move;	
 	}
 	
-	/*
+	/**
 	 * Uses a winning heuristic for the Nim game to produce a move.
+	 * @param board - A valid board to select the intelligent move from.
+	 * @return the selected move.
 	 */
 	private Move produceHeuristicMove(Board board){
 
@@ -430,11 +432,11 @@ public class Player {
 				binarySum[bitIndex] = (binarySum[bitIndex]+bins[k][bitIndex])%2;
 			}
 		}
-		//We only have single sticks
+		/** We only have single sticks */
 		if(higherThenOne==0){
 			return new Move(lastOneRow,lastOneLeft,lastOneLeft);
 		}
-		//We are at a finishing state				
+		/** We are at a finishing state	*/			
 		if(higherThenOne<=1){
 			if(totalOnes == 0){
 				return new Move(lastRow,lastLeft,lastLeft+(lastSize-1) - 1);
@@ -466,7 +468,7 @@ public class Player {
 					}
 				}
 				numRemove = eraseSize - finalSum;
-				//Now we find that part and remove from it the required piece
+				/** Now we find that part and remove from it the required piece */
 				int numOnes=0,i=0;
 				while(numOnes<eraseSize){
 					if(board.isStickUnmarked(eraseRow,i+1)){
@@ -479,7 +481,7 @@ public class Player {
 				return new Move(eraseRow,i-numOnes+1,i-numOnes+numRemove);
 			}
 		}
-		//If we reached here, and the board is not symmetric, then we only need to erase a single stick
+		/** If we reached here, and the board is not symmetric, then we only need to erase a single stick */
 		if(binarySum[BINARY_LENGTH-1]>0){
 			return new Move(lastOneRow,lastOneLeft,lastOneLeft);
 		}
@@ -487,24 +489,5 @@ public class Player {
 		and then we simply mark one stick from the last sequence we saw:*/
 		return new Move(lastRow,lastLeft,lastLeft);		
 	}
-//	// TODO: remove garbage main
-	// public static void main(String[] args) {
-	// 	Board board = new Board();
-	// 	Scanner scanner = new Scanner(System.in);
-	// 	Scanner scanner2 = new Scanner(System.in);
-	// 	// Player player = new Player(1, 1, scanner);
-	// 	Player player = new Player(4, 1, scanner);
-	// 	Player player2 = new Player(3,2, scanner2);
-	// 	for(int i=0;i<15;i++){
-	// 		Move move = player.produceMove(board);
-	// 		int d = board.markStickSequence(move);
-	// 		// System.out.println(move);
-	// 		boolean trail = player.firstEuristic(board);
-	// 		System.out.println("check 1st Euristic:"+trail);
-	// 		Move move2 = player2.produceMove(board);
-	// 		System.out.println(move2);
-	// 		int d2 = board.markStickSequence(move2);
-	// 	}
-	// 	System.out.println(board);
-	// }
+
 }
