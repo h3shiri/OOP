@@ -33,12 +33,7 @@ public class SpaceShipFactory {
 	}
 
     public static SpaceShip[] createSpaceShips(String[] args) {
-    	// TODO: check whether to test the validity of the input
-    //     String ERROR_MSG = "Invalid input";
-    //     if(!legalInput(args))
-    //     	System.out.println(ERROR_MSG);
-//		TODO: check the structure properly..
-//		SpaceWars wars = new SpaceWars(args);
+
     	int i = 0;
     	SpaceShip[] res;
     	res = new SpaceShip[args.length];
@@ -72,13 +67,4 @@ public class SpaceShipFactory {
     	}
 		return res;
     }
-    // TODO: Remove silly main testing
-    // public static void main(String[] args) {
-    // 	for (String l : args) {
-    // 		System.out.println(l);
-    // 	}
-    // 	for (String m : validSet) {
-    // 		System.out.println(m);
-    // 	}   	
-    // }
 }

@@ -10,6 +10,8 @@ public class SpecialSpaceShip extends SpaceShip{
      * @parm game the game object to which this ship belongs.
      */
     public void doAction(SpaceWars game) {
+        rechargeGuns();
+
         SpaceShip enemyShip = game.getClosestShipTo(this);
         SpaceShipPhysics enemy_physics = enemyShip.getPhysics();
         double distance = getPhysics().distanceFrom(enemy_physics);
@@ -18,8 +20,6 @@ public class SpecialSpaceShip extends SpaceShip{
             shieldOn();
         else
             shieldsCondition = false;
-        setGuns();
-        superCharge();
         fire(game);
         double terminationBound = 0.14;
         if(distance < terminationBound){
@@ -28,7 +28,8 @@ public class SpecialSpaceShip extends SpaceShip{
         }
         else
             getPhysics().move(false, 1);
-
+        if(!shieldsCondition)
+            currentEnergyLevel++;
     }
 
     /** 

@@ -1,0 +1,43 @@
+h3shiri
+Shiri Heffetz
+
+====================================
+= README for ex2 the SpaceWars =
+====================================
+Building a SpaceWars game and creating various types of SpaceShip.
+
+==================
+=  Description:  =
+==================
+I have implemented numerous types of ships in seperate classes.
+In addition, supplemented the factory method for loading all the ships.
+
+==================
+=  Design:  =
+==================
+I have one abstract class which is the SpaceShip, all the other various ships are extensions.
+So they inhert the basic structure from SpaceShip, while the key difference between the ships is within
+the doAction method.
+In addition, I designed the drunkard movement to be quite random with tendency to shot and spin too much.
+I have allowed the SpecialSpaceShip to hack the game rules slightly, using its mind control abillities 
+it can terminate any ship which gets too close to it.
+
+=============================
+=  List of submitted files: =
+=============================
+
+README - This file.
+SpaceShip.java - The mother of all ships, which is an abstract class.
+SpecialSpaceship.java - A special SpaceShip which shall be a challenging for any player.
+AggressiveSpaceShip.java - An aggressive ship which seeks to hunt the closest ship down.
+DrunkardSpaceShip.java - A SpaceShip whos pilot had too much to drink.
+HumanSpaceShip.java - Contolled by a human player who is running the game.
+BasherSpaceShip.java - A SpaceShip which seeks to crash into other ships.
+RunnerSpaceShip.java - A Spaceship which seeks to run away from any conflict.
+SpaceShipFactory.java - The constructor for all the driver class, building all the various ships.
+
+======================
+=  Special Comments  =
+======================
+Extra comments are inside the classes in order to make to code readability
+better to the naked eye.

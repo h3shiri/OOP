@@ -35,7 +35,8 @@ public class BasherSpaceShip extends SpaceShip{
         }
         else
             shieldsCondition = false;
-
+        if(!shieldsCondition)
+            currentEnergyLevel++;
     }
 
     /** 

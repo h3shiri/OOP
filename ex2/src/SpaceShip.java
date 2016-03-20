@@ -23,11 +23,7 @@ public abstract class SpaceShip{
     protected int tempShotCounter = 0;
 
     protected SpaceShip(){
-        healthLevel = initialHealthLevel;
-        this.physics = new SpaceShipPhysics();
-        maximumEnergy = initialMaximumEnergy;
-        currentEnergyLevel = initialEnergyLevel; 
-        shieldsCondition = false;
+        reset();
     }
 
     /**
@@ -56,7 +52,7 @@ public abstract class SpaceShip{
      * attributes, and starts it at a new random position.
      */
     public void reset(){
-        // TODO: Rest any other counter u might use in your implementation.
+        tempShotCounter = 0;
         physics = new SpaceShipPhysics();
         shieldsCondition = false;
         healthLevel = initialHealthLevel;
@@ -71,11 +67,7 @@ public abstract class SpaceShip{
      * @return true if the ship is dead. false otherwise.
      */
     public boolean isDead(){
-        if(healthLevel <= lowerHealthBound){
-            return true;
-        }
-        else
-            return false;
+        return (healthLevel <= lowerHealthBound);
     }
 
     /**
@@ -136,7 +128,6 @@ public abstract class SpaceShip{
      * Attempts to turn on the shield.
      */
     public void shieldOn(){
-        // TODO: check the cost of turning on
         int costPerRound = 3;
         if (currentEnergyLevel > costPerRound) {
             shieldsCondition = true;
@@ -148,9 +139,8 @@ public abstract class SpaceShip{
      * Attempts to teleport.
      */
     public void teleport(){
-//        TODO: fix teleportation..issues.
         int costOfTele = 140;
-        if (currentEnergyLevel > costOfTele){
+        if (currentEnergyLevel > costOfTele) {
             this.physics = new SpaceShipPhysics();
             currentEnergyLevel -= costOfTele;
         }

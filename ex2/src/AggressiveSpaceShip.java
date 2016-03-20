@@ -32,6 +32,8 @@ public class AggressiveSpaceShip extends SpaceShip{
         double distanceBound = 0.21;
         if (distance <= distanceBound)
             fire(game);
+        if(!shieldsCondition)
+            currentEnergyLevel++;
 
     }
 
