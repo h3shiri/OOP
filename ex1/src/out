@@ -1,0 +1,457 @@
+======================
+===== EX1 TESTER =====
+======================
+
+===== CHECKING JAR & FILES =====
+
+===== ANALYZE README =====
+
+===== COMPILE CODE =====
+
+===== RUN TESTS =====
+
+#########################
+Executing Tests
+#########################
+***     test1 - Human vs Human
+RUNNING: timeout 10 java Competition 4 4 1
+  _____     _ _          _   _            _   
+ |  ___|_ _(_) | ___  __| | | |_ ___  ___| |_ 
+ | |_ / _` | | |/ _ \/ _` | | __/ _ \/ __| __|
+ |  _| (_| | | |  __/ (_| | | ||  __/\__ \ |_ 
+ |_|  \__,_|_|_|\___|\__,_|  \__\___||___/\__|
+                                              
+Running your program returned non-zero.
+The error reported was:
+
+Exception in thread "main" java.util.NoSuchElementException
+	at java.util.Scanner.throwFor(Scanner.java:862)
+	at java.util.Scanner.next(Scanner.java:1485)
+	at java.util.Scanner.nextInt(Scanner.java:2117)
+	at java.util.Scanner.nextInt(Scanner.java:2076)
+	at Player.produceHumanMove(Player.java:346)
+	at Player.produceMove(Player.java:111)
+	at Competition.playAMatch(Competition.java:117)
+	at Competition.playMultiple(Competition.java:154)
+	at Competition.main(Competition.java:189)
+
+***     test2 - Human vs Human
+RUNNING: timeout 10 java Competition 4 4 1
+  _____     _ _          _   _            _   
+ |  ___|_ _(_) | ___  __| | | |_ ___  ___| |_ 
+ | |_ / _` | | |/ _ \/ _` | | __/ _ \/ __| __|
+ |  _| (_| | | |  __/ (_| | | ||  __/\__ \ |_ 
+ |_|  \__,_|_|_|\___|\__,_|  \__\___||___/\__|
+                                              
+Running your program returned non-zero.
+The error reported was:
+
+Exception in thread "main" java.util.NoSuchElementException
+	at java.util.Scanner.throwFor(Scanner.java:862)
+	at java.util.Scanner.next(Scanner.java:1485)
+	at java.util.Scanner.nextInt(Scanner.java:2117)
+	at java.util.Scanner.nextInt(Scanner.java:2076)
+	at Player.produceHumanMove(Player.java:346)
+	at Player.produceMove(Player.java:111)
+	at Competition.playAMatch(Competition.java:117)
+	at Competition.playMultiple(Competition.java:154)
+	at Competition.main(Competition.java:189)
+
+***     test3 - Human vs Human
+RUNNING: timeout 10 java Competition 4 4 1
+  _____     _ _          _   _            _   
+ |  ___|_ _(_) | ___  __| | | |_ ___  ___| |_ 
+ | |_ / _` | | |/ _ \/ _` | | __/ _ \/ __| __|
+ |  _| (_| | | |  __/ (_| | | ||  __/\__ \ |_ 
+ |_|  \__,_|_|_|\___|\__,_|  \__\___||___/\__|
+                                              
+Running your program returned non-zero.
+The error reported was:
+
+Exception in thread "main" java.util.NoSuchElementException
+	at java.util.Scanner.throwFor(Scanner.java:862)
+	at java.util.Scanner.next(Scanner.java:1485)
+	at java.util.Scanner.nextInt(Scanner.java:2117)
+	at java.util.Scanner.nextInt(Scanner.java:2076)
+	at Player.produceHumanMove(Player.java:346)
+	at Player.produceMove(Player.java:111)
+	at Competition.playAMatch(Competition.java:117)
+	at Competition.playMultiple(Competition.java:154)
+	at Competition.main(Competition.java:189)
+
+***     test4 - Human vs Human
+RUNNING: timeout 10 java Competition 4 4 1
+  _____     _ _          _   _            _   
+ |  ___|_ _(_) | ___  __| | | |_ ___  ___| |_ 
+ | |_ / _` | | |/ _ \/ _` | | __/ _ \/ __| __|
+ |  _| (_| | | |  __/ (_| | | ||  __/\__ \ |_ 
+ |_|  \__,_|_|_|\___|\__,_|  \__\___||___/\__|
+                                              
+Running your program returned non-zero.
+The error reported was:
+
+Exception in thread "main" java.util.NoSuchElementException
+	at java.util.Scanner.throwFor(Scanner.java:862)
+	at java.util.Scanner.next(Scanner.java:1485)
+	at java.util.Scanner.nextInt(Scanner.java:2117)
+	at java.util.Scanner.nextInt(Scanner.java:2076)
+	at Player.produceHumanMove(Player.java:346)
+	at Player.produceMove(Player.java:111)
+	at Competition.playAMatch(Competition.java:117)
+	at Competition.playMultiple(Competition.java:154)
+	at Competition.main(Competition.java:189)
+
+***     test5 - Human vs Human
+RUNNING: timeout 10 java Competition 4 4 1
+  _____     _ _          _   _            _   
+ |  ___|_ _(_) | ___  __| | | |_ ___  ___| |_ 
+ | |_ / _` | | |/ _ \/ _` | | __/ _ \/ __| __|
+ |  _| (_| | | |  __/ (_| | | ||  __/\__ \ |_ 
+ |_|  \__,_|_|_|\___|\__,_|  \__\___||___/\__|
+                                              
+Running your program returned non-zero.
+The error reported was:
+
+Exception in thread "main" java.util.NoSuchElementException
+	at java.util.Scanner.throwFor(Scanner.java:862)
+	at java.util.Scanner.next(Scanner.java:1485)
+	at java.util.Scanner.nextInt(Scanner.java:2117)
+	at java.util.Scanner.nextInt(Scanner.java:2076)
+	at Player.produceHumanMove(Player.java:346)
+	at Player.produceMove(Player.java:111)
+	at Competition.playAMatch(Competition.java:117)
+	at Competition.playMultiple(Competition.java:154)
+	at Competition.main(Competition.java:189)
+
+***     test6 - Human vs Human
+RUNNING: timeout 10 java Competition 4 4 1
+  _____     _ _          _   _            _   
+ |  ___|_ _(_) | ___  __| | | |_ ___  ___| |_ 
+ | |_ / _` | | |/ _ \/ _` | | __/ _ \/ __| __|
+ |  _| (_| | | |  __/ (_| | | ||  __/\__ \ |_ 
+ |_|  \__,_|_|_|\___|\__,_|  \__\___||___/\__|
+                                              
+Running your program returned non-zero.
+The error reported was:
+
+Exception in thread "main" java.util.NoSuchElementException
+	at java.util.Scanner.throwFor(Scanner.java:862)
+	at java.util.Scanner.next(Scanner.java:1485)
+	at java.util.Scanner.nextInt(Scanner.java:2117)
+	at java.util.Scanner.nextInt(Scanner.java:2076)
+	at Player.produceHumanMove(Player.java:346)
+	at Player.produceMove(Player.java:111)
+	at Competition.playAMatch(Competition.java:117)
+	at Competition.playMultiple(Competition.java:154)
+	at Competition.main(Competition.java:189)
+
+***     test7 - Smart vs Random
+RUNNING: timeout 10 java Competition 3 1 1000
+  _____     _ _          _   _            _   
+ |  ___|_ _(_) | ___  __| | | |_ ___  ___| |_ 
+ | |_ / _` | | |/ _ \/ _` | | __/ _ \/ __| __|
+ |  _| (_| | | |  __/ (_| | | ||  __/\__ \ |_ 
+ |_|  \__,_|_|_|\___|\__,_|  \__\___||___/\__|
+                                              Faild :: Bad printing format
+***     test8 - Wrong row number
+RUNNING: timeout 10 java Competition 4 4 1
+  _____     _ _          _   _            _   
+ |  ___|_ _(_) | ___  __| | | |_ ___  ___| |_ 
+ | |_ / _` | | |/ _ \/ _` | | __/ _ \/ __| __|
+ |  _| (_| | | |  __/ (_| | | ||  __/\__ \ |_ 
+ |_|  \__,_|_|_|\___|\__,_|  \__\___||___/\__|
+                                              
+Running your program returned non-zero.
+The error reported was:
+
+Exception in thread "main" java.util.NoSuchElementException
+	at java.util.Scanner.throwFor(Scanner.java:862)
+	at java.util.Scanner.next(Scanner.java:1485)
+	at java.util.Scanner.nextInt(Scanner.java:2117)
+	at java.util.Scanner.nextInt(Scanner.java:2076)
+	at Player.produceHumanMove(Player.java:346)
+	at Player.produceMove(Player.java:111)
+	at Competition.playAMatch(Competition.java:117)
+	at Competition.playMultiple(Competition.java:154)
+	at Competition.main(Competition.java:189)
+
+***     test9 - Wrong in-row index
+RUNNING: timeout 10 java Competition 4 4 1
+  _____     _ _          _   _            _   
+ |  ___|_ _(_) | ___  __| | | |_ ___  ___| |_ 
+ | |_ / _` | | |/ _ \/ _` | | __/ _ \/ __| __|
+ |  _| (_| | | |  __/ (_| | | ||  __/\__ \ |_ 
+ |_|  \__,_|_|_|\___|\__,_|  \__\___||___/\__|
+                                              
+Running your program returned non-zero.
+The error reported was:
+
+Exception in thread "main" java.util.NoSuchElementException
+	at java.util.Scanner.throwFor(Scanner.java:862)
+	at java.util.Scanner.next(Scanner.java:1485)
+	at java.util.Scanner.nextInt(Scanner.java:2117)
+	at java.util.Scanner.nextInt(Scanner.java:2076)
+	at Player.produceHumanMove(Player.java:346)
+	at Player.produceMove(Player.java:111)
+	at Competition.playAMatch(Competition.java:117)
+	at Competition.playMultiple(Competition.java:154)
+	at Competition.main(Competition.java:189)
+
+***     test10 - left bound greater than right bound
+RUNNING: timeout 10 java Competition 4 4 1
+  _____     _ _          _   _            _   
+ |  ___|_ _(_) | ___  __| | | |_ ___  ___| |_ 
+ | |_ / _` | | |/ _ \/ _` | | __/ _ \/ __| __|
+ |  _| (_| | | |  __/ (_| | | ||  __/\__ \ |_ 
+ |_|  \__,_|_|_|\___|\__,_|  \__\___||___/\__|
+                                              
+Running your program returned non-zero.
+The error reported was:
+
+Exception in thread "main" java.util.NoSuchElementException
+	at java.util.Scanner.throwFor(Scanner.java:862)
+	at java.util.Scanner.next(Scanner.java:1485)
+	at java.util.Scanner.nextInt(Scanner.java:2117)
+	at java.util.Scanner.nextInt(Scanner.java:2076)
+	at Player.produceHumanMove(Player.java:346)
+	at Player.produceMove(Player.java:111)
+	at Competition.playAMatch(Competition.java:117)
+	at Competition.playMultiple(Competition.java:154)
+	at Competition.main(Competition.java:189)
+
+***     test11 - Human Vs Human
+RUNNING: timeout 10 java Competition 4 4 1
+  _____     _ _          _   _            _   
+ |  ___|_ _(_) | ___  __| | | |_ ___  ___| |_ 
+ | |_ / _` | | |/ _ \/ _` | | __/ _ \/ __| __|
+ |  _| (_| | | |  __/ (_| | | ||  __/\__ \ |_ 
+ |_|  \__,_|_|_|\___|\__,_|  \__\___||___/\__|
+                                              
+Running your program returned non-zero.
+The error reported was:
+
+Exception in thread "main" java.util.NoSuchElementException
+	at java.util.Scanner.throwFor(Scanner.java:862)
+	at java.util.Scanner.next(Scanner.java:1485)
+	at java.util.Scanner.nextInt(Scanner.java:2117)
+	at java.util.Scanner.nextInt(Scanner.java:2076)
+	at Player.produceHumanMove(Player.java:346)
+	at Player.produceMove(Player.java:111)
+	at Competition.playAMatch(Competition.java:117)
+	at Competition.playMultiple(Competition.java:154)
+	at Competition.main(Competition.java:189)
+
+***     test12 - Human vs Human
+RUNNING: timeout 10 java Competition 4 4 1
+  _____     _ _          _   _            _   
+ |  ___|_ _(_) | ___  __| | | |_ ___  ___| |_ 
+ | |_ / _` | | |/ _ \/ _` | | __/ _ \/ __| __|
+ |  _| (_| | | |  __/ (_| | | ||  __/\__ \ |_ 
+ |_|  \__,_|_|_|\___|\__,_|  \__\___||___/\__|
+                                              
+Running your program returned non-zero.
+The error reported was:
+
+Exception in thread "main" java.util.NoSuchElementException
+	at java.util.Scanner.throwFor(Scanner.java:862)
+	at java.util.Scanner.next(Scanner.java:1485)
+	at java.util.Scanner.nextInt(Scanner.java:2117)
+	at java.util.Scanner.nextInt(Scanner.java:2076)
+	at Player.produceHumanMove(Player.java:346)
+	at Player.produceMove(Player.java:111)
+	at Competition.playAMatch(Competition.java:117)
+	at Competition.playMultiple(Competition.java:154)
+	at Competition.main(Competition.java:189)
+
+***     test13 - Human vs Human
+RUNNING: timeout 10 java Competition 4 4 1
+  _____     _ _          _   _            _   
+ |  ___|_ _(_) | ___  __| | | |_ ___  ___| |_ 
+ | |_ / _` | | |/ _ \/ _` | | __/ _ \/ __| __|
+ |  _| (_| | | |  __/ (_| | | ||  __/\__ \ |_ 
+ |_|  \__,_|_|_|\___|\__,_|  \__\___||___/\__|
+                                              
+Running your program returned non-zero.
+The error reported was:
+
+Exception in thread "main" java.util.NoSuchElementException
+	at java.util.Scanner.throwFor(Scanner.java:862)
+	at java.util.Scanner.next(Scanner.java:1485)
+	at java.util.Scanner.nextInt(Scanner.java:2117)
+	at java.util.Scanner.nextInt(Scanner.java:2076)
+	at Player.produceHumanMove(Player.java:346)
+	at Player.produceMove(Player.java:111)
+	at Competition.playAMatch(Competition.java:117)
+	at Competition.playMultiple(Competition.java:154)
+	at Competition.main(Competition.java:189)
+
+***     test14 - Human vs Human
+RUNNING: timeout 10 java Competition 4 4 1
+  _____     _ _          _   _            _   
+ |  ___|_ _(_) | ___  __| | | |_ ___  ___| |_ 
+ | |_ / _` | | |/ _ \/ _` | | __/ _ \/ __| __|
+ |  _| (_| | | |  __/ (_| | | ||  __/\__ \ |_ 
+ |_|  \__,_|_|_|\___|\__,_|  \__\___||___/\__|
+                                              
+Running your program returned non-zero.
+The error reported was:
+
+Exception in thread "main" java.util.NoSuchElementException
+	at java.util.Scanner.throwFor(Scanner.java:862)
+	at java.util.Scanner.next(Scanner.java:1485)
+	at java.util.Scanner.nextInt(Scanner.java:2117)
+	at java.util.Scanner.nextInt(Scanner.java:2076)
+	at Player.produceHumanMove(Player.java:346)
+	at Player.produceMove(Player.java:111)
+	at Competition.playAMatch(Competition.java:117)
+	at Competition.playMultiple(Competition.java:154)
+	at Competition.main(Competition.java:189)
+
+***     test15 - Human vs Human
+RUNNING: timeout 10 java Competition 4 4 1
+  _____     _ _          _   _            _   
+ |  ___|_ _(_) | ___  __| | | |_ ___  ___| |_ 
+ | |_ / _` | | |/ _ \/ _` | | __/ _ \/ __| __|
+ |  _| (_| | | |  __/ (_| | | ||  __/\__ \ |_ 
+ |_|  \__,_|_|_|\___|\__,_|  \__\___||___/\__|
+                                              
+Running your program returned non-zero.
+The error reported was:
+
+Exception in thread "main" java.util.NoSuchElementException
+	at java.util.Scanner.throwFor(Scanner.java:862)
+	at java.util.Scanner.next(Scanner.java:1485)
+	at java.util.Scanner.nextInt(Scanner.java:2117)
+	at java.util.Scanner.nextInt(Scanner.java:2076)
+	at Player.produceHumanMove(Player.java:346)
+	at Player.produceMove(Player.java:111)
+	at Competition.playAMatch(Competition.java:117)
+	at Competition.playMultiple(Competition.java:154)
+	at Competition.main(Competition.java:189)
+
+***     test16 - Human vs Human
+RUNNING: timeout 10 java Competition 4 4 2
+  _____     _ _          _   _            _   
+ |  ___|_ _(_) | ___  __| | | |_ ___  ___| |_ 
+ | |_ / _` | | |/ _ \/ _` | | __/ _ \/ __| __|
+ |  _| (_| | | |  __/ (_| | | ||  __/\__ \ |_ 
+ |_|  \__,_|_|_|\___|\__,_|  \__\___||___/\__|
+                                              
+Running your program returned non-zero.
+The error reported was:
+
+Exception in thread "main" java.util.NoSuchElementException
+	at java.util.Scanner.throwFor(Scanner.java:862)
+	at java.util.Scanner.next(Scanner.java:1485)
+	at java.util.Scanner.nextInt(Scanner.java:2117)
+	at java.util.Scanner.nextInt(Scanner.java:2076)
+	at Player.produceHumanMove(Player.java:346)
+	at Player.produceMove(Player.java:111)
+	at Competition.playAMatch(Competition.java:117)
+	at Competition.playMultiple(Competition.java:154)
+	at Competition.main(Competition.java:189)
+
+***     test17 - Human vs Human
+RUNNING: timeout 10 java Competition 4 4 1
+  _____     _ _          _   _            _   
+ |  ___|_ _(_) | ___  __| | | |_ ___  ___| |_ 
+ | |_ / _` | | |/ _ \/ _` | | __/ _ \/ __| __|
+ |  _| (_| | | |  __/ (_| | | ||  __/\__ \ |_ 
+ |_|  \__,_|_|_|\___|\__,_|  \__\___||___/\__|
+                                              
+Running your program returned non-zero.
+The error reported was:
+
+Exception in thread "main" java.util.NoSuchElementException
+	at java.util.Scanner.throwFor(Scanner.java:862)
+	at java.util.Scanner.next(Scanner.java:1485)
+	at java.util.Scanner.nextInt(Scanner.java:2117)
+	at java.util.Scanner.nextInt(Scanner.java:2076)
+	at Player.produceHumanMove(Player.java:346)
+	at Player.produceMove(Player.java:111)
+	at Competition.playAMatch(Competition.java:117)
+	at Competition.playMultiple(Competition.java:154)
+	at Competition.main(Competition.java:189)
+
+***     test18 - Human vs Human
+RUNNING: timeout 10 java Competition 4 4 1
+  _____     _ _          _   _            _   
+ |  ___|_ _(_) | ___  __| | | |_ ___  ___| |_ 
+ | |_ / _` | | |/ _ \/ _` | | __/ _ \/ __| __|
+ |  _| (_| | | |  __/ (_| | | ||  __/\__ \ |_ 
+ |_|  \__,_|_|_|\___|\__,_|  \__\___||___/\__|
+                                              
+Running your program returned non-zero.
+The error reported was:
+
+Exception in thread "main" java.util.NoSuchElementException
+	at java.util.Scanner.throwFor(Scanner.java:862)
+	at java.util.Scanner.next(Scanner.java:1485)
+	at java.util.Scanner.nextInt(Scanner.java:2117)
+	at java.util.Scanner.nextInt(Scanner.java:2076)
+	at Player.produceHumanMove(Player.java:346)
+	at Player.produceMove(Player.java:111)
+	at Competition.playAMatch(Competition.java:117)
+	at Competition.playMultiple(Competition.java:154)
+	at Competition.main(Competition.java:189)
+
+***     test19 - Smart vs Random
+RUNNING: timeout 10 java Competition 3 1 1000
+  _____     _ _          _   _            _   
+ |  ___|_ _(_) | ___  __| | | |_ ___  ___| |_ 
+ | |_ / _` | | |/ _ \/ _` | | __/ _ \/ __| __|
+ |  _| (_| | | |  __/ (_| | | ||  __/\__ \ |_ 
+ |_|  \__,_|_|_|\___|\__,_|  \__\___||___/\__|
+                                              Faild :: Bad printing format
+***     test20 - Human vs Heuristic
+RUNNING: timeout 10 java Competition 4 2 1
+Success!
+***     test21 - Heuristic Vs Human
+RUNNING: timeout 10 java Competition 2 4 1
+Success!
+***     test22 - Human Vs Human
+RUNNING: timeout 10 java Competition 4 4 1
+  _____     _ _          _   _            _   
+ |  ___|_ _(_) | ___  __| | | |_ ___  ___| |_ 
+ | |_ / _` | | |/ _ \/ _` | | __/ _ \/ __| __|
+ |  _| (_| | | |  __/ (_| | | ||  __/\__ \ |_ 
+ |_|  \__,_|_|_|\___|\__,_|  \__\___||___/\__|
+                                              
+Running your program returned non-zero.
+The error reported was:
+
+Exception in thread "main" java.util.NoSuchElementException
+	at java.util.Scanner.throwFor(Scanner.java:862)
+	at java.util.Scanner.next(Scanner.java:1485)
+	at java.util.Scanner.nextInt(Scanner.java:2117)
+	at java.util.Scanner.nextInt(Scanner.java:2076)
+	at Player.produceHumanMove(Player.java:346)
+	at Player.produceMove(Player.java:111)
+	at Competition.playAMatch(Competition.java:117)
+	at Competition.playMultiple(Competition.java:154)
+	at Competition.main(Competition.java:189)
+
+***     test23 - Human vs Human
+RUNNING: timeout 10 java Competition 4 4 100
+  _____     _ _          _   _            _   
+ |  ___|_ _(_) | ___  __| | | |_ ___  ___| |_ 
+ | |_ / _` | | |/ _ \/ _` | | __/ _ \/ __| __|
+ |  _| (_| | | |  __/ (_| | | ||  __/\__ \ |_ 
+ |_|  \__,_|_|_|\___|\__,_|  \__\___||___/\__|
+                                              
+Running your program returned non-zero.
+The error reported was:
+
+Exception in thread "main" java.util.NoSuchElementException
+	at java.util.Scanner.throwFor(Scanner.java:862)
+	at java.util.Scanner.next(Scanner.java:1485)
+	at java.util.Scanner.nextInt(Scanner.java:2117)
+	at java.util.Scanner.nextInt(Scanner.java:2076)
+	at Player.produceHumanMove(Player.java:346)
+	at Player.produceMove(Player.java:111)
+	at Competition.playAMatch(Competition.java:117)
+	at Competition.playMultiple(Competition.java:154)
+	at Competition.main(Competition.java:189)
+
+
+You passed 2 out of 23 tests.

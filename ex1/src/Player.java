@@ -341,6 +341,7 @@ public class Player {
 				if (!scanner.hasNextInt()) {
 					String ERROR_MSG = "Unsupported command";
 					System.out.println(ERROR_MSG);
+					scanner.nextLine();
 					continue;
 				}
 				int userInput = scanner.nextInt();
@@ -363,6 +364,7 @@ public class Player {
 				else{
 					String ERROR_MSG = "Unsupported command";
 					System.out.println(ERROR_MSG);
+					scanner.nextLine();
 				}
 			
 		}

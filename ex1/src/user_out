@@ -1,0 +1,3202 @@
+Starting a Nim competition of 100 rounds between a Human player and a Human player.
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+Welcome to the sticks game!
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 1:1-9
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 2:1-7
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 3:1-5
+Player 2, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 2 made the move: 4:1-3
+Player 1, it is now your turn!
+Press 1 to display the board. Press 2 to make a move:
+Enter the row number:
+Enter the index of the leftmost stick:
+Enter the index of the rightmost stick:
+Player 1 made the move: 5:1-1
+Player 2 won!
+The results are 0:100
