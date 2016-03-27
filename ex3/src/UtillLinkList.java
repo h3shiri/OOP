@@ -1,21 +1,76 @@
+import java.util.Collection;
 import java.util.LinkedList;
-public class UtillLinkList extends CollectionFacadeSet{
+public class UtillLinkList{
+
+	private LinkedList<String> list;
 	/**
 	 * A constructor for a utillity link-list.
 	 * We created this one in order to have an array of link-lists with strings.
 	 */
-	private CollectionFacadeSet object;
-	Public UtillLinkList(){
-		LinkedList<String> linkedList = new LinkedList<String>();
-		object = CollectionFacadeSet(linkedList);
+	public UtillLinkList() {
+		list = new LinkedList<String>();
 	}
-	public static void main(String[] args) {
-		UtillLinkList test = new UtillLinkList();
-		// test.add("1");
-		// test.add("2");
-		// test.add("3");
-		// for (String item : test) {
-		// 	System.out.println(item);
-		// }
+
+	/**
+	 * adding a new element into the array (if its already there it wouldn't be added)
+	 * @param element - given element to add into the array
+     */
+	public void add(String element){
+		if(!contains(element))
+			list.addLast(element);
 	}
+
+	/**
+	 * deleting an element
+	 * @param element - to remove from list
+	 * @return false iff the element isn't in the list.
+     */
+	public boolean delete(String element){
+		boolean res = list.remove(element);
+		return res;
+	}
+
+	/**
+	 * checking whether the target element is within the array.
+	 * @param target
+	 * @return true iff the element is in the array
+     */
+	public boolean contains(String target){
+		return list.contains(target);
+	}
+
+	/**
+	 * calculate the number of elements in the array.
+	 * @return size of the array
+     */
+	public int size(){
+		return list.size();
+	}
+
+	/**
+	 * A useful method to access a spesific element in the array.
+	 * @param index - a valid index within the array range (raises exception otherwise)
+	 * @return - the element in the specific index (for a valid index).
+     */
+	public String get(int index){
+		return list.get(index);
+	}
+
+
+
+//	TODO: remove silly main
+
+//	public LinkedList<String> getList(){
+//		return list;
+//	}
+//	public static void main(String[] args) {
+//		UtillLinkList test = new UtillLinkList();
+//		test.add("1");
+//		test.add("2");
+//		test.add("3");
+//		test.add("3");
+//		test.delete("2");
+//		System.out.println(test.getList());
+//	}
+
 }
