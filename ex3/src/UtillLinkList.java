@@ -19,6 +19,13 @@ public class UtillLinkList{
 		if(!contains(element))
 			list.addLast(element);
 	}
+	/**
+	 * addidng a valid member (no need to check for contaignment)
+	 * @param element -  the target string that should be added to the list.
+	 */
+	public void validAdd(String element){
+		list.addLast(element);
+	}
 
 	/**
 	 * deleting an element
