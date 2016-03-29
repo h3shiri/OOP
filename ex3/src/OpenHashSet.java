@@ -3,9 +3,9 @@ import java.util.LinkedList;
 public class OpenHashSet extends SimpleHashSet {
     //TODO: check inheritance issue and visibility..
     protected int capacityMinusOne;
-    protected int INITIAL_CAPACITY = 16;
-    private float DEFAULT_UPPER_BOUND = 0.75f;
-    private float DEFAULT_LOWER_BOUND = 0.25f;
+    private final int INITIAL_CAPACITY = 16;
+    private final float DEFAULT_UPPER_BOUND = 0.75f;
+    private final float DEFAULT_LOWER_BOUND = 0.25f;
     protected int capacity;
     protected float lowerLoadFactor;
     protected float upperLoadFactor;
@@ -55,8 +55,9 @@ public class OpenHashSet extends SimpleHashSet {
     public boolean add(String newValue) {
         boolean res = contains(newValue);
         /** in case we already have the element*/
-        if (res)
+        if (res){
             return false;
+        }
         float potentialLoadFactor = (float) ((numOfElements+1)/(double)capacity);
         if (potentialLoadFactor > upperLoadFactor){
             UtillLinkList[] modernCells = new UtillLinkList[(capacity*2)];

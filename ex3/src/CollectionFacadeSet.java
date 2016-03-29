@@ -19,8 +19,9 @@ public class CollectionFacadeSet extends java.lang.Object implements SimpleSet {
      * @return False iff newValue already exists in the set
      */
     public boolean add(String newValue) {
-        if(collection.contains(newValue))
+        if(collection.contains(newValue)){
             return false;
+        }
         else{
             collection.add(newValue);
             return true;
@@ -46,8 +47,9 @@ public class CollectionFacadeSet extends java.lang.Object implements SimpleSet {
             collection.remove(toDelete);
             return true;
         }
-        else
+        else{
             return false;
+        }
     }
 
     /**

@@ -1,0 +1,65 @@
+h3shiri
+Shiri Heffetz
+
+====================================
+= README for ex3 the Hash-Tables =
+====================================
+building HashTables, working with various data structures.
+In addition we used the Facade design pattern and implemented open/closed hashing techiniques such as
+quadratic probing and chainning.
+
+==================
+=  Description:  =
+==================
+I have implemented Open/Closed hash sets (detailed description follows in design section).
+In addition, we have created SimpleHashSet an abstract class that implements the interface SimpleSet,
+basically it's the standard for our hash sets. We hava designed the ColectionFacadeSet according to the
+Facade design pattern in order to compare various data structures efficiently.  
+The rest of the files are used in order to measure our sets preformance in comparison to common string
+data structures (that comply the SimpleSet interface).
+
+=============
+=  Design:  =
+=============
+1) I have implemented the OpenHashSet using chainning in case of collisions, on top of that each 
+cell of the table is a link-list (I have created a wrapper for that).
+2) In the ClosedHashSet each time deletion mechanism is preformed we check whether we contaign that string,
+by simply iterating over the cells (at most O(n) if we probe the whole list). After we located it we
+replace it by a null.
+
+===================
+Results discussion:
+===================
+1) For OpenHashSet the text1 caused one cell to have a very long linked list (equal hash values). Once
+we have this dinasore of a list each search opperation reuires as to traverse the list instead of
+simply calculating hash value and then checking a relative small linked-list.
+For the ClosedHashSet Once we startted loading significant amount of values with the same hash value
+the quadratic probing starts taking significant time. These values have the same hash value hence they
+create this huge cluster and each new addition requires to traverse it entirely.
+2)For a relatively random data the hash tables would be great with the fastest access computational
+time O(1). Although, both suffer in the case we have a large list of strings with the same hash value.
+
+
+=============================
+=  List of submitted files: =
+=============================
+
+README - This file.
+SimpleHashSet.java - a common useful abstract (our Hash Tables extends it) class the implements SimpleSet.
+OpenHashSet.java - implementation of open hashing (in case of collisions we used chainning).
+ClosedHashSet.java - Colourful take on Close Hash-Table (in case of collisions we used quadratic probing).
+CollectionFacadeSet.java - A useful wrapper for various data structures that store strings.
+UtillLinkList.java - A wrapper class for a link list of strings.
+SimpleSetPerformanceAnalyzer.java - A simple test class that anyalyze our various data structures.
+RESULTS - Stores numerical results for a range of simple opperations on our data structures.
+
+=======================
+=  Special Comments:  =
+=======================
+Extra comments are inside the classes in order to make to code readability
+better to the naked eye.
+
+============
+=  BONUS:  =
+============
+

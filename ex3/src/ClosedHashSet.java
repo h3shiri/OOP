@@ -127,6 +127,11 @@ public class ClosedHashSet extends SimpleHashSet{
         array = new String[capacity];
     }
 
+    /**
+     * A utility function that process the rehashing quickly.
+     * @param target - the new table we copy the old one into.
+     * @param newCapacity - the size of the new table.
+     */
     private void totalReHashing(String[] target, int newCapacity){
         for (int i=0; i<capacity; i++){
             if (array[i] != null) {

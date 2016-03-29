@@ -16,8 +16,9 @@ public class UtillLinkList{
 	 * @param element - given element to add into the array
      */
 	public void add(String element){
-		if(!contains(element))
+		if(!contains(element)){
 			list.addLast(element);
+		}
 	}
 	/**
 	 * addidng a valid member (no need to check for contaignment)
@@ -62,22 +63,4 @@ public class UtillLinkList{
 	public String get(int index){
 		return list.get(index);
 	}
-
-
-
-//	TODO: remove silly main
-
-//	public LinkedList<String> getList(){
-//		return list;
-//	}
-//	public static void main(String[] args) {
-//		UtillLinkList test = new UtillLinkList();
-//		test.add("1");
-//		test.add("2");
-//		test.add("3");
-//		test.add("3");
-//		test.delete("2");
-//		System.out.println(test.getList());
-//	}
-
 }
