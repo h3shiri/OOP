@@ -22,6 +22,7 @@ public class OpenHashSet extends SimpleHashSet {
         capacityMinusOne = (capacity - 1);
         this.lowerLoadFactor = lowerLoadFactor;
         this.upperLoadFactor = upperLoadFactor;
+        cells = new UtillLinkList[capacity];
         rowsAllocation(capacity, cells);
     }
 
@@ -56,7 +57,7 @@ public class OpenHashSet extends SimpleHashSet {
         /** in case we already have the element*/
         if (res)
             return false;
-        float potentialLoadFactor = (float) (numOfElements+1/capacity);
+        float potentialLoadFactor = (float) ((numOfElements+1)/(double)capacity);
         if (potentialLoadFactor > upperLoadFactor){
             UtillLinkList[] modernCells = new UtillLinkList[(capacity*2)];
             rowsAllocation((capacity*2), modernCells);
@@ -84,7 +85,7 @@ public class OpenHashSet extends SimpleHashSet {
      */
     public boolean delete(String toDelete) {
         boolean res = contains(toDelete);
-        float potentialLoadFactor = (float) (numOfElements-1/capacity);
+        float potentialLoadFactor = (float) ((numOfElements-1)/(double)capacity);
         if(potentialLoadFactor < lowerLoadFactor){
             /** capacity is power of 2*/
             UtillLinkList[] modernCells = new UtillLinkList[(capacity/2)];
@@ -117,7 +118,6 @@ public class OpenHashSet extends SimpleHashSet {
      * A Utility function for setting the rows on empty string linked lists.
      */
     private void rowsAllocation(int numOfRows, UtillLinkList[] temp){
-        temp = new UtillLinkList[numOfRows];
         for(int i=0; i<numOfRows; i++){
             temp[i] = new UtillLinkList();
         }
@@ -132,6 +132,7 @@ public class OpenHashSet extends SimpleHashSet {
         lowerLoadFactor = DEFAULT_LOWER_BOUND;
         capacity = INITIAL_CAPACITY;
         capacityMinusOne = capacity-1;
+        cells = new UtillLinkList[capacity];
         rowsAllocation(capacity, cells);
     }
 

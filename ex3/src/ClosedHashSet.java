@@ -53,12 +53,14 @@ public class ClosedHashSet extends SimpleHashSet{
         /** in case we already have the element*/
         if (res)
             return false;
-        float potentialLoadFactor = (float) (numOfElements+1/capacity);
+        float potentialLoadFactor = (float) ((numOfElements+1)/(double)capacity);
         if (potentialLoadFactor > upperLoadFactor){
             String[] modernArray = new String[(capacity*2)];
             totalReHashing(modernArray, (capacity*2));
         }
         numOfElements++;
+        int index = calcHashCodeIndex(newValue, capacity, array);
+        array[index] = newValue;
         return true;
     }
 
@@ -68,13 +70,14 @@ public class ClosedHashSet extends SimpleHashSet{
      * @return True iff searchVal is found in the set
      */
     public boolean contains(String searchVal) {
+        boolean res = false;
         for (int i=0; i<capacity; i++){
             if (array[i] == null)
                 continue;
             if (array[i].equals(searchVal))
-                return true;
+                res = true;
         }
-        return false;
+        return res;
     }
 
     /**
@@ -86,11 +89,13 @@ public class ClosedHashSet extends SimpleHashSet{
         /** in case we don't have the element*/
         if (!res)
             return false;
-        float potentialLoadFactor = (float) (numOfElements-1/capacity);
+        float potentialLoadFactor = (float) ((numOfElements-1)/(double)capacity);
         if (potentialLoadFactor < lowerLoadFactor){
             String[] modernArray = new String[(capacity/2)];
             totalReHashing(modernArray, (capacity/2));
         }
+        int index = calcHashCodeIndex(toDelete, capacity, array);
+        array[index] = null;
         numOfElements--;
         return true;
     }
@@ -156,5 +161,4 @@ public class ClosedHashSet extends SimpleHashSet{
         }
         return res;
     }
-
 }
