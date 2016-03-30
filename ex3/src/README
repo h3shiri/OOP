@@ -36,8 +36,10 @@ simply calculating hash value and then checking a relative small linked-list.
 For the ClosedHashSet Once we startted loading significant amount of values with the same hash value
 the quadratic probing starts taking significant time. These values have the same hash value hence they
 create this huge cluster and each new addition requires to traverse it entirely.
-2)For a relatively random data the hash tables would be great with the fastest access computational
-time O(1). Although, both suffer in the case we have a large list of strings with the same hash value.
+2)For a relatively randomly distributed data the hash tables would be great with the fastest
+access computational time O(1).
+Although, both suffer in the case we have a large list of strings with the same hash value.
+We can note how the TreeSet out preformed all the others data structures in loading data1 (equal hash).
 
 
 =============================

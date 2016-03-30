@@ -2,18 +2,18 @@
 #You should replace each X with the corresponding value
 
 #These values correspond to the time it takes (in ms) to insert data1 to all data structures
-OpenHashSet_AddData1 = X
-ClosedHashSet_AddData1 = X
-TreeSet_AddData1 = X
-LinkedList_AddData1 = X
-HashSet_AddData1 = X
+OpenHashSet_AddData1 = 60244
+ClosedHashSet_AddData1 = 123362
+TreeSet_AddData1 = 44
+LinkedList_AddData1 = 28095
+HashSet_AddData1 = 66
 
 #These values correspond to the time it takes (in ms) to insert data2 to all data structures
-OpenHashSet_AddData2 = X
-ClosedHashSet_AddData2 = X
-TreeSet_AddData2 = X
-LinkedList_AddData2 = X
-HashSet_AddData2 = X
+OpenHashSet_AddData2 = 49
+ClosedHashSet_AddData2 = 34743
+TreeSet_AddData2 = 41
+LinkedList_AddData2 = 30601
+HashSet_AddData2 = 42
 
 #These values correspond to the time it takes (in ns) to check if "hi" is contained in
 #the data structures initialized with data1
