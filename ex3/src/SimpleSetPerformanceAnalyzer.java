@@ -4,7 +4,6 @@ import java.util.TreeSet;
 /** we import this module for the repr function*/
 //TODO: check you are allowed to import this module.
 import java.util.Arrays;
-//TODO: Wtf?!
 /**
  * Performance Analysis date members
  * 1) OpenHashSet
@@ -16,13 +15,13 @@ import java.util.Arrays;
 //TODO: remember to remove garbage
 public class SimpleSetPerformanceAnalyzer{
 	/** magic numbers*/
-	private static final int WARM_UP = 70,000;
-	private static final int ARRAY_SIZE = 5;
+	private final static int WARM_UP = 70000;
+	private final static int ARRAY_SIZE = 5;
 
     public static void main(String[] args) {
     	/** basic set up */
-        String[] file1 = Ex3Utils.file2array("/cs/stud/h3shiri/safe/OOP/ex3/src/data1.txt");
-        String[] file2 = Ex3Utils.file2array("/cs/stud/h3shiri/safe/OOP/ex3/src/data2.txt");
+        String[] file1 = Ex3Utils.file2array("/Users/shiri/IdeaProjects/OOP/ex3/src/data1.txt");
+        String[] file2 = Ex3Utils.file2array("/Users/shiri/IdeaProjects/OOP/ex3/src/data2.txt");
     	SimpleSet[] megaArray = new SimpleSet[ARRAY_SIZE];
 	    megaArray[0] = new OpenHashSet();
 	    megaArray[1] = new ClosedHashSet();
@@ -30,9 +29,13 @@ public class SimpleSetPerformanceAnalyzer{
 	    megaArray[3] = new CollectionFacadeSet(new LinkedList<String>());
 	    megaArray[4] = new CollectionFacadeSet(new HashSet<String>());
 
-	    boolean test1 = true;
+	    /** Setting which tests should run*/
+	    boolean test1 = false;
 	    boolean test2 = false;
-	    boolean test3 = true;
+	    boolean test3 = false;
+	    boolean test4 = false;
+	    boolean test5 = false;
+	    boolean test6 = false;
 
 	    if (test1) {
 	    	long[] results = new long[ARRAY_SIZE];
@@ -40,7 +43,11 @@ public class SimpleSetPerformanceAnalyzer{
 	    		SimpleSet set = megaArray[i];
 	    		results[i] = testInitSet(set, file1);
 	    	}
-	    	System.out.println(Arrays.toString(results));
+	    	/** A boolean for controlling the print flow */
+	    	boolean print = false;
+	    	if (print) {
+	        	System.out.println(Arrays.toString(results));
+	    	}
 	    }
 	    if (test2) {
 	    	long[] results = new long[ARRAY_SIZE];
@@ -48,19 +55,63 @@ public class SimpleSetPerformanceAnalyzer{
 	    		SimpleSet set = megaArray[i];
 	    		results[i] = testInitSet(set, file2);
 	    	}
-	    	System.out.println(Arrays.toString(results));
+	    	/** A boolean for controlling the print flow */
+	    	boolean print = false;
+	    	if (print) {
+	        	System.out.println(Arrays.toString(results));
+	    	}
 	    }
 	    if (test3 && test1) {
 	    	String TARGET = "hi";
 	    	long[] results = new long[ARRAY_SIZE];
 	    	for (int i=0; i<ARRAY_SIZE; i++) {
-	    		if (i==4){
+	    		if (i==3){
 	    			continue;
 	    		}
 	       		SimpleSet set = megaArray[i];
 	       		results[i] = testContians(set, TARGET);
 	    	}
-	    	results[3] = testContainsLinkList(megaArray[4], TARGET);
+	    	results[3] = testContainsLinkList(megaArray[3], TARGET);
+	        System.out.println(Arrays.toString(results));
+	    }
+	    if (test4 && test1){
+	    	String TARGET = "-13170890158";
+	    	long[] results = new long[ARRAY_SIZE];
+	    	for (int i=0; i<ARRAY_SIZE; i++) {
+	    		if (i==3){
+	    			continue;
+	    		}
+	       		SimpleSet set = megaArray[i];
+	       		results[i] = testContians(set, TARGET);
+	    	}
+	    	results[3] = testContainsLinkList(megaArray[3], TARGET);
+	        System.out.println(Arrays.toString(results));
+	    }
+	    if (test2 && test5) {
+	    	String TARGET = "23";
+	    	long[] results = new long[ARRAY_SIZE];
+	    	for (int i=0; i<ARRAY_SIZE; i++) {
+	    		if (i==3){
+	    			continue;
+	    		}
+	       		SimpleSet set = megaArray[i];
+	       		results[i] = testContians(set, TARGET);
+	    	}
+	    	results[3] = testContainsLinkList(megaArray[3], TARGET);
+	        System.out.println(Arrays.toString(results));
+	    }
+	    if (test2 && test6) {
+	    	String TARGET = "hi";
+	    	long[] results = new long[ARRAY_SIZE];
+	    	for (int i=0; i<ARRAY_SIZE; i++) {
+	    		if (i==3){
+	    			continue;
+	    		}
+	       		SimpleSet set = megaArray[i];
+	       		results[i] = testContians(set, TARGET);
+	    	}
+	    	results[3] = testContainsLinkList(megaArray[3], TARGET);
+	        System.out.println(Arrays.toString(results));
 	    }
     }
     private static long testInitSet(SimpleSet set, String[] words){
@@ -81,6 +132,7 @@ public class SimpleSetPerformanceAnalyzer{
     		set.contains(target);
     	}
     	long difference = ((System.nanoTime() - timeBefore)/70000);
+    	return difference;
     }
     private static long testContainsLinkList(SimpleSet set, String target){
     	long timeBefore = System.nanoTime();
