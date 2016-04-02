@@ -62,7 +62,7 @@ public class OpenHashSet extends SimpleHashSet {
         if (potentialLoadFactor > upperLoadFactor){
             UtillLinkList[] modernCells = new UtillLinkList[(capacity*2)];
             rowsAllocation((capacity*2), modernCells);
-            totalReHashing(cells, modernCells, (capacity*2));
+            totalReHashing(modernCells, (capacity*2));
         }
         int index = calcHashCodeIndex(newValue);
         cells[index].add(newValue);
@@ -86,12 +86,15 @@ public class OpenHashSet extends SimpleHashSet {
      */
     public boolean delete(String toDelete) {
         boolean res = contains(toDelete);
+        /** in case we don't have the element*/
+        if (!res)
+            return false;
         float potentialLoadFactor = (float) ((numOfElements-1)/(double)capacity);
         if(potentialLoadFactor < lowerLoadFactor){
             /** capacity is power of 2*/
             UtillLinkList[] modernCells = new UtillLinkList[(capacity/2)];
             rowsAllocation((capacity/2), modernCells);
-            totalReHashing(cells, modernCells, (capacity/2));
+            totalReHashing(modernCells, (capacity/2));
         }
         int index = calcHashCodeIndex(toDelete);
         cells[index].delete(toDelete);
@@ -106,7 +109,7 @@ public class OpenHashSet extends SimpleHashSet {
     public int size() {
         return numOfElements;
     }
-    //TODO: check the capacity thing for the SimpleHashSet..etc
+
     /**
      * The capacity of the table.
      * @return - The current capacity (number of cells) of the table.
@@ -152,17 +155,18 @@ public class OpenHashSet extends SimpleHashSet {
      * @param target - the new table.
      * @param newCapacity - the new capacity.
      */
-    private void totalReHashing(UtillLinkList[] source, UtillLinkList[] target, int newCapacity){
-        for(int i=0; i<capacity; i++){
-            for(int j=0; j<source[i].size();j++){
-                String temp = source[i].get(j);
+    private void totalReHashing(UtillLinkList[] target, int newCapacity){
+        int oldCapacity = capacity;
+        capacity = newCapacity;
+        capacityMinusOne = capacity-1;
+        for(int i=0; i<oldCapacity; i++){
+            for(int j=0; j<cells[i].size();j++){
+                String temp = cells[i].get(j);
                 int index = calcHashCodeIndex(temp);
                 /** Uses a special add that doesn't check for validity. */
                 target[index].validAdd(temp);
             }
         }
-        capacity = newCapacity;
-        capacityMinusOne = capacity-1;
         /** moving the cell's pointer to the new cells arrangement*/
         cells = target;
     }

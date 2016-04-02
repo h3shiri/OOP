@@ -26,4 +26,10 @@ public abstract class SimpleHashSet implements SimpleSet{
      * @return The number of elements currently in the set
      */
     public abstract int size();
+
+    /**
+     * the capacity of the current HashSet
+     * @return the capacity of the current table
+     */
+    public abstract int capacity();
 }
