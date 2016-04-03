@@ -4,20 +4,20 @@
 #These values correspond to the time it takes (in ms) to insert data1 to all data structures
 OpenHashSet_AddData1 = 60244
 ClosedHashSet_AddData1 = 123362
-TreeSet_AddData1 = 44
+TreeSet_AddData1 = *44*
 LinkedList_AddData1 = 28095
 HashSet_AddData1 = 66
 
 #These values correspond to the time it takes (in ms) to insert data2 to all data structures
 OpenHashSet_AddData2 = 49
 ClosedHashSet_AddData2 = 34743
-TreeSet_AddData2 = 41
+TreeSet_AddData2 = *41*
 LinkedList_AddData2 = 30601
 HashSet_AddData2 = 42
 
 #These values correspond to the time it takes (in ns) to check if "hi" is contained in
 #the data structures initialized with data1
-OpenHashSet_Contains_hi1 = 70
+OpenHashSet_Contains_hi1 = *70*
 ClosedHashSet_Contains_hi1 = 4885871
 TreeSet_Contains_hi1 = 175
 LinkedList_Contains_hi1 = 2077921
@@ -29,11 +29,11 @@ OpenHashSet_Contains_negative = 1605621
 ClosedHashSet_Contains_negative = 5317394
 TreeSet_Contains_negative = 361
 LinkedList_Contains_negative = 2006599
-HashSet_Contains_negative = 38
+HashSet_Contains_negative = *38*
 
 #These values correspond to the time it takes (in ns) to check if "23" is contained in
 #the data structures initialized with data2
-OpenHashSet_Contains_23 = 71
+OpenHashSet_Contains_23 = *71*
 ClosedHashSet_Contains_23 = 1358635
 TreeSet_Contains_23 = 82
 LinkedList_Contains_23 = 42840
@@ -41,7 +41,7 @@ HashSet_Contains_23 = 187
 
 #These values correspond to the time it takes (in ns) to check if "hi" is contained in
 #the data structures initialized with data2
-OpenHashSet_Contains_hi2 = 66
+OpenHashSet_Contains_hi2 = *66*
 ClosedHashSet_Contains_hi2 = 1322825
 TreeSet_Contains_hi2 = 153
 LinkedList_Contains_hi2 = 1792966

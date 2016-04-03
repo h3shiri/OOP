@@ -1,16 +1,15 @@
 import java.util.LinkedList;
 
 public class OpenHashSet extends SimpleHashSet {
-    //TODO: check inheritance issue and visibility..
-    protected int capacityMinusOne;
+    private int capacityMinusOne;
     private final int INITIAL_CAPACITY = 16;
     private final float DEFAULT_UPPER_BOUND = 0.75f;
     private final float DEFAULT_LOWER_BOUND = 0.25f;
-    protected int capacity;
-    protected float lowerLoadFactor;
-    protected float upperLoadFactor;
-    protected int numOfElements;
-    protected UtillLinkList[] cells;
+    private int capacity;
+    private float lowerLoadFactor;
+    private float upperLoadFactor;
+    private int numOfElements;
+    private UtillLinkList[] cells;
 
     /**
      * Constructs a new, empty table with the specified load factors, and the default initial capacity (16).
@@ -127,7 +126,6 @@ public class OpenHashSet extends SimpleHashSet {
         }
     }
 
-    //TODO: check for repetitions such as this one in open/closed hash classes
     /**
      * The default setting for the constructors.
      */

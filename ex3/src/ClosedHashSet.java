@@ -1,13 +1,13 @@
 
 public class ClosedHashSet extends SimpleHashSet{
-    protected int capacityMinusOne;
-    protected int INITIAL_CAPACITY = 16;
+    private int capacityMinusOne;
+    private int INITIAL_CAPACITY = 16;
     private float DEFAULT_UPPER_BOUND = 0.75f;
     private float DEFAULT_LOWER_BOUND = 0.25f;
-    protected int capacity;
-    protected float lowerLoadFactor;
-    protected float upperLoadFactor;
-    protected int numOfElements;
+    private int capacity;
+    private float lowerLoadFactor;
+    private float upperLoadFactor;
+    private int numOfElements;
     private String[] array;
 
     /**
@@ -107,7 +107,7 @@ public class ClosedHashSet extends SimpleHashSet{
     public int size() {
         return numOfElements;
     }
-    //TODO: check the capacity thing for the SimpleHashSet..etc
+
     /**
      * The capacity of the table.
      * @return - The current capacity (number of cells) of the table.

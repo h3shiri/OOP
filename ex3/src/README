@@ -26,10 +26,16 @@ cell of the table is a link-list (I have created a wrapper for that).
 2) In the ClosedHashSet each time deletion mechanism is preformed we check whether we contaign that string,
 by simply iterating over the cells (at most O(n) if we probe the whole list). After we located it we
 replace it by a null.
+3) UtillLinkList class is a wrapper I have implemented for the link list of strings, which is used in the
+OpenHashing for each cell in the table.
+4) In the set Performance analyzer I have initiated a list of booleans as a filter for which tests should run.
+Inside the individual tests there are conditionals for controlling the print flow.
 
 ===================
 Results discussion:
 ===================
+# spesific time measurments are well described within the RESULTS file.
+
 1) For OpenHashSet the text1 caused one cell to have a very long linked list (equal hash values). Once
 we have this dinasore of a list each search opperation reuires as to traverse the list instead of
 simply calculating hash value and then checking a relative small linked-list.
@@ -40,7 +46,15 @@ create this huge cluster and each new addition requires to traverse it entirely.
 access computational time O(1).
 Although, both suffer in the case we have a large list of strings with the same hash value.
 We can note how the TreeSet out preformed all the others data structures in loading data1 (equal hash).
-
+3) Treeset takes the shortest time for initiating from the data, it also maintain small time for search operations.
+On the other hand from time to time we can observe the HashSet out preforms it (with fairly random distributed data).
+4) The LinkList is one of the slowest data structures regarding almost all the operation but it allows us greater
+access to the data. For instance for small amount of data its is significantly to alter existing elements.
+5) The HashSet is just fast it out performed all the others data structures in the forth test
+(checking for "-13170890158" with data1 init) it also has low cost of initialising. It's weakeness is well observed
+in searching on dense data (small range of hash values).
+6) As noted out our OpenHashSet out preformed Java HashSet in the 3rd, 5th and 6th tests. 
+Although, our ClosedHashSet is siginificantly out played by Java's hashSet across all the tests.
 
 =============================
 =  List of submitted files: =
@@ -64,4 +78,20 @@ better to the naked eye.
 ============
 =  BONUS:  =
 ============
+Time consumption for warm up with data2 performing contains 70,000 with "hi" in mili seconds:
+(we took this one as a representation case over relatively randomly distributed data)
+OpenHashSet_Contains_hi2_warmUp = 4
+ClosedHashSet_Contains_hi2_warmUp = 110187
+TreeSet_Contains_hi2_warmUp = 16
+LinkedList_Contains_hi2_warmUp = 150894
+HashSet_Contains_hi2_warmUp = 4
+
+The biggest difference was with the TreeSet.
+
+The actual measurment time on avarage for 70,000 iteration is in nano seconds:
+OpenHashSet_Contains_hi2 = 103
+ClosedHashSet_Contains_hi2 = 2461225
+TreeSet_Contains_hi2 = 220
+LinkedList_Contains_hi2 = 2056418
+HashSet_Contains_hi2 = 20
 
