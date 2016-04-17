@@ -141,7 +141,7 @@ public class TreeLink {
 		}
 		TreeLink left = getLeftSon();
 		if (!left.isEmpty()) {
-			leftHeight = right.getHeight();
+			leftHeight = left.getHeight();
 		}
 		height = (Math.max(leftHeight, rightHeight)+1);
 	}

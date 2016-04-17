@@ -28,7 +28,12 @@ public class AvlTree implements Iterable<Integer> {
 	 */
 	private TreeLink rotateRight(TreeLink target){
 		TreeLink subLeft = target.getLeftSon();
-		target.setLeftSon(subLeft.getRightSon());
+		if (subLeft.getRightSon().isEmpty()){
+			target.setLeftSon(null);
+		}
+		else {
+			target.setLeftSon(subLeft.getRightSon());
+		}
 		subLeft.setRightSon(target);
 		target.heightCorrection();
 		subLeft.heightCorrection();
@@ -42,7 +47,12 @@ public class AvlTree implements Iterable<Integer> {
 	 */
 	private TreeLink rotateLeft(TreeLink target){
 		TreeLink subRight = target.getRightSon();
-		target.setRightSon(subRight.getLeftSon());
+		if (subRight.getLeftSon().isEmpty()){
+			target.setRightSon(null);
+		}
+		else {
+			target.setRightSon(subRight.getLeftSon());
+		}
 		subRight.setLeftSon(target);
 		target.heightCorrection();
 		subRight.heightCorrection();
@@ -59,15 +69,18 @@ public class AvlTree implements Iterable<Integer> {
 		if (target.balanceFactor() == 2){
 			if (target.getRightSon().balanceFactor() < 0){
 				target.setRightSon(rotateRight(target.getRightSon()));
+				target.getRightSon().heightCorrection();
 			}
 			return rotateLeft(target);
 		}
 		if (target.balanceFactor() == -2){
 			if (target.getLeftSon().balanceFactor() > 0){
 				target.setLeftSon(rotateLeft(target.getLeftSon()));
+				target.getLeftSon().heightCorrection();
 			}
 			return rotateRight(target);
 		}
+		target.heightCorrection();
 		return target;
 	}
 
@@ -99,11 +112,13 @@ public class AvlTree implements Iterable<Integer> {
 		}
 		if (target.getData() > newVal){
 			target.setLeftSon(recursiveAdd(target.getLeftSon(), newVal));
-//			target.setLeftSon(levelTree(target.getLeftSon()));
+			target.getLeftSon().heightCorrection();
+			target.heightCorrection();
 		}
 		else{
 			target.setRightSon(recursiveAdd(target.getRightSon(), newVal));
-//			target.setRightSon(levelTree(target.getRightSon()));
+			target.getRightSon().heightCorrection();
+			target.heightCorrection();
 		}
 		return levelTree(target);
 	}
@@ -162,10 +177,10 @@ public class AvlTree implements Iterable<Integer> {
 	//TODO: remember to remove garbage main
 	public static void main(String[] args) {
 		AvlTree tree = new AvlTree();
-		int[] exampleArray =  {2,3,4};
+		int[] exampleArray =  {2,3,4,6,-4,8,9,12};
 		for (int i: exampleArray){
 			tree.add(i);
 		}
-		System.out.println(tree.contains(4));
+		System.out.println(tree.contains(-4));
 	}
 }
