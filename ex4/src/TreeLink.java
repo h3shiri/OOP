@@ -48,6 +48,14 @@ public class TreeLink {
 	}
 
 	/**
+	 * A setter function for the data.
+	 * @param - the spesific data that should be set.
+	 */
+	public void setData(int data){
+		this.data = data;
+	}
+
+	/**
 	 * A setter function for the left son
 	 */
 	public void setLeftSon(TreeLink link){

@@ -85,6 +85,81 @@ public class AvlTree implements Iterable<Integer> {
 	}
 
 	/**
+	 * Finding the minimal element in a subtree.
+	 * @param head -  the local root of the subtree.
+	 * @return the imnimal element in the local subtree.
+	 */
+	private TreeLink findMin(TreeLink head){
+		if (head.getLeftSon().isEmpty()) {
+			return head;
+		}
+		else{
+			return findMin(head.getLeftSon());
+		}
+	}
+
+	private void removeMin(TreeLink head){
+		if (head.getLeftSon().isEmpty()){
+			if (head.getRightSon().isEmpty()) {
+				head = null;
+			}
+			else{
+				head = head.getRightSon();
+			}	
+		}
+		else{
+			removeMin(head.getLeftSon());
+			head = levelTree(head);
+		}
+	}
+
+	private TreeLink recursiveDelete(TreeLink head, int target){
+		if (head.isEmpty()) {
+			return null;
+		}
+		if (head.getData() > target) {
+			head.setLeftSon(recursiveDelete(head.getLeftSon(), target));
+		}
+		else if (head.getData() < target) {
+			head.setRightSon(recursiveDelete(head.getRightSon(), target));
+		}
+		/** in case we hit the right value */
+		else{
+			TreeLink left = head.getLeftSon();
+			TreeLink right = head.getRightSon();
+			if (left.isEmpty() && right.isEmpty()) {
+				head = null;
+			}
+			else if (left.isEmpty()) {
+				head = right;
+			}
+			else if (right.isEmpty()) {
+				head = left;
+			}
+			else{
+				TreeLink temp = findMin(right);
+				if (right.getHeight() == 0) {
+					head.setRightSon(null);
+				}
+				else{
+					removeMin(right);
+				}
+				head.setData(temp.getData());
+			}
+		}
+		return levelTree(head);
+	}
+
+	public boolean delete(int toDelete){	
+		if (contains(toDelete) == -1) {
+			return false;
+		}
+		root = recursiveDelete(root, toDelete);
+		size--;
+		return true;
+	}
+
+	/**
 	 * Add a new node with the given key to the tree.
 	 * @param newValue - the value of the new node to add.
 	 * @return true if the value to add is not already in the tree and it was successfully added,
@@ -174,13 +249,16 @@ public class AvlTree implements Iterable<Integer> {
 		}
 		return res;
 	}
+
 	//TODO: remember to remove garbage main
 	public static void main(String[] args) {
 		AvlTree tree = new AvlTree();
-		int[] exampleArray =  {2,3,4,6,-4,8,9,12};
+		int[] exampleArray =  {2,3,4};
 		for (int i: exampleArray){
 			tree.add(i);
 		}
-		System.out.println(tree.contains(-4));
+		System.out.println(tree.delete(3));
+		System.out.println(tree.contains(4));
+		System.out.println(tree.size());
 	}
 }
