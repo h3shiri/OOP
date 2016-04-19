@@ -12,9 +12,6 @@ public class TreeLink {
 	/** height an important internal field for the AVL */
 	private int height;
 
-	/** pointer to the father of the current node */
-	private TreeLink father;
-
 	/**
 	 * A constructor for the TreeLink.
 	 * @param data -  the internal value for the data
@@ -24,7 +21,6 @@ public class TreeLink {
 		leftSon = null;
 		rightSon = null;
 		height = 0;
-		father = null;
 	}
 
 	/**
@@ -35,7 +31,6 @@ public class TreeLink {
 		data = 0;
 		leftSon = null;
 		rightSon = null;
-		father = null;
 		height = -1;
 	}
 
@@ -67,28 +62,6 @@ public class TreeLink {
 	 */
 	public void setRightSon(TreeLink link){
 		rightSon = link;
-	}
-
-	/** 
-	 * A setter function for the father pointer
-	 */
-	public void setFather(TreeLink link){
-		father = link;
-	}
-
-	/**
-	 * A getter function for the father
-	 * @return The father of the current link (if one exits), in case of root an empty link.
-	 */
-	public TreeLink getFather(){
-		if(father != null){
-			return father;
-		}
-		else{
-			//TODO: should return an error message..etc?
-			TreeLink emptyLink = new TreeLink();
-			return emptyLink;
-		}
 	}
 
 	/**

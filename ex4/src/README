@@ -1,0 +1,48 @@
+h3shiri
+Shiri Heffetz
+
+============================
+= README for ex4 AVL trees =
+============================
+Building an AVL tree from scratch.
+
+==================
+=  Description:  =
+==================
+I have designed the basic node structure class (TreeLink) for the tree and the implemented the AVL.
+The AVL contains all the automatic balancing methods.
+In addition, I have attempted to stick close as possible to the given minimal API.
+
+=============
+=  Design:  =
+=============
+I have firstly build the TreeLink (aka a node) it's a basic link that holds internal data
+(value and height) and 2 pointers one for the left son and one for the right one.
+Except that that all the fields are private and could only be accessed few getters and setters.
+
+In the AVL the add method firstly preform a binary search (which takes at most the tree's height) until
+it locates the appropriate place for the new element it then balance the tree recursively at each
+node along the path from the root to the current insertion location.
+The delete method works slightly differently, it traces the target value in the same manner
+(binnery search). After we have located the relevent value we replace it by the minimal value in the
+right subTree and balnce the nodes from the buttom (aka the minimum element we found) all the way back
+to the initial deletion location. I have implemted both bineary searches in a recursive manner
+add uses (recursiveAdd) where delete uses (recursiveDelete) its mportant to note these functions
+behave differntly and the recursiveDelete method has significantly different end cases.
+Only then we update the global fields in the given AVL, its also important to note that path tracing
+and balancing occurs within the recursive calls.
+
+
+=============================
+=  List of submitted files: =
+=============================
+
+README - This file.
+TreeLink.java - The basic link in the AVL tree.
+AvlTree.java - The Avl tree implementation.
+
+======================
+=  Special Comments  =
+======================
+Extra comments are inside the classes in order to make to code readability
+better to the naked eye.

@@ -1,8 +1,11 @@
 import java.util.ArrayList;
 import java.util.Iterator;
+
 /** An AVL Tree */
 public class AvlTree implements Iterable<Integer> {
-
+	/**
+	 * An inner class that implements the iterator object
+	 */
 	public class SimpleIterator implements Iterator<Integer>{
 			private Iterator<Integer> iter;
 			public SimpleIterator(ArrayList<Integer> array){
@@ -31,6 +34,30 @@ public class AvlTree implements Iterable<Integer> {
 	}
 
 	/**
+	 * A constructor that builds a new AVL tree containing all unique values in the input array.
+	 * @param data - data - the values to add to tree.
+	 */
+	public AvlTree(int[] data){
+		root = new TreeLink();
+		for(int element : data){
+			add(element);
+		}
+	}
+
+	/**
+	 * A copy constructor that creates a deep copy of the given AvlTree. The new tree contains all the values of the given tree,
+	 * but not necessarily in the same structure.
+	 * @param tree - The AVL tree to be copied.
+	 */
+	public AvlTree(AvlTree tree){
+		root = new TreeLink();
+		Iterator<Integer> iter = tree.iterator();
+		while(iter.hasNext()){
+			add(iter.next());
+		}
+	}
+
+	/**
 	 * Specified by: iterator in interface Iterable<Integer>.
 	 * @return - an iterator for the Avl Tree. The returned iterator iterates over the tree nodes in an ascending order,
 	 * and does NOT implement the remove() method.
@@ -41,6 +68,11 @@ public class AvlTree implements Iterable<Integer> {
 		return new SimpleIterator(array);
 	}
 
+	/**
+	 * A utility method that traverses the graph in ascending order and add that into an array.
+	 * @param head - the root of our local AVL tree
+	 * @param array - The array that should store all the elements.
+     */
 	private void traverse(TreeLink head, ArrayList<Integer> array){
 		if (!head.getLeftSon().isEmpty()) {
 			traverse(head.getLeftSon(), array);
@@ -301,20 +333,48 @@ public class AvlTree implements Iterable<Integer> {
 		}
 		return res;
 	}
-
-	//TODO: remember to remove garbage main
-	public static void main(String[] args) {
-		AvlTree tree = new AvlTree();
-		int[] exampleArray =  {2,3,5,4,6,-4};
-		for (int i: exampleArray){
-			tree.add(i);
+	/**
+	 * Calculates the minimum number of nodes in an AVL tree of height h.
+	 * @param h - the height of the tree (a non-negative number) in question.
+	 * @return The minimum number of nodes in an AVL tree of the given height.
+	 */
+	public static int findMinNodes(int h){
+		if (h == 0) {
+			return 1;
 		}
-		System.out.println(tree.delete(3));
-		System.out.println(tree.contains(4));
-		System.out.println(tree.size());
-		Iterator<Integer> iter = tree.iterator();
-		while (iter.hasNext()){
-			System.out.print(iter.next()+",");
+		int first = 1;
+		int second = 2;
+		int third;
+		for(int i=1; i<h; i++){
+			third = (first + second + 1);
+			first = second;
+			second = third;
 		}
+		return second;
 	}
+
+//	//TODO: remember to remove garbage main
+//	public static void main(String[] args) {
+//		AvlTree tree = new AvlTree();
+//		int[] exampleArray =  {2,3,5,4,6,-4};
+//		for (int i: exampleArray){
+//			tree.add(i);
+//		}
+//		AvlTree tree2 = new AvlTree(tree);
+//		System.out.println(tree.delete(3));
+//		System.out.println(tree2.size());
+//		Iterator<Integer> iter2 = tree2.iterator();
+//		while (iter2.hasNext()){
+//			System.out.print(iter2.next()+",");
+//		}
+//		System.out.println();
+//		Iterator<Integer> iter = tree.iterator();
+//		while (iter.hasNext()) {
+//			System.out.print(iter.next() + ",");
+//		}
+//		System.out.println();
+//		for (int i=1;i<10 ;i++) {
+//			System.out.println(AvlTree.findMinNodes(i));
+//		}
+//	}
 }
