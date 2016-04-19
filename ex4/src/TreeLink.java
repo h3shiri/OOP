@@ -1,4 +1,6 @@
+package oop.ex4.data_structures;
 import java.lang.Math;
+
 /** the essential link */
 
 public class TreeLink {
@@ -81,7 +83,6 @@ public class TreeLink {
 			return leftSon;
 		}
 		else{
-			//TODO: check whether I should throw an exception here..
 			TreeLink emptyLink = new TreeLink();
 			return emptyLink;
 		}
@@ -96,7 +97,6 @@ public class TreeLink {
 			return rightSon;
 		}
 		else{
-			//TODO: check whether I should throw an exception here..
 			TreeLink emptyLink = new TreeLink();
 			return emptyLink;
 		}
@@ -127,6 +127,10 @@ public class TreeLink {
 		height = (Math.max(leftHeight, rightHeight)+1);
 	}
 
+	/**
+	 * A utility function for calculating the balance factor.
+	 * @return - the difference between subtree on the right to the subtree on the left.
+	 */
 	public int balanceFactor(){
 		return (getRightSon().getHeight() - getLeftSon().getHeight());
 	}

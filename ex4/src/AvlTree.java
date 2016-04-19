@@ -1,3 +1,5 @@
+package oop.ex4.data_structures;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -303,7 +305,7 @@ public class AvlTree implements Iterable<Integer> {
 		}
 		int res = 0;
 		TreeLink tempRoot = root;
-		// As long as we have some extra depth to dig into, iterate.
+		/** As long as we have some extra depth to dig into, iterate. */
 		while (!tempRoot.isEmpty()){
 			int tempVal = tempRoot.getData();
 			if(tempVal == searchVal){
@@ -352,29 +354,4 @@ public class AvlTree implements Iterable<Integer> {
 		}
 		return second;
 	}
-
-//	//TODO: remember to remove garbage main
-//	public static void main(String[] args) {
-//		AvlTree tree = new AvlTree();
-//		int[] exampleArray =  {2,3,5,4,6,-4};
-//		for (int i: exampleArray){
-//			tree.add(i);
-//		}
-//		AvlTree tree2 = new AvlTree(tree);
-//		System.out.println(tree.delete(3));
-//		System.out.println(tree2.size());
-//		Iterator<Integer> iter2 = tree2.iterator();
-//		while (iter2.hasNext()){
-//			System.out.print(iter2.next()+",");
-//		}
-//		System.out.println();
-//		Iterator<Integer> iter = tree.iterator();
-//		while (iter.hasNext()) {
-//			System.out.print(iter.next() + ",");
-//		}
-//		System.out.println();
-//		for (int i=1;i<10 ;i++) {
-//			System.out.println(AvlTree.findMinNodes(i));
-//		}
-//	}
 }

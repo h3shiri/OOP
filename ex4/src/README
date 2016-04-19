@@ -6,16 +6,16 @@ Shiri Heffetz
 ============================
 Building an AVL tree from scratch.
 
-==================
-=  Description:  =
-==================
+=================
+=  Description  =
+=================
 I have designed the basic node structure class (TreeLink) for the tree and the implemented the AVL.
 The AVL contains all the automatic balancing methods.
 In addition, I have attempted to stick close as possible to the given minimal API.
 
-=============
-=  Design:  =
-=============
+============
+=  Design  =
+============
 I have firstly build the TreeLink (aka a node) it's a basic link that holds internal data
 (value and height) and 2 pointers one for the left son and one for the right one.
 Except that that all the fields are private and could only be accessed few getters and setters.
@@ -32,6 +32,37 @@ behave differntly and the recursiveDelete method has significantly different end
 Only then we update the global fields in the given AVL, its also important to note that path tracing
 and balancing occurs within the recursive calls.
 
+=========================
+= Theoretical Questions =
+=========================
+
+Question1 answer:
+20,30,50,10,40,60,25,27,38,65,70,62
+
+Quesrion 2 answer:
+The asympotic time is at most O(log(n)) for each individual addition hence total time of
+O(nlog(n)).
+# note that due to the fact it pratically sorts an array of integers it cannot actually run faster
+if it is based on comparisons.
+Bonus:
+If the list we recieve is sorted its possible to build the AvlTree in O(n) it works this way we go
+from left to right each time picking 2 nodes and establishing a local avl where the root is the bigger
+of the two and both of the nodes are leefs. We then take the local root and the next elemnt in the array
+we continue until we exusted the array. Then we delete the duplicate and autobalance the tree this minor
+change if preformed properly during construction takes O(logn) in total hence we managed to build the 
+Avl in case of sorted array in O(n).
+
+Qustion 3 answer:
+Firstly we find the minimal element in the AVL (takes at most log(n)) then movin from one link to another
+takes O(1) so the array ritrival takes O(n) then insertion of each individual element is at most O(log(n))
+So on avarage O(nlog(n)).
+The best case is if we assume sortation, which we can in case there are no duplicates.
+Then we implement addition with the previous bonus section method thus reaching O(n) construction time.
+
+Question 4 answer:
+I used an iterative method, each iteration takes O(1) hence total time of O(n).
+The best complexity is O(1). We can calculate a closed formula for any
+finite recursive relation.
 
 =============================
 =  List of submitted files: =
