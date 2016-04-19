@@ -1,6 +1,23 @@
-
+import java.util.ArrayList;
+import java.util.Iterator;
 /** An AVL Tree */
 public class AvlTree implements Iterable<Integer> {
+
+	public class SimpleIterator implements Iterator<Integer>{
+			private Iterator<Integer> iter;
+			public SimpleIterator(ArrayList<Integer> array){
+				iter = array.iterator();
+			}
+			public boolean hasNext(){
+				return iter.hasNext();
+			}
+			public Integer next(){
+				return iter.next();
+			}
+			public void remove() {
+				throw new UnsupportedOperationException("remove");
+			}
+		}
 
 	/** data members */
 	private TreeLink root;
@@ -19,8 +36,21 @@ public class AvlTree implements Iterable<Integer> {
 	 * and does NOT implement the remove() method.
      */
 	public java.util.Iterator<Integer> iterator(){
-		return null;
+		ArrayList<Integer> array = new ArrayList<Integer>();
+		traverse(root, array);
+		return new SimpleIterator(array);
 	}
+
+	private void traverse(TreeLink head, ArrayList<Integer> array){
+		if (!head.getLeftSon().isEmpty()) {
+			traverse(head.getLeftSon(), array);
+		}
+		array.add(head.getData());
+		if (!head.getRightSon().isEmpty()){
+			traverse(head.getRightSon(), array);
+		}
+	}
+
 	/**
 	 * Rotation to the right around the target link
 	 * @param target - the link we wish to rotate right around
@@ -87,7 +117,7 @@ public class AvlTree implements Iterable<Integer> {
 	/**
 	 * Finding the minimal element in a subtree.
 	 * @param head -  the local root of the subtree.
-	 * @return the imnimal element in the local subtree.
+	 * @return - The minimal element in the local subtree.
 	 */
 	private TreeLink findMin(TreeLink head){
 		if (head.getLeftSon().isEmpty()) {
@@ -98,21 +128,32 @@ public class AvlTree implements Iterable<Integer> {
 		}
 	}
 
-	private void removeMin(TreeLink head){
+	/**
+	 * remove the minimal element from a subtree
+	 * @param head -  the subtree root.
+	 * @return - A new link without the local minimum.
+     */
+	private TreeLink removeMin(TreeLink head){
 		if (head.getLeftSon().isEmpty()){
 			if (head.getRightSon().isEmpty()) {
-				head = null;
+				return null;
 			}
 			else{
-				head = head.getRightSon();
+				return head.getRightSon();
 			}	
 		}
 		else{
-			removeMin(head.getLeftSon());
-			head = levelTree(head);
+			head.setLeftSon(removeMin(head.getLeftSon()));
+			return levelTree(head);
 		}
 	}
 
+	/**
+	 * deleting an element using recursive search according to the current root's data.
+	 * @param head - the current root of a given subtree
+	 * @param target - the value that should be deleted.
+     * @return - A new modified root that doesn't contain the deletion target any longer.
+     */
 	private TreeLink recursiveDelete(TreeLink head, int target){
 		if (head.isEmpty()) {
 			return null;
@@ -128,21 +169,21 @@ public class AvlTree implements Iterable<Integer> {
 			TreeLink left = head.getLeftSon();
 			TreeLink right = head.getRightSon();
 			if (left.isEmpty() && right.isEmpty()) {
-				head = null;
+				return null;
 			}
 			else if (left.isEmpty()) {
-				head = right;
+				return right;
 			}
 			else if (right.isEmpty()) {
-				head = left;
+				return left;
 			}
 			else{
-				TreeLink temp = findMin(right);
+				TreeLink temp = new TreeLink(findMin(right).getData());
 				if (right.getHeight() == 0) {
 					head.setRightSon(null);
 				}
 				else{
-					removeMin(right);
+					 head.setRightSon(removeMin(right));
 				}
 				head.setData(temp.getData());
 			}
@@ -150,6 +191,11 @@ public class AvlTree implements Iterable<Integer> {
 		return levelTree(head);
 	}
 
+	/**
+	 * Removes the node with the given value from the tree, if it exists.
+	 * @param toDelete - the value to remove from the tree.
+	 * @return - true if the given value was found and deleted, false otherwise.
+     */
 	public boolean delete(int toDelete){	
 		if (contains(toDelete) == -1) {
 			return false;
@@ -181,6 +227,12 @@ public class AvlTree implements Iterable<Integer> {
 		return true;
 	}
 
+	/**
+	 * A recursive method for adding a new element,
+	 * @param target - the root of the current subtree
+	 * @param newVal - the new value that should be added into the tree.
+     * @return - A new modified root that contains the new value.
+     */
 	private TreeLink recursiveAdd(TreeLink target, int newVal){
 		if(target.isEmpty()){
 			return new TreeLink(newVal);
@@ -253,12 +305,16 @@ public class AvlTree implements Iterable<Integer> {
 	//TODO: remember to remove garbage main
 	public static void main(String[] args) {
 		AvlTree tree = new AvlTree();
-		int[] exampleArray =  {2,3,4};
+		int[] exampleArray =  {2,3,5,4,6,-4};
 		for (int i: exampleArray){
 			tree.add(i);
 		}
 		System.out.println(tree.delete(3));
 		System.out.println(tree.contains(4));
 		System.out.println(tree.size());
+		Iterator<Integer> iter = tree.iterator();
+		while (iter.hasNext()){
+			System.out.print(iter.next()+",");
+		}
 	}
 }
