@@ -1,26 +1,13 @@
 package filesprocessing;
 import java.io.*;
+import java.util.function.Predicate;
 
 /** the basic structure for any given filter */
-public abstract class Filter<T>{
-	
-	/** the filter's name */
-	private final String name;
-	
-	private T data;
+public interface Filter extends Predicate<File>{
 
-	public Filter(String name, T data){
-		this.name = name;
-		this.data = data;
-	}
-
-	public String getName(){
-		return name;
-	}
-
-	public T getData(){
-		return data;
-	}
-
-	public abstract boolean check(File file);
+	/**
+	 * A getter function for the type of the Filter
+	 * @return - depends on the class type.
+	 */
+	public String getName();
 }

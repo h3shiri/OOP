@@ -16,13 +16,18 @@ public class Parser{
 	/** magic string that acts as the filter delimeter between argumets */
 	private final String FILTERDELIM = "#";
 
+	/**
+	 * The constructor of the parser class.
+	 * @param sourceDirectory - the source directory location of all the files.
+	 * @param sourceCommands - the location of the commands file.
+     */
 	public Parser(final String sourceDirectory, final String sourceCommands){
 		files = new ArrayList<File>();
 		fileNames = new ArrayList<String>();
 		File source = new File(sourceDirectory);
 		File commandsFile = new File(sourceCommands);
-		File[] temp = source.listFiles();
-		for (File file : temp) {
+		File[] tempFiles = source.listFiles();
+		for (File file : tempFiles) {
 			if(file.isFile()){
 				files.add(file);
 				fileNames.add(file.getName());
@@ -33,14 +38,14 @@ public class Parser{
 		}
 	}
 
-	public ArrayList<Section> parseCommands(File commands){
+	public ArrayList<Section> parseCommands() throws FileNotFoundException {
 		// TODO: check whether the factory lines should be in try block.
 		Scanner scanner = new Scanner(new FileReader(commands));
 		ArrayList<Section> res = new ArrayList<Section>();
 		boolean filterTest = false;
 		boolean orderTest = false;
-		Filter currentFilter = new Filter();
-		Order currentOrder = new Order();
+		Filter currentFilter = new AiFilter();
+		Order currentOrder = new TypeOrder();
 		while(scanner.hasNextLine()){
 			String line = scanner.nextLine();
 			if (line.contains(FILTERMARKER)){
@@ -57,6 +62,8 @@ public class Parser{
 			}
 			if (orderTest && filterTest) {
 				res.add(new Section(currentFilter, currentOrder));
+				orderTest = false;
+				filterTest = false;
 			}
 		}
 		return res;

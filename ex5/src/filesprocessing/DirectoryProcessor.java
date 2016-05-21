@@ -9,10 +9,42 @@ import java.text.*;
 
 public class DirectoryProcessor {
 	public static void main(String[] args){
-		for (String arg : args){
-			System.out.println(arg);
-		}
 		Parser parser = new Parser(args[0], args[1]);
-		System.out.println(parser.getNames());
+		try{
+			ArrayList<Section> sections = parser.parseCommands();
+			ArrayList<File> files = parser.getFiles();
+			for (Section section : sections){
+				ArrayList<File> toPrint;
+				toPrint = selectRelevant(files, section.getFilter());
+				Collections.sort(toPrint, section.getOrder());
+				if (section.errorCheck()){
+					System.err.println(section.getErrorMsg());
+				}
+				for (File file : toPrint) {
+					System.out.println(file.getName());
+				}
+			}
+
+		} catch (java.io.FileNotFoundException e){
+			String errorMsgCommandsFileLocation = "The path for the command file directory have" +
+					" been inappropriately supplied";
+			System.err.println(errorMsgCommandsFileLocation);
+		}
+	}
+
+	/**
+	 * A selection method give the relevant files and the appropriate filter.
+	 * @param files - target files to be filtered.
+	 * @param predicate - the specific predicate we use to filter the files.
+     * @return - the relevant files who passed the predicate's test.
+     */
+	public static ArrayList<File> selectRelevant(List<File> files, Predicate<File> predicate){
+		ArrayList<File> res = new ArrayList<>();
+		for(File file : files){
+			if (predicate.test(file)){
+				res.add(file);
+			}
+		}
+		return res;
 	}
 }
