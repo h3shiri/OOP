@@ -1,6 +1,4 @@
 package filters;
-import com.sun.tools.corba.se.idl.constExpr.Not;
-
 import java.io.*;
 
 public class GrFilter implements Filter{
