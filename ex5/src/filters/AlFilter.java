@@ -1,7 +1,7 @@
-package filesprocessing;
+package filters;
 import java.io.*;
 
-public class AiFilter implements Filter{
+public class AlFilter implements Filter{
 	/** The filter's type */
 	String name;
 
@@ -14,11 +14,15 @@ public class AiFilter implements Filter{
 	/**
 	 * The primary constructor.
 	 */
-	public AiFilter(){
+	public AlFilter(){
 		name = TYPE;
 	}
 
-	public AiFilter(boolean negation){
+	/**
+	 * secondary constructor in case of negation.
+	 * @param negation - the flag for deciding whether to use the opposite filter.
+     */
+	public AlFilter(boolean negation){
 		name = TYPE;
 		this.negation = negation;
 	}

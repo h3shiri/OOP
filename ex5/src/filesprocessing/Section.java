@@ -1,5 +1,6 @@
 package filesprocessing;
-
+import orders.*;
+import filters.*;
 public class Section{
 
 	/** String representation of the filter */

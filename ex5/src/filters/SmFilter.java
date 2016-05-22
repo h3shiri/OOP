@@ -1,4 +1,4 @@
-package filesprocessing;
+package filters;
 import java.io.*;
 
 public class SmFilter implements Filter{

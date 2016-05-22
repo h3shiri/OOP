@@ -1,6 +1,8 @@
 package filesprocessing;
 import java.io.*;
 import java.util.*;
+import orders.*;
+import filters.*;
 
 public class Parser{
 	/** all the relevant files under the source directory */
@@ -44,7 +46,7 @@ public class Parser{
 		ArrayList<Section> res = new ArrayList<Section>();
 		boolean filterTest = false;
 		boolean orderTest = false;
-		Filter currentFilter = new AiFilter();
+		Filter currentFilter = new AlFilter();
 		Order currentOrder = new TypeOrder();
 		while(scanner.hasNextLine()){
 			String line = scanner.nextLine();

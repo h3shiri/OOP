@@ -1,4 +1,4 @@
-package filesprocessing;
+package filters;
 import java.io.*;
 import java.util.function.Predicate;
 

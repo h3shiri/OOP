@@ -1,4 +1,4 @@
-package filesprocessing;
+package filters;
 import java.io.*;
 import java.lang.*;
 
@@ -17,12 +17,12 @@ public abstract class FilterFactory{
      */
 	public static Filter build(String rawData) {
 		String NEGATE = "NOT";
-		Filter res = new AiFilter();
+		Filter res = new AlFilter();
 		String[] data = rawData.split("#");
 		String filterType = data[0];
 //		TODO: add appropriate errors.
 		boolean negation = false;
-		if (data[data.length-1] == NEGATE){
+		if (data[data.length-1].equals(NEGATE)){
 			negation = true;
 		}
 		switch (filterType) {
@@ -66,40 +66,75 @@ public abstract class FilterFactory{
 					res = new SmFilter(value3);
 				}
 				break;
-//			case "file":
-//				String name = data[1];
-//				res = new FiFilter(name);
-//				break;
-//			case "contains":
-//				String part = data[1];
-//				res = new CoFilter(part);
-//				break;
-//			case "prefix":
-//				String pre = data[1];
-//				res = new PrFilter(pre);
-//				break;
-//			case "suffix":
-//				String suf = data[1];
-//				res = new SuFilter(suf);
-//				break;
-//			case "writable":
-//				String affirmation = data[1];
-//				res = new WrFilter(affirmation);
-//				break;
-//			case "executable":
-//				String affirmation2 = data[1];
-//				res = new ExFilter(affirmation2);
-//				break;
-//			case "hidden":
-//				String affirmation3 = data[1];
-//				res = new HiFilter(affirmation3);
-//				break;
-			case "all":
+			case "file":
+				String name = data[1];
+				if (negation) {
+					res = new FiFilter(name, negation);
+				}
+				else{
+					res = new FiFilter(name);
+				}
+				break;
+			case "contains":
+				String part = data[1];
 				if (negation){
-					res = new AiFilter(negation);
+					res = new CoFilter(part, negation);
+				}
+				else{
+					res = new CoFilter(part);
+				}
+				break;
+			case "prefix":
+				String pre = data[1];
+				if (negation){
+					res = new PrFilter(pre, negation);
 				}
 				else {
-					res = new AiFilter();
+					res = new PrFilter(pre);
+				}
+				break;
+			case "suffix":
+				String suf = data[1];
+				if (negation){
+					res = new SuFilter(suf, negation);
+				}
+				else{
+					res = new SuFilter(suf);
+				}
+				break;
+			case "writable":
+				String affirmation = data[1];
+				if (negation){
+					res = new WrFilter(affirmation, negation);
+				}
+				else{
+					res = new WrFilter(affirmation);
+				}
+				break;
+			case "executable":
+				String affirmation2 = data[1];
+				if (negation){
+					res = new ExFilter(affirmation2, negation);
+				}
+				else {
+					res = new ExFilter(affirmation2);
+				}
+				break;
+			case "hidden":
+				String affirmation3 = data[1];
+				if (negation){
+					res = new HiFilter(affirmation3, negation);
+				}
+				else{
+					res = new HiFilter(affirmation3);
+				}
+				break;
+			case "all":
+				if (negation){
+					res = new AlFilter(negation);
+				}
+				else {
+					res = new AlFilter();
 				}
 				break;
 			default:
