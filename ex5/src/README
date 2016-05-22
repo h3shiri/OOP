@@ -1,0 +1,29 @@
+h3shiri
+Shiri Heffetz
+
+==================================
+= README for ex5 file processing =
+==================================
+
+=================
+=  Description  =
+=================
+I have designed a Firectory processor that can use a variety of filters and order mechanisms
+to sort and return the requaested files in a given directory. The filters package cotains all the
+filters implemintations and appropriate errors. Similarly the orders package cotains all the various 
+order implementations. Note the exceptions follow an hierarchical structure divided to appropriate
+sub-groups.
+
+============
+=  Design  =
+============
+
+=============================
+=  List of submitted files: =
+=============================
+
+======================
+=  Special Comments  =
+======================
+Extra comments are inside the classes in order to make to code readability
+better to the naked eye.
