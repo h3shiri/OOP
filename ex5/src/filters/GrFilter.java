@@ -21,18 +21,9 @@ public class GrFilter implements Filter{
 	boolean negation = false;
 
 	/**
-	 * Primary constructor.
+	 * Primary constructor
 	 * @param floor - the lower bound for the file's size.
-     */
-	public GrFilter(double floor){
-		name = TYPE;
-		this.floor = floor;
-	}
-
-	/**
-	 * Secondery constructor
-	 * @param floor
-	 * @param NotOption
+	 * @param NotOption - the negation flag option.
      */
 	public GrFilter(double floor, boolean NotOption){
 		name = TYPE;

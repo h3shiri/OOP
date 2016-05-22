@@ -56,8 +56,12 @@ public class TypeOrder extends Order{
      */
 	private String findType(File file){
 		String name = file.getName();
-		String[] arr = name.split(".");
-		String type = arr[arr.length-1];
+		String[] arr = name.split("\\.");
+		/** In case of no dot we shall return the empty type */
+		if (arr.length == 0){
+			return "";
+		}
+		String type = arr[(arr.length-1)];
 		return type;
 	}
 }

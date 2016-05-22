@@ -1,5 +1,5 @@
 package filters;
-import java.io.*;
+
 import java.lang.*;
 
 public abstract class FilterFactory{
@@ -28,16 +28,7 @@ public abstract class FilterFactory{
 		switch (filterType) {
 			case "greater_than":
 				double value = Double.parseDouble(data[1]);
-				if (value < 0) {
-//					TODO: insert potential error here.
-					break;
-				}
-				if (negation){
-					res = new GrFilter(value, negation);
-				}
-				else{
-					res = new GrFilter(value);
-				}
+				res = greaterThanBuilder(value, negation);
 				break;
 			case "between":
 				double value1 = Double.parseDouble(data[1]);
@@ -142,5 +133,34 @@ public abstract class FilterFactory{
 				System.out.println("Non-existing filter type");
 		}
 		return res;
+	}
+
+	/**
+	 * The builder for the greater_than error processing.
+	 * @param value - the double value.
+	 * @param negation - the negation flag.
+     * @return - the appropriate Filter if no crucial errors have been met.
+     */
+	private static Filter greaterThanBuilder(double value, boolean negation) {
+		try {
+			checkDoubleNotNegative(value);
+			Filter res = new GrFilter(value, negation);
+			return res;
+		} catch (NegativeDoubleException e) {
+			System.err.println(e);
+			/** Magic numbers dummy clone */
+			return new GrFilter(500.0, false);
+		}
+	}
+
+	/**
+	 * checks a given double argument isn't
+	 * @param value - the double value to be tested.
+	 * @throws NegativeDoubleException - A unique exception for negative doubles.
+     */
+	private static void checkDoubleNotNegative(double value) throws NegativeDoubleException {
+		if (value < 0) {
+			throw new NegativeDoubleException();
+		}
 	}
 }
