@@ -41,8 +41,9 @@ public class Parser{
 		}
 	}
 
-	public ArrayList<Section> parseCommands() throws FileNotFoundException {
-		// TODO: check whether the factory lines should be in try block.
+	public ArrayList<Section> parseCommands() throws FileNotFoundException, TypeTwoError{
+		int numOfFilterHeadings = 0;
+		int numOfOrderHeadings = 0;
 		Scanner scanner = new Scanner(new FileReader(commands));
 		ArrayList<Section> res = new ArrayList<>();
 		String potentialFilterError = "EMPTY";
@@ -66,25 +67,45 @@ public class Parser{
 					Filter filter = FilterFactory.build(filterData, lineNumber);
 					currentFilter = filter;
 					filterTest = true;
+					numOfFilterHeadings++;
+					continue;
 				} catch (TypeOneError e) {
 					currentFilter = new AiFilter();
 					filterTest = true;
 					filterError = true;
 					potentialFilterError = e.getMessage();
+					numOfFilterHeadings++;
 				}
 			}
 			else if (line.contains(ORDERMARKER)) {
-				String orderData = scanner.nextLine();
-				lineNumber++;
-				try {
-					Order order = OrderFactory.build(orderData, lineNumber);
-					currentOrder = order;
-					orderTest = true;
+				try{
+					/** In case of finishing with empty line */
+					if (!scanner.hasNext()){
+						orderTest = true;
+						currentOrder = new AbsOrder();
+						numOfOrderHeadings++;
+					}
+					else if (scanner.hasNext()) {
+						String orderData = scanner.nextLine();
+						lineNumber++;
+						/** Testing the sub field has some data */
+						if (orderData.equals(FILTERMARKER)) {
+							currentOrder = new AbsOrder();
+							orderTest = true;
+							numOfOrderHeadings++;
+						} else {
+							Order order = OrderFactory.build(orderData, lineNumber);
+							currentOrder = order;
+							orderTest = true;
+							numOfOrderHeadings++;
+						}
+					}
 				} catch (TypeOneError e) {
 					currentOrder = new AbsOrder();
 					orderTest = true;
 					orderError = true;
 					potentialOrderError = e.getMessage();
+					numOfOrderHeadings++;
 				}
 			}
 			if (orderTest && filterTest) {
@@ -103,14 +124,31 @@ public class Parser{
 				filterError = false;
 				orderError = false;
 			}
+			/** In case of a non valid heading */
+			else if((!line.contains(FILTERMARKER))&&(!line.contains(ORDERMARKER))){
+				/** In case of a non-valid heading */
+				throw new BadSubSectionName();
+			}
+			/** In case of non matching number of Filter headings and Order Headings after parsing the file. */
+			if ((!scanner.hasNext()) && (numOfFilterHeadings != numOfOrderHeadings)){
+				throw new MisMatchingNumberOfHeadings();
+			}
 		}
 		return res;
 	}
 
+	/**
+	 * A getter function for the names of the files
+	 * @return - An array list of the files containing their names.
+     */
 	public ArrayList<String> getNames(){
 		return fileNames;
 	}
 
+	/**
+	 * A getter function for all the files.
+	 * @return - all the files in the given target directory.
+     */
 	public ArrayList<File> getFiles(){
 		return files;
 	}

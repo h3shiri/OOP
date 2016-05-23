@@ -25,8 +25,8 @@ public class SizeOrder extends Order{
 
 	@Override
 	public int compare(File file1, File file2){
-		long size1 = file1.getTotalSpace();
-		long size2 = file2. getTotalSpace();
+		long size1 = file1.length();
+		long size2 = file2.length();
 		long res = (size1 - size2);
 		if (res != 0) {
 			if (res > 0) {

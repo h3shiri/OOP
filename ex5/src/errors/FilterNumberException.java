@@ -6,6 +6,6 @@ public class FilterNumberException extends TypeOneError{
      * @param lineNumber - the line number in the command file.
      */
     public FilterNumberException(int lineNumber){
-        super(errorMsg);
+        super(lineNumber);
     }
 }

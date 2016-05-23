@@ -46,11 +46,18 @@ public class SmFilter implements Filter{
     public boolean test(File file){
         long size =  file.length();
         double appSize = (size/CONVERT);
+        boolean res;
         if(appSize < ceiling){
-            return true;
+            res = true;
         }
         else{
-            return false;
+            res = false;
+        }
+        if(negation){
+            return (!res);
+        }
+        else{
+            return res;
         }
     }
 }

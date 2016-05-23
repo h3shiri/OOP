@@ -1,6 +1,8 @@
 package filesprocessing;
 /** Utility packages */
-// TODO: clean redundant importations..
+import errors.PathNotFoundException;
+import errors.TypeTwoError;
+
 import java.util.*;
 import java.util.function.*;
 import java.io.*;
@@ -31,10 +33,13 @@ public class DirectoryProcessor {
 				}
 			}
 
-		} catch (java.io.FileNotFoundException e){
-			String errorMsgCommandsFileLocation = "The path for the command file directory have" +
-					" been inappropriately supplied";
-			System.err.println(errorMsgCommandsFileLocation);
+		} catch (TypeTwoError e) {
+			System.err.println(e.getMessage());
+			return;
+		} catch (FileNotFoundException e){
+			TypeTwoError error = new PathNotFoundException();
+			System.err.println(error.getMessage());
+			return;
 		}
 	}
 

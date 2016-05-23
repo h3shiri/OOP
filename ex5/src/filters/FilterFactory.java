@@ -31,11 +31,11 @@ public abstract class FilterFactory{
 			case "between":
 				double value1 = Double.parseDouble(data[1]);
 				double value2 = Double.parseDouble(data[2]);
-				betweenBuilder(value1, value2, lineNumber, negation);
+				res = betweenBuilder(value1, value2, lineNumber, negation);
 				break;
 			case "smaller_than":
 				double value3 = Double.parseDouble(data[1]);
-				smallerBuilder(value3, lineNumber, negation);
+				res = smallerBuilder(value3, lineNumber, negation);
 				break;
 			case "file":
 				String name = data[1];
