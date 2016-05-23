@@ -15,16 +15,7 @@ public class CoFilter implements Filter{
     boolean negation = false;
 
     /**
-     * The primary constructor.
-     * @param target - the containment target string.
-     */
-    public CoFilter(String target){
-    	name = TYPE;
-    	this.target = target;
-    }
-
-    /**
-     * A secondry constructor for the negation filter.
+     * A secondary constructor for the negation filter.
      * @param target - the containment target string.
      * @param negation - the negation flag.
      */

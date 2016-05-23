@@ -21,13 +21,9 @@ public class SmFilter implements Filter{
 
     /**
      * The primary constructor.
-     * @param ceiling
+     * @param ceiling - the upper bound value for the size.
+     * @param negation - the negation flag option.
      */
-    public SmFilter(double ceiling){
-        name = TYPE;
-        this.ceiling = ceiling;
-    }
-
     public  SmFilter(double ceiling, boolean negation){
         name = TYPE;
         this.ceiling = ceiling;

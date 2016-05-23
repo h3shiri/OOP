@@ -1,22 +1,30 @@
 package orders;
 
+import errors.*;
 import java.lang.*;
-import java.io.*;
-import java.util.*;
 
 public abstract class OrderFactory{
 
 	/** The data set of all the various orders */
-	String[] types = new String[]{"abs", "type", "size"};
-	// TODO: add exceptions to the factory make up.
+	private static String[] types = new String[]{"abs", "type", "size"};
+
+	private static String FLAGSDELIM = "#";
 
 	/**
 	 * The factory method for building the various order classes.
-	 * @param order - the given order that shall be created.
+	 * @param rawData - the given order rawData from which the order shall be created.
 	 * @return - an Order object accordingly.
      */
-	public static Order build(String order){
-		Order res = new AbsOrder();
+	public static Order build(String rawData, int lineNumber) throws TypeOneError{
+		String[] data = rawData.split(FLAGSDELIM);
+		String order;
+		if(data.length > 0){
+			order = data[0];
+		}
+		else{
+			order = rawData;
+		}
+		Order res;
 		switch(order){
 			case "abs" :
 				res = new AbsOrder();
@@ -32,7 +40,13 @@ public abstract class OrderFactory{
 				res = new SizeOrder();
 				break;
 			default:
-					System.out.println("Invalid Order");	
+					throw new TypeOneError(lineNumber);
+		}
+		if (data.length > 0){
+			String revFlag = "REVERSE";
+			if (data[data.length-1].equals(revFlag)){
+				res.setReverse(true);
+			}
 		}
 		return res;
 	}

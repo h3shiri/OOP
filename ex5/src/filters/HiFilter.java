@@ -17,15 +17,6 @@ public class HiFilter implements Filter{
     /**
      * The primary constructor.
      * @param literal - The literal target aka YES/NO.
-     */
-    public HiFilter(String literal){
-        name = TYPE;
-        this.literal = literal;
-    }
-
-    /**
-     * the secondry constructor.
-     * @param literal - The literal target aka YES/NO.
      * @param negation - the negation flag.
      */
     public HiFilter(String literal, boolean negation){

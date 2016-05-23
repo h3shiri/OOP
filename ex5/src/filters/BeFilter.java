@@ -21,19 +21,6 @@ public class BeFilter implements Filter{
     /** An internal boolean supporting the NOT (negation filter) option */
     boolean negation = false;
 
-
-    /**
-     * The basic constructor.
-     * @param lowerBound - size of the lower bound for the filter.
-     * @param upperBound - size of the upper bound for the filter.
-     */
-    public BeFilter(double lowerBound, double upperBound)
-    {
-        name = TYPE;
-        this.lowerBound = lowerBound;
-        this.upperBound = upperBound;
-    }
-
     /**
      * Secondary constructor for the NOT flag.
      * @param lowerBound - size of the lower bound for the filter.

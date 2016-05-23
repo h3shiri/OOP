@@ -16,16 +16,7 @@ public class PrFilter implements Filter{
     boolean negation = false;
 
     /**
-     * The primary constructor.
-     * @param prefix - The prefix target.
-     */
-    public PrFilter(String prefix){
-        name = TYPE;
-        this.prefix = prefix;
-    }
-
-    /**
-     * The secondry constructor for the negation filter.
+     * The primary constructor for the negation filter.
      * @param prefix - The prefix target.
      * @param negation - the negation flag.
      */

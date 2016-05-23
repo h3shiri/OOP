@@ -1,15 +1,16 @@
 package filesprocessing;
-import orders.*;
-import filters.*;
 /** Utility packages */
 // TODO: clean redundant importations..
 import java.util.*;
 import java.util.function.*;
 import java.io.*;
 import java.lang.*;
-import java.text.*;
 
 public class DirectoryProcessor {
+	/**
+	 * The main driver method running the files management script.
+	 * @param args - SourceDirectory and then FileCommandsPath (separated by a space).
+     */
 	public static void main(String[] args){
 		Parser parser = new Parser(args[0], args[1]);
 		try{
@@ -19,8 +20,11 @@ public class DirectoryProcessor {
 				ArrayList<File> toPrint;
 				toPrint = selectRelevant(files, section.getFilter());
 				Collections.sort(toPrint, section.getOrder());
+				if (section.getOrder().checkReverseFlag()){
+					Collections.reverse(toPrint);
+				}
 				if (section.errorCheck()){
-					System.err.println(section.getErrorMsg());
+					section.printErrorMessages();
 				}
 				for (File file : toPrint) {
 					System.out.println(file.getName());

@@ -16,16 +16,7 @@ public class FiFilter implements Filter{
     boolean negation = false;
 
     /**
-     * The primary constructor.
-     * @param fileName - the target file (name).
-     */
-    public FiFilter(String fileName){
-        this.fileName = fileName;
-        name = TYPE;
-    }
-
-    /**
-     * Secondry constructor for the negation option.
+     * The primary constructor for the negation option.
      * @param fileName - the target file (name).
      * @param negation - the negation flag.
      */

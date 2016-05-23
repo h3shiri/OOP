@@ -3,6 +3,7 @@ import java.io.*;
 import java.util.*;
 import orders.*;
 import filters.*;
+import errors.*;
 
 public class Parser{
 	/** all the relevant files under the source directory */
@@ -43,29 +44,64 @@ public class Parser{
 	public ArrayList<Section> parseCommands() throws FileNotFoundException {
 		// TODO: check whether the factory lines should be in try block.
 		Scanner scanner = new Scanner(new FileReader(commands));
-		ArrayList<Section> res = new ArrayList<Section>();
+		ArrayList<Section> res = new ArrayList<>();
+		String potentialFilterError = "EMPTY";
+		boolean filterError = false;
+		String potentialOrderError = "EMPTY";
+		boolean orderError = false;
+		/** boolean trackers of the initiation segment parts */
 		boolean filterTest = false;
 		boolean orderTest = false;
-		Filter currentFilter = new AlFilter();
+		Filter currentFilter = new AiFilter();
 		Order currentOrder = new TypeOrder();
+		/** Starts tracing for type I errors */
+		int lineNumber = 0;
 		while(scanner.hasNextLine()){
 			String line = scanner.nextLine();
+			lineNumber++;
 			if (line.contains(FILTERMARKER)){
 				String filterData = scanner.nextLine();
-				Filter filter = FilterFactory.build(filterData);
-				currentFilter = filter;
-				filterTest = true;
+				lineNumber++;
+				try {
+					Filter filter = FilterFactory.build(filterData, lineNumber);
+					currentFilter = filter;
+					filterTest = true;
+				} catch (TypeOneError e) {
+					currentFilter = new AiFilter();
+					filterTest = true;
+					filterError = true;
+					potentialFilterError = e.getMessage();
+				}
 			}
 			else if (line.contains(ORDERMARKER)) {
 				String orderData = scanner.nextLine();
-				Order order = OrderFactory.build(orderData);
-				currentOrder = order;
-				orderTest = true;
+				lineNumber++;
+				try {
+					Order order = OrderFactory.build(orderData, lineNumber);
+					currentOrder = order;
+					orderTest = true;
+				} catch (TypeOneError e) {
+					currentOrder = new AbsOrder();
+					orderTest = true;
+					orderError = true;
+					potentialOrderError = e.getMessage();
+				}
 			}
 			if (orderTest && filterTest) {
-				res.add(new Section(currentFilter, currentOrder));
+				Section tempSection = new Section(currentFilter, currentOrder);
+				if (filterError){
+					tempSection.setError();
+					tempSection.addError(potentialFilterError);
+				}
+				if (orderError){
+					tempSection.setError();
+					tempSection.addError(potentialOrderError);
+				}
+				res.add(tempSection);
 				orderTest = false;
 				filterTest = false;
+				filterError = false;
+				orderError = false;
 			}
 		}
 		return res;

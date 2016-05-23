@@ -16,16 +16,7 @@ public class SuFilter implements Filter{
     boolean negation = false;
 
     /**
-     * The primary constructor.
-     * @param suffix - The suffix target.
-     */
-    public SuFilter(String suffix){
-        name = TYPE;
-        this.suffix = suffix;
-    }
-
-    /**
-     * The secondry constructor for the negation filter.
+     * The primary constructor for the negation filter.
      * @param suffix - The suffix target.
      * @param negation - the negation flag.
      */

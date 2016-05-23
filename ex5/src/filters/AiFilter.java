@@ -1,7 +1,7 @@
 package filters;
 import java.io.*;
 
-public class AlFilter implements Filter{
+public class AiFilter implements Filter{
 	/** The filter's type */
 	String name;
 
@@ -14,7 +14,7 @@ public class AlFilter implements Filter{
 	/**
 	 * The primary constructor.
 	 */
-	public AlFilter(){
+	public AiFilter(){
 		name = TYPE;
 	}
 
@@ -22,7 +22,7 @@ public class AlFilter implements Filter{
 	 * secondary constructor in case of negation.
 	 * @param negation - the flag for deciding whether to use the opposite filter.
      */
-	public AlFilter(boolean negation){
+	public AiFilter(boolean negation){
 		name = TYPE;
 		this.negation = negation;
 	}

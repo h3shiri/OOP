@@ -1,6 +1,9 @@
 package filesprocessing;
 import orders.*;
 import filters.*;
+
+import java.util.ArrayList;
+
 public class Section{
 
 	/** String representation of the filter */
@@ -12,7 +15,7 @@ public class Section{
 	private boolean errorCondition = false;
 
 	/** A string holding the potential error message */
-	private String errorMsg = "empty";
+	private ArrayList<String> errorMesagges = new ArrayList<>();
 
 	/**
 	 * The constructor function.
@@ -39,12 +42,18 @@ public class Section{
 	}
 
 	/**
-	 * Setting the error message in case of reaching an error.
-	 * @param errorMsg - the message that should be printed along the error.
+	 * Setting the error flag in case of reaching an error.
      */
-	public void setError(String errorMsg){
+	public void setError(){
 		errorCondition = true;
-		this.errorMsg = errorMsg;
+	}
+
+	/**
+	 * Adding a new error message.
+	 * @param errorMsg - the new error.
+     */
+	public void addError(String errorMsg){
+		errorMesagges.add(errorMsg);
 	}
 
 	/** A getter function for checking the error condition */
@@ -53,11 +62,13 @@ public class Section{
 	}
 
 	/**
-	 * A getter function for the error message.
-	 * @return - the relevant error, if none exist returns "empty".
+	 * A printer function for the error messages.
+	 * Prints the relevant errors.
      */
-	public String getErrorMsg(){
-		return errorMsg;
+	public void printErrorMessages(){
+		for (String error : errorMesagges){
+			System.err.println(error);
+		}
 	}
 
 

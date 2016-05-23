@@ -6,10 +6,10 @@ import java.util.*;
 
 public class AbsOrder extends Order{
 	/** the order's type*/
-	String name;
+	private String name;
 
 	/** The magic string for this spesific order*/
-	String TYPE = "abs";
+	private String TYPE = "abs";
 
     /**
      * constructor function.

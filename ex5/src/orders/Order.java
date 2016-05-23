@@ -5,6 +5,9 @@ import java.io.*;
 import java.util.*;
 
 public abstract class Order implements Comparator<File>{
+	/** The reverse flag option */
+	public boolean reverse = false;
+
 	/**
 	 * A getter function for the type of the Order
 	 * @return - depends on the inheriting class type.
@@ -22,5 +25,21 @@ public abstract class Order implements Comparator<File>{
 		String name1 = file1.getAbsolutePath();
 		String name2 = file2.getAbsolutePath();
 		return name1.compareTo(name2);
+	}
+
+	/**
+	 * A setter function for the reverse flag.
+	 * @param condition - the boolean for setting the flag.
+     */
+	public void setReverse(boolean condition){
+		reverse = condition;
+	}
+
+	/**
+	 * A getter function for checking the reverse flag condition.
+	 * @return
+     */
+	public boolean checkReverseFlag(){
+		return reverse;
 	}
 } 

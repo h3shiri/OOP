@@ -18,15 +18,6 @@ public class ExFilter implements Filter{
     /**
      * The primary constructor.
      * @param literal - The literal target aka YES/NO.
-     */
-    public ExFilter(String literal){
-        name = TYPE;
-        this.literal = literal;
-    }
-
-    /**
-     * the secondry constructor.
-     * @param literal - The literal target aka YES/NO.
      * @param negation - the negation flag.
      */
     public ExFilter(String literal, boolean negation){
