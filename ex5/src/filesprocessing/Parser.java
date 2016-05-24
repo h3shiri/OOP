@@ -57,8 +57,18 @@ public class Parser{
 		Order currentOrder = new TypeOrder();
 		/** Starts tracing for type I errors */
 		int lineNumber = 0;
+		/** boolean edge case for conjunction of ORDER then FILTER */
+		boolean edgeCase = false;
+		/** A string holder for the current line */
+		String line;
 		while(scanner.hasNextLine()){
-			String line = scanner.nextLine();
+			if(edgeCase){
+				line = FILTERMARKER;
+				edgeCase = false;
+			}
+			else{
+				line = scanner.nextLine();
+			}
 			lineNumber++;
 			if (line.contains(FILTERMARKER)){
 				String filterData = scanner.nextLine();
@@ -75,6 +85,7 @@ public class Parser{
 					filterError = true;
 					potentialFilterError = e.getMessage();
 					numOfFilterHeadings++;
+					continue;
 				}
 			}
 			else if (line.contains(ORDERMARKER)) {
@@ -93,6 +104,7 @@ public class Parser{
 							currentOrder = new AbsOrder();
 							orderTest = true;
 							numOfOrderHeadings++;
+							edgeCase = true;
 						} else {
 							Order order = OrderFactory.build(orderData, lineNumber);
 							currentOrder = order;
