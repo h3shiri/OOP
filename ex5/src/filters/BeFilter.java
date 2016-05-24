@@ -51,7 +51,7 @@ public class BeFilter implements Filter{
         long size =  file.length();
         double appSize = (size/CONVERT);
         boolean res;
-        if ((appSize < upperBound) && (appSize > lowerBound)){
+        if ((appSize <= upperBound) && (appSize >= lowerBound)){
             res = true;
         }
         else{

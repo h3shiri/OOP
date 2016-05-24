@@ -17,10 +17,70 @@ sub-groups.
 ============
 =  Design  =
 ============
+1) Filters : I have designed filters in a modularic design. Hence each filter is individual,
+all of which implements the Filter interface. The filter Interface contains a test method which is
+a predicate for files. We build these filters using a factory class following the single chice principle
+and the Factory design pattern. The factory may throw type I exception in case of a non valid internal data.
+
+2) Orders : Similarly I have didided the orders into modular units that are independent of each other.
+All the various orders inherent from the Order Abstract class. The abstract class defines a coparator 
+between files and thus allows us to sort them efficiently, the collections method sort is an efficient
+implementation by java. In addition we have the OrdersFactory that follows the single choice principle
+it may throw type I error in case of a non valid internal arguments.
+
+3) files processing : the directory processor is our main class it firstly runs the parser and then
+prints the appropriate output(errors/files). Note that the Parser class may throw Type II exception 
+in case of a bad format in the Command file or an IOException with the files. In addition our parser
+builds the appropriate section during runtime and tracks potential errors line by line, according to
+the factory design approach. 
+
+4) Errors : We have 2 major groups of errors type I and type II.
+type I errors are due to faulty data in an internal field in the command file such errors are caught
+in tuntime (an appropriate error is printed including the problematic line in the command file). On
+the otherhand, type II errors are crucial erros and as such stops the main method and retrun the 
+appropriate error. Inside these, there are various kinds Number errors refering to filters which require
+positive numbers for instance (TypeI). There are invalid parameter such as literal not in the valid domain
+(YES/NO) shall throw typeI. In additon, we have other Type I errors that are divided to sub groups.
+Similarly the typeII errors are well divided into the appropriate subgroups, such as IOexceptions and
+commandfile bad format (e.g too many FILTERS/ORDERS).
 
 =============================
 =  List of submitted files: =
 =============================
+
+README - this file
+AbsOrder.java - the natural lexical order.
+Order.java - the abstract class for all the various orders.
+OrderFactory.java - the factory method for the various order.
+SizeOrder.java - order class that sorts by the sizes.
+TypeOrder.java - sorts them by the various types (lexicographically).
+AiFilter.java - the "all" filter.
+BeFilter.java - the "between" filter.
+CoFilter.java - the "contain" filter.
+ExFilter.java - the "executable" filter.
+FiFilter.java - the "file" filter.
+Filter.java - The filter interface, which all filters implement.
+FilterFactory.java - the factory class for the filters.
+GrFilter.java - "greater_than" filter.
+HiFilter.java - the "hidden" filter, checks for hidden files.
+PrFilter.java - the "prefix" filter, checks for spesific prefix.
+SmFilter.java - the "smaller_than" filter checks files are under a ceiling value.
+SuFilter.java - the "suffix" filter checks for a spesific suffix in the file's name.
+WrFilter.java - the "writable" filter checks for a writing premission.
+Section.java - the basic section class for holding the filter and type.
+Parser.java - the parser for the commands file and the directory source.
+DirectoryProcessor.java - the driver class running the main method.
+TypeTwoError.java - Type II errors result in exciting the script and running an error.
+TypeOneError.java - Type I errors result in checked exceptions that are printed in running time.
+PathNotFoundException.java - An IO exception (Type II).
+NoSubOrderField.java - An exception for Filter with no subsection (Type II).
+NegativeDoubleException.java - An error for negative double value in the filter's field (NumberException).
+MisMatchingNumberOfHeadings.java - Type II error format issues (non mathicng number of FILTER and ORDERS)..
+LiteralNonValid.java - type II error non valid literal. (aka not YES/NO)
+InternalFilterLogicError.java - Reports an internal logic problem in various parameters. (Type I)
+FilterNumberException.java - Type I error in the filters indicating non legal value (such as negatives)
+BadSubSectionName.java - Type II error indicating a non valid section heading.
+BadFilterName.java - Type I error a bad filter's name (not in the valid set of names).
 
 ======================
 =  Special Comments  =

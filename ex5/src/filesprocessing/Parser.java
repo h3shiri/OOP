@@ -68,8 +68,8 @@ public class Parser{
 			}
 			else{
 				line = scanner.nextLine();
+				lineNumber++;
 			}
-			lineNumber++;
 			if (line.contains(FILTERMARKER)){
 				String filterData = scanner.nextLine();
 				lineNumber++;
