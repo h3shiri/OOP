@@ -1,6 +1,6 @@
-package oop.ex6.main;
-import java.util.regex.*;
+package oop.ex6.main.sJavacUtil;
 import java.util.ArrayList;
+import oop.ex6.main.line.*;
 
 public class LinkComplexNode{
 	/* data members */
@@ -15,7 +15,7 @@ public class LinkComplexNode{
 	private final boolean hasAFather;
 
 	/** holding the line data */
-	private final ArrayList<SjavacLine> dataSet = new ArrayList<>();
+	private ArrayList<SjavacLine> dataSet = new ArrayList<>();
 
 	/** important strng holding the cluse type (method Decleration/if/while) */
 	private String type;
