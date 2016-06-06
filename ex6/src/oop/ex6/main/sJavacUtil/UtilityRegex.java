@@ -23,7 +23,8 @@ public class UtilityRegex{
 	public final static String methodName = "[a-zA-Z]+[\\w]*";
 	public final static String methodParametersForSimpleCall = "[(]([a-zA-Z]+[\\w,\\s]*|_+[a-zA-Z]+[\\w,\\s]*)[)]";
 	public final static String methodCall = methodName+"\\s?"+methodParametersForSimpleCall;
-	public final static String variableRegex = "^(\\s*)(int |double |boolean |String |char )?([a-zA-Z]+[\\w]*|_+[a-zA-Z]+\\w*)( = [^\\s]+)?(\\s*|,)$";
+	public final static String variableRegex =
+			"^(\\s*)(int |double |boolean |String |char )?([a-zA-Z]+[\\w]*|_+[a-zA-Z]+\\w*)( = [^\\s]+)?(\\s*|,)$";
 	// $ sensitivity problem.. line ending (test).
 	// group indexing starts from zero or one.
 
@@ -95,6 +96,11 @@ public class UtilityRegex{
      */
 	public static boolean checkLineIsMethodCall(String lineInput){
 		Pattern tempVar = Pattern.compile(methodCall);
+		Matcher tempMat = tempVar.matcher(lineInput);
+		return tempMat.matches();
+	}
+	public static boolean checkLineIsVariableDeclaration(String lineInput) {
+		Pattern tempVar = Pattern.compile(variableRegex);
 		Matcher tempMat = tempVar.matcher(lineInput);
 		return tempMat.matches();
 	}

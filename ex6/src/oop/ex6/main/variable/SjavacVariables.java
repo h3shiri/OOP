@@ -12,16 +12,15 @@ public class SjavacVariables {
     String stringValue;
     boolean booleanValue;
     String charValue;
-    public SjavacVariables(String line){
-        //NEED TO BREAK LINE INTO NAME TYPE AND VALUE!
+    private int lineNumber;
+    public SjavacVariables(String type, String name, String value, int lineNumber){
+        this.lineNumber = lineNumber;
         this.name = name;
         this.type = type;
         switch (type){
             case("int"):
                 try {
                     this.intValue = Integer.parseInt(value);
-                    this.doubleValue = Double.parseDouble(value);
-                    this.booleanValue = (Integer.parseInt(value) != 0);
                 }catch (NumberFormatException e){
                     //NOT A VALID VALUE FOR INT
                 }
@@ -30,7 +29,6 @@ public class SjavacVariables {
                 try{
                     this.intValue = Integer.parseInt(value);
                     this.doubleValue = Double.parseDouble(value);
-                    this.booleanValue = (Integer.parseInt(value) != 0);
                 }catch (NumberFormatException e){
                     //ERROR
                 }
@@ -78,9 +76,7 @@ public class SjavacVariables {
      * @return
      */
     public String getValue(){
-        //Some thinking needs to be done here, do we want to return it as a string or as something else..
-        //this could be like a wrapper thing, for example if its a int it will return this.intValue
-        //The problem is with the methods signature.. what should it be?
+
         return "haha";
     }
 }

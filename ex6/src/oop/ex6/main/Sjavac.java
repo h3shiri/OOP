@@ -35,37 +35,37 @@ public class Sjavac {
      * @param args
      * @throws IOException
      */
-    public static void main(String[] args) throws IOException,IllegalLineFormatException {
-        if (args.length != 1){
-            System.err.print("Illegal arguments given (only 1 argument is allowed!)");
-            System.out.print("2");
-            return;
-        }
-        else {
-            String file = args[0];
-            try {
-                ArrayList<String> fileInArray = fileToArray(new File(file));
-                if (fileInArray == null) {
-                    System.err.print("The file is empty, terminating");
-                    System.out.println("2");
-                    return;
-                }
-                /* main processing occurring in the various processors */
-                try {
-                    ArrayList<String> codeData = (FirstOrderProcessor.process(fileInArray));
-                    ArrayList<SjavacLine> classifiedLines = (SecondOrderProcessor.process(codeData));
-
- //                    SjavacReader reader = new SjavacReader(fileInArray);
-
-                } catch (IllegalLineFormatException e) {
-                    System.out.println("1");
-                }
-            } catch (IOException e) {
-                System.err.print("There was an I/O problem, terminating.");
-                System.out.println("2");
-                return;
-            }
-        }
-    }
+//    public static void main(String[] args) throws IOException,IllegalLineFormatException {
+//        if (args.length != 1){
+//            System.err.print("Illegal arguments given (only 1 argument is allowed!)");
+//            System.out.print("2");
+//            return;
+//        }
+//        else {
+//            String file = args[0];
+//            try {
+//                ArrayList<String> fileInArray = fileToArray(new File(file));
+//                if (fileInArray == null) {
+//                    System.err.print("The file is empty, terminating");
+//                    System.out.println("2");
+//                    return;
+//                }
+//                /* main processing occurring in the various processors */
+//                try {
+//                    ArrayList<String> codeData = (FirstOrderProcessor.process(fileInArray));
+//                    ArrayList<SjavacLine> classifiedLines = (SecondOrderProcessor.process(codeData));
+//
+//                     SjavacReader reader = new SjavacReader(fileInArray);
+//
+//                } catch (IllegalLineFormatException e) {
+//                    System.out.println("1");
+//                }
+//            } catch (IOException e) {
+//                System.err.print("There was an I/O problem, terminating.");
+//                System.out.println("2");
+//                return;
+//            }
+//        }
+//    }
 
 }

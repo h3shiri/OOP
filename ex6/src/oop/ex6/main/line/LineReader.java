@@ -69,8 +69,8 @@ public class LineReader{
      * return true if the line is not valid Sjava line
      */
     public boolean isVariableDeclaration() {
-        //REGEX
-        return true;
+
+        return UtilityRegex.checkLineIsVariableDeclaration(this.line);
     }
 
     /**
