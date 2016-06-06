@@ -15,12 +15,10 @@ public class SecondOrderProcessor {
             String line = rawData.get(i);
             int lineNumber = i;
             if (checkForSimpleLine(line)){
-                System.out.println("1");
                 SimpleLine temp = new SimpLine(lineNumber, line);
                 res.add(temp);
             }
             else if (checkForComplexLine(line)){
-                System.out.println("2");
                 CompLine temp = new CompLine(lineNumber, line);
                 res.add(temp);
             }
@@ -34,7 +32,7 @@ public class SecondOrderProcessor {
      * @return - true iff the line is simple.
      */
     private static boolean checkForSimpleLine(String lineInput){
-        final String simpleLineFormat = "^([.]*)(;)([\\s]*)$";
+        final String simpleLineFormat = "^(.*)(;)([\\s]*)$";
         Pattern tempVar = Pattern.compile(simpleLineFormat);
         Matcher tempMat = tempVar.matcher(lineInput);
         return tempMat.matches();
@@ -42,11 +40,11 @@ public class SecondOrderProcessor {
 
     /**
      * A static method for identifying simple lines.
-     * @param lineInput
+     * @param lineInput - the relevant line input.
      * @return
      */
     private static boolean checkForComplexLine(String lineInput){
-        final String complexLineFormat = "^(\\s)*[.]*[\\{\\}](\\s)*$";
+        final String complexLineFormat = "^.*[\\{\\}](\\s)*$";
         Pattern tempVar = Pattern.compile(complexLineFormat);
         Matcher tempMat = tempVar.matcher(lineInput);
         return tempMat.matches();
@@ -58,8 +56,7 @@ public class SecondOrderProcessor {
         ArrayList<String> temp2 = FirstOrderProcessor.process(temp);
         ArrayList<SjavacLine> res = process(temp2);
         for (int i=0;i<res.size();i++){
-            System.out.println(res.get(i)+":"+res.get(i).getType());
+            System.out.println(res.get(i).toString()+":"+res.get(i).getType());
         }
-        System.out.println("out");
     }
 }
