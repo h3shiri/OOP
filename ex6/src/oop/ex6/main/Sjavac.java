@@ -53,6 +53,7 @@ public class Sjavac {
                 /* main processing occurring in the various processors */
                 try {
                     ArrayList<String> codeData = (FirstOrderProcessor.process(fileInArray));
+                    ArrayList<SjavacLine> classifiedLines = (SecondOrderProcessor.process(codeData));
 
  //                    SjavacReader reader = new SjavacReader(fileInArray);
 
