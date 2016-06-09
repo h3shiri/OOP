@@ -1,5 +1,4 @@
 package oop.ex6.main;
-
 import oop.ex6.main.line.*;
 import oop.ex6.main.sJavacUtil.*;
 

@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class SjavacMethod {
     //here is start to understand we will need the ? thing that they tought in the lecture. To be honest,
     //I am still not sure how it works..
-    final ArrayList<?> parameters; //The parameters could be anything, we do not know what they are until init
+    ArrayList<MethodVariable> parameters; //The parameters could be anything, we do not know what they are until init
     final String methodName;
     final int firstLine;
     final int lastLine; // These are the lines in the original Sjavac file
@@ -20,24 +20,36 @@ public class SjavacMethod {
      * @param firstLine
      * @param lastLine
      */
-    public SjavacMethod(String methodName, ArrayList<?> parameters, int firstLine, int lastLine,
+    public SjavacMethod(String methodName, String parameters, int firstLine, int lastLine,
                          ArrayList<String> sJavacFile) throws IllegalMethodDeclerationException{
-        this.parameters = parameters; //We need to see how we create this array of parameters to begin with
-        this.methodName = methodName;
-        this.firstLine = firstLine;
-        this.lastLine = lastLine;
-        this.sJavacFile = sJavacFile; //the original file so we have the content of the method according to the
         try {
-            this.checkMethodIsLegal();
-        }catch (IllegalMethodDeclerationException e){
+            this.parameters = new MethodVariableFactory(parameters).getVariables();
+            this.methodName = methodName;
+            this.firstLine = firstLine;
+            this.lastLine = lastLine;
+            this.sJavacFile = sJavacFile; //the original file so we have the content of the method according to the
+        }catch (Exception e){
             throw new IllegalMethodDeclerationException();
         }
     }
 
     /**
-     * Check if the method is a legal method declaration
+     * Check if a method call is a legal method call (given that the name is already checked and it is this).
      */
-    private void checkMethodIsLegal() throws IllegalMethodDeclerationException{
-        return;
+    public void checkVars(ArrayList<String> vars) throws IllegalMethodCallException{
+        if(vars.size() != this.parameters.size()){
+            throw new IllegalMethodCallException();
+        }else{
+            try {
+                int counter = 0;
+                for (MethodVariable varInMethod : this.parameters) {
+                    varInMethod.checkVar(vars.get(counter));// this will throw an exception if not legal
+                    counter++;
+                }
+            }catch(Exception e){
+                throw new IllegalMethodCallException();
+            }
+        }
     }
+    public String getMethodName(){return this.methodName;}
 }
