@@ -15,15 +15,15 @@ public class SjavacMethod {
     ArrayList<String> sJavacFile;
     /**
      * Constructor for a new method class
-     * @param methodName
-     * @param parameters
+     * @param methodName - the method's name.
+     * @param parameters - the various parameters.
      * @param firstLine
      * @param lastLine
      */
     public SjavacMethod(String methodName, String parameters, int firstLine, int lastLine,
                          ArrayList<String> sJavacFile) throws IllegalMethodDeclerationException{
         try {
-            this.parameters = new MethodVariableFactory(parameters).getVariables();
+//            this.parameters = new MethodCallVariableFactory(parameters).getVariables();
             this.methodName = methodName;
             this.firstLine = firstLine;
             this.lastLine = lastLine;

@@ -1,11 +1,9 @@
 package oop.ex6.main.variable;
-import java.util.*;
-import java.nio.charset.CharacterCodingException;
 
-/**
- * Created by Dell on 02/06/2016.
- */
-public class SjavacVariables{
+import oop.ex6.main.Sjavac;
+import oop.ex6.main.line.ParametersFormatException;
+
+public class SjavacVariable {
     final String[] types = {"int","double","boolean", "string", "char"};
 
     boolean isFinal = false;
@@ -20,32 +18,34 @@ public class SjavacVariables{
 
     /**
      * This constructor creates a copy of an existing variable
-     * @param isFinal
-     * @param type
-     * @param a
+     * @param isFinal - is final flag.
+     * @param type - the variable type.
+     * @param source - the SjavacVariable we copy from.
     */
-    public SjavacVariables (boolean isFinal,String name, String type, SjavacVariables a)
+    public SjavacVariable(boolean isFinal, String name, String type, SjavacVariable source)
             /* Notice that factory can also call this constructor when a line like this is found : int a = b;*/
             throws UnlegalVariableException{
         try{
             this.isFinal = isFinal;
             this.name = name;
             this.type = type;
-            this.stringValue = a.getValue();
+            this.lineNumber = source.getLineNumber();
+            this.stringValue = source.getValue();
             this.parseValue(this.stringValue);
         }catch(Exception e){
             throw new UnlegalVariableException();
         }
     }
+
     /**
      * Constructor that creates a new variable (not a copy of an existing one)
-     * @param isFinal
-     * @param type
-     * @param name
-     * @param value
-     * @param lineNumber
+     * @param isFinal - A final flag.
+     * @param type - the relevant type.
+     * @param name - the variable's name.
+     * @param value - the actual value.
+     * @param lineNumber - the relevant line number.
      */
-    public SjavacVariables(boolean isFinal,String type, String name, String value, int lineNumber) throws
+    public SjavacVariable(boolean isFinal, String type, String name, String value, int lineNumber) throws
     UnlegalVariableException{
         this.isFinal = isFinal;
         this.lineNumber = lineNumber;
@@ -58,6 +58,42 @@ public class SjavacVariables{
             throw new UnlegalVariableException();
         }
     }
+
+    /**
+     * An autoboxing constructor for the primitives.
+     * @param typeOfConst - the required type.
+     * @param lineNumber - the relevant line number.
+     * @throws ParametersFormatException - in case of a non valid type.
+     */
+    public SjavacVariable(String typeOfConst, int lineNumber) throws ParametersFormatException{
+        this.isFinal = true;
+        this.lineNumber = lineNumber;
+        this.name = "CONST";
+        switch (typeOfConst) {
+            case "String":
+                this.type = typeOfConst;
+                break;
+            case "int":
+                this.type = typeOfConst;
+                break;
+            case "double":
+                this.type = typeOfConst;
+                break;
+            case "char":
+                this.type = typeOfConst;
+                break;
+            case "boolean":
+                this.type = typeOfConst;
+            default:
+                throw new ParametersFormatException();
+        }
+    }
+
+    /**
+     * A parsing method to test legality of various types of values.
+     * @param value - the value to be tested
+     * @throws UnlegalVariableException - In case of a non valid form.
+     */
     private void parseValue(String value) throws UnlegalVariableException{
         switch (this.type){
             case("int"):
@@ -113,7 +149,8 @@ public class SjavacVariables{
     }
 
     /**
-     * this method let's you set a value only if the variable is not final
+     * A setter function for the variable value, only applicable in case of non-final variable.
+     * Note it holds that value in a string format.
      */
     public void setValue(String value) throws UnlegalVariableException {
         if (this.isFinal){
@@ -129,7 +166,7 @@ public class SjavacVariables{
                 try{
                     this.intValue = Integer.parseInt(value);
                     this.doubleValue = Double.parseDouble(value);
-                }catch (Exception E){
+                }catch (Exception e){
                     throw new UnlegalVariableException();
                 }
             }else if(this.type == "char"){
@@ -149,13 +186,22 @@ public class SjavacVariables{
             }
         }
     }
+    //TODO: I'm not sure it is the best way to actually retrieve, data type consideration is crucial.
     /**
-     * get the value of this variable
-     * @return
+     * A getter function.
+     * @return - the value of this variable in a String format.
      */
     public String getValue(){
 
         return this.stringValue;
+    }
+
+    /**
+     * A getter function for the line number.
+     * @return - the relevant lineNumber.
+     */
+    public int getLineNumber(){
+        return this.lineNumber;
     }
 }
 

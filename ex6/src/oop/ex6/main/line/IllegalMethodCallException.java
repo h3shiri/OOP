@@ -1,7 +1,9 @@
 package oop.ex6.main.line;
+import oop.ex6.main.sJavacUtil.SjavaFormatException;
 
 /**
- * Created by Dell on 05/06/2016.
+ * Illegal method call format exception
+ * could refer to non valid name or parameters format.
  */
-public class IllegalMethodCallException {
+public class IllegalMethodCallException extends SjavaFormatException{
 }

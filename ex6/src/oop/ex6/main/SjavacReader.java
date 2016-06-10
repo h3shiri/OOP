@@ -1,13 +1,5 @@
 package oop.ex6.main;
 
-import oop.ex6.main.line.IllegalLineFormatException;
-import oop.ex6.main.line.LineReader;
-import oop.ex6.main.line.MethodCall;
-import oop.ex6.main.method.SjavacMethod;
-import oop.ex6.main.variable.SjavacVariables;
-
-import java.util.ArrayList;
-
 /**
  * This class will handle the sJava file, going line by line and creating instances
  * of classes (lines, methods, loops, ifs)
@@ -18,10 +10,10 @@ public class SjavacReader {
 //    ArrayList<SjavacMethod> methods = new ArrayList<>(); //The methods that we will find in the file
 //    //Notice that methods can be called before they are defined but variables cannot..
 //    //So we need to  keep all the method calls in a list and in the end after all methods are declared
-//    //we can check it out.. So we may need a class "MethodCall" that keeps instances of method calls
+//    //we can check it out.. So we may need a class MethodCall" that keeps instances of method calls
 //    // and then we can iterate it in the end and check that each one is valid.
 //    ArrayList<MethodCall> methodCalls = new ArrayList<>();
-//    ArrayList<SjavacVariables> variables = new ArrayList<>(); //The variables that we found
+//    ArrayList<SjavacVariable> variables = new ArrayList<>(); //The variables that we found
 //    /**
 //     * Constructor, it gets a line and goes one by one and first finds the simple lines (checking if it ends
 //     * with ; no need for regex for that). It will keep all the variables and the method calls (not method declare)
@@ -56,7 +48,7 @@ public class SjavacReader {
 //                    } else if (readLine.isSpaceLine()) {
 //                        continue;
 //                    } else if (readLine.isVariableDeclaration()) {
-//                        SjavacVariables variable = new SjavacVariables(line);
+//                        SjavacVariable variable = new SjavacVariable(line);
 //                        this.variables.add(variable);
 //                    } else if (readLine.isVariableCopy()) {
 //                        String variable; //Needs to break this from the line somehow...

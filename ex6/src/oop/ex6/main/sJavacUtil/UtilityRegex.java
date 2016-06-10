@@ -24,7 +24,7 @@ public class UtilityRegex{
 	public final static String methodParametersForSimpleCall = "[(]([a-zA-Z]+[\\w,\\s]*|_+[a-zA-Z]+[\\w,\\s]*)[)]";
 	public final static String methodCall = methodName+"\\s?"+methodParametersForSimpleCall;
 	public final static String variableRegex =
-			"^(\\s*)(int |double |boolean |String |char )?([a-zA-Z]+[\\w]*|_+[a-zA-Z]+\\w*)( = [^\\s]+)?(\\s*|,)$";
+			"^(\\s*)(int |double |boolean |String |char )([a-zA-Z]+[\\w]*|_+[a-zA-Z]+\\w*)( = [^\\s]+)?(\\s*|,)$";
 	// $ sensitivity problem.. line ending (test).
 	// group indexing starts from zero or one.
 
@@ -47,7 +47,7 @@ public class UtilityRegex{
 
 	/**
 	 * Get the name and parameters out of a method call line.
-	 * @param line
+	 * @param line - the line input for the method call parsing.
      */
 	//TODO: test this thing. It may not work if there are spaces in a param call, e.g foo(3,    4);
 	public static ArrayList<String> parseMethodCall(String line){
@@ -60,7 +60,7 @@ public class UtilityRegex{
 			rawMethodCallData.add(methodName); //first in raw will be the name, the rest are params
 			variables = mat.group(2);
 		}
-		while(variables.length() != 0){ //now we get the params
+		while(variables.length() > 0){ //now we get the params
 			String next = variables.substring(variables.lastIndexOf(",") +1);
 			rawMethodCallData.add(next);
 			variables = variables.substring(0,variables.lastIndexOf(","));

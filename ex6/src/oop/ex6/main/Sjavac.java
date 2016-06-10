@@ -1,4 +1,5 @@
 package oop.ex6.main;
+import com.sun.org.apache.bcel.internal.generic.RETURN;
 import oop.ex6.main.line.*;
 import oop.ex6.main.sJavacUtil.*;
 
@@ -31,40 +32,41 @@ public class Sjavac {
 
     /**
      * Main method
-     * @param args
+     * @param args - arguments for the main function.
      * @throws IOException
      */
-//    public static void main(String[] args) throws IOException,IllegalLineFormatException {
-//        if (args.length != 1){
-//            System.err.print("Illegal arguments given (only 1 argument is allowed!)");
-//            System.out.print("2");
-//            return;
-//        }
-//        else {
-//            String file = args[0];
-//            try {
-//                ArrayList<String> fileInArray = fileToArray(new File(file));
-//                if (fileInArray == null) {
-//                    System.err.print("The file is empty, terminating");
-//                    System.out.println("2");
-//                    return;
-//                }
-//                /* main processing occurring in the various processors */
-//                try {
-//                    ArrayList<String> codeData = (FirstOrderProcessor.process(fileInArray));
-//                    ArrayList<SjavacLine> classifiedLines = (SecondOrderProcessor.process(codeData));
-//
-//                     SjavacReader reader = new SjavacReader(fileInArray);
-//
-//                } catch (IllegalLineFormatException e) {
-//                    System.out.println("1");
-//                }
-//            } catch (IOException e) {
-//                System.err.print("There was an I/O problem, terminating.");
-//                System.out.println("2");
-//                return;
-//            }
-//        }
-//    }
+    public static void main(String[] args) throws IOException,IllegalLineFormatException {
+        if (args.length != 1){
+            System.err.print("Illegal arguments given (only 1 argument is allowed!)");
+            System.out.print("2");
+            return;
+        }
+        else {
+            String file = args[0];
+            try {
+                ArrayList<String> fileInArray = fileToArray(new File(file));
+                if (fileInArray == null) {
+                    System.err.print("The file is empty, terminating");
+                    System.out.println("2");
+                    return;
+                }
+                /* main processing occurring in the various processors */
+                try {
+                    ArrayList<String> codeData = (FirstOrderProcessor.process(fileInArray));
+                    ArrayList<SjavacLine> classifiedLines = (SecondOrderProcessor.process(codeData));
+                    ArrayList<SjavacLine> processedLines = (ThirdOrderProcessor.process(classifiedLines));
+                    System.out.println(0);
+                    return;
+                } catch (SjavaFormatException e) {
+                    System.out.println("1");
+                }
+            } catch (IOException e) {
+                //TODO: remove should only print out 0,1 or 2.
+                System.err.print("There was an I/O problem, terminating.\n");
+                System.out.println("2");
+                return;
+            }
+        }
+    }
 
 }

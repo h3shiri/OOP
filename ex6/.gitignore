@@ -1,0 +1,10 @@
+# ignoring the compiling data# 
+##############################
+
+*.class
+
+#ignoring the idea files#
+#########################
+
+*.idea
+*.iml

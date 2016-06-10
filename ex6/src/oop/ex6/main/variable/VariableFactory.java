@@ -1,24 +1,23 @@
 package oop.ex6.main.variable;
-import java.security.spec.ECField;
 import java.util.*;
 /**
- * This class gets a type of variable, and creates instances of SjavacVariables
+ * This class gets a type of variable, and creates instances of SjavacVariable
  */
 public class VariableFactory {
     String line;
     String type;
     boolean isFinal;
-    ArrayList<SjavacVariables> scopeVars;
-    ArrayList<SjavacVariables> variables = new ArrayList<>();
+    ArrayList<SjavacVariable> scopeVars;
+    ArrayList<SjavacVariable> variables = new ArrayList<>();
 
     int lineNumber;
     /**
      * Constructor
-     * @param type
+     * @param type - the specific type of this variable.
      * @param lineWithoutType
      */
     public VariableFactory(boolean isFinal,String type, String lineWithoutType, int lineNumber,
-                           ArrayList<SjavacVariables> scopeVars) throws UnlegalVariableException{
+                           ArrayList<SjavacVariable> scopeVars) throws UnlegalVariableException{
         try {
             this.scopeVars = scopeVars;
             this.isFinal = isFinal;
@@ -32,7 +31,7 @@ public class VariableFactory {
     }
 
     /**
-     * Break lineWithoutType into SjavacVariables instances, and add them to variables array list
+     * Break lineWithoutType into SjavacVariable instances, and add them to variables array list
      */
     public void breakLineToVariables() throws UnlegalVariableException{
         String value;
@@ -52,16 +51,16 @@ public class VariableFactory {
                     name = part.substring(0, part.indexOf("=")).replaceAll("\\s", "");
                     value = part.substring(part.lastIndexOf("=") + 1).replaceAll("\\s", "");
                     if (this.isAnExistingVar(value) != null) {
-                        SjavacVariables newVar =
-                                new SjavacVariables(this.isFinal,name,this.type,this.isAnExistingVar(value));
+                        SjavacVariable newVar =
+                                new SjavacVariable(this.isFinal,name,this.type,this.isAnExistingVar(value));
                     }else{
-                        SjavacVariables newVar =
-                                new SjavacVariables(this.isFinal, this.type, name, value, this.lineNumber);
+                        SjavacVariable newVar =
+                                new SjavacVariable(this.isFinal, this.type, name, value, this.lineNumber);
                         this.variables.add(newVar);
                     }
                 }else{
                     name = part.replaceAll("\\s", "");
-                    SjavacVariables newVar = new SjavacVariables(this.isFinal, this.type, name, null, this.lineNumber);
+                    SjavacVariable newVar = new SjavacVariable(this.isFinal, this.type, name, null, this.lineNumber);
                     this.variables.add(newVar);
                 }
             }
@@ -71,9 +70,10 @@ public class VariableFactory {
     }
 
     /**
-     * return the array list of variables that were created by this class
+     * A getter function for the list of the new variables.
+     * @return the array list of variables that were created by this class
      */
-    public ArrayList<SjavacVariables> getVariables(){
+    public ArrayList<SjavacVariable> getVariables(){
         return this.variables;
     }
 
@@ -82,11 +82,11 @@ public class VariableFactory {
      * @param name
      * @return the variable if its found, if not return null
      */
-    private SjavacVariables isAnExistingVar (String name){
+    private SjavacVariable isAnExistingVar (String name){
         if (scopeVars == null) {
             return null;
         }
-        for (SjavacVariables var: this.scopeVars){
+        for (SjavacVariable var: this.scopeVars){
             if(var.getName().equals(name)){
                 return var;
             }

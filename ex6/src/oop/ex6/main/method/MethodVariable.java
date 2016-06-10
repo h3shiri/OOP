@@ -1,24 +1,37 @@
 package oop.ex6.main.method;
 
 /**
- * this class represents a method parameter call (e.g type1 name1)
+ * This class represents a method parameters aka (final int a, String b)
+ * thus each instant is simply an indication og type and flag used for initializing
+ * a new function.
  */
 public class MethodVariable {
+    /** A flag indicating whether it's final */
     boolean isFinal;
+    /** The argument type */
     String type;
+
     /**
-     * constructor
-     * @param isFinal
-     * @param type
+     * constructor for the methods parameters.
+     * @param isFinal - A flag indicting whether its final.
+     * @param type - the parameter type.
      */
     public MethodVariable (boolean isFinal, String type){
         this.isFinal = isFinal;
         this.type = type;
 
     }
-    /*get the isFinal flag*/
+
+    /**
+     * A getter function for the final flag.
+     * @return - true iff the final flag is on.
+     */
     public boolean getIsFinal(){return this.isFinal;}
-    /*get the type*/
+
+    /**
+     * A getter function for the parameter type.
+     * @return - A string representing the type in question.
+     */
     public String getType(){return this.type;}
 
     public void checkVar(String value) throws IllegalMethodCallException, Exception{
