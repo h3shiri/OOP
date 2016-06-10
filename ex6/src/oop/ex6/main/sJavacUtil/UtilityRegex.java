@@ -16,34 +16,17 @@ public class UtilityRegex{
 	public final static String emptyLine = "^(\\s*)$";
 	public final static String commentLine = "//.*";
 	public final static String typesRegex = "(int |double |boolean |String |char )";
-	public final static String spaces = "(\\s*)";
+	public final static String spaces = "\\s*";
 	public final static String variableName = "([a-zA-Z]+[\\w]*|_+[a-zA-Z]+\\w*)";
-	public final static String substitution = "( = [^\\s]+)";
+	public final static String substitution = "(?:\\s*=\\s*([^\\s])+)";
 	public final static String variablesDelim = ",";
 	public final static String methodName = "[a-zA-Z]+[\\w]*";
 	public final static String methodParametersForSimpleCall = "[(]([a-zA-Z]+[\\w,\\s]*|_+[a-zA-Z]+[\\w,\\s]*)[)]";
 	public final static String methodCall = methodName+"\\s?"+methodParametersForSimpleCall;
 	public final static String variableRegex =
-			"^(\\s*)(int |double |boolean |String |char )([a-zA-Z]+[\\w]*|_+[a-zA-Z]+\\w*)( = [^\\s]+)?(\\s*|,)$";
-	// $ sensitivity problem.. line ending (test).
-	// group indexing starts from zero or one.
+			"^\\s*(int|double|boolean|String|char)\\s+((([a-zA-Z]+\\w*|_+[a-zA-Z]+\\w*)+)(?:\\s*=\\s*([^\\s])+)?\\s*,?\\s*)+;\\s*$";
+	public final static String variableSubstitutionRegex = "^"+spaces+variableName+spaces+"="+spaces+variableName+spaces+";"+spaces+"$";
 
-	// TODO: In progress finish..
-	public static void parseSimpleVariableLine(String line){
-		ArrayList<String> rawVariablesData = new ArrayList<>();
-		Pattern var = Pattern.compile(variableRegex);
-		Matcher mat = var.matcher(line);
-		while(mat.find()){
-			// Shit load of testing types destribution previously_casted/ down casting.. etc
-			String type = mat.group(1);
-
-			// declaration dependent group 1 or 2.
-			String name =  mat.group(2);
-
-			// Similarly only optional.
-			String value = mat.group(3);
-		}
-	}
 
 	/**
 	 * Get the name and parameters out of a method call line.
@@ -69,8 +52,8 @@ public class UtilityRegex{
 	}
 	/**
 	 * Check whether a line is an empty spaces line
-	 * @param lineInput
-	 * @return
+	 * @param lineInput - the given line input.
+	 * @return - true iff the line is empty.
      */
 	public static boolean checkLineIsEmpty(String lineInput){
 		Pattern tempVar = Pattern.compile(emptyLine);
@@ -80,8 +63,8 @@ public class UtilityRegex{
 
 	/**
 	 * Check whether the line is a comment line
-	 * @param lineInput
-	 * @return
+	 * @param lineInput - the given line input.
+	 * @return - true iff the line is a comment.
      */
 	public static boolean checkLineIsComment(String lineInput){
 		Pattern tempVar = Pattern.compile(commentLine);
@@ -91,14 +74,31 @@ public class UtilityRegex{
 
 	/**
 	 * This method check whether a line is a method call.
-	 * @param lineInput
-	 * @return
+	 * @param lineInput - A given line input.
+	 * @return - true iff the line is a method call.
      */
 	public static boolean checkLineIsMethodCall(String lineInput){
 		Pattern tempVar = Pattern.compile(methodCall);
 		Matcher tempMat = tempVar.matcher(lineInput);
 		return tempMat.matches();
 	}
+
+	/**
+	 * A tester function for valid variable substitution.
+	 * @param lineInput - the relevant line
+	 * @return true iff it contains legal syntax.
+     */
+	public static boolean checkLineIsVariableSubstitution(String lineInput){
+		Pattern tempVar = Pattern.compile(variableSubstitutionRegex);
+		Matcher tempMat = tempVar.matcher(lineInput);
+		return tempMat.matches();
+	}
+
+	/**
+	 * A tester function for the deceleration of new variables.
+	 * @param lineInput - the relevant line.
+	 * @return - true iff the line is a legal variable deceleration.
+     */
 	public static boolean checkLineIsVariableDeclaration(String lineInput) {
 		Pattern tempVar = Pattern.compile(variableRegex);
 		Matcher tempMat = tempVar.matcher(lineInput);

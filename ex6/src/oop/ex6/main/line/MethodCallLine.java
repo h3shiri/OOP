@@ -25,6 +25,9 @@ public class MethodCallLine implements SimpleLine{
     // TODO: shouldn't we just throw an exception in case it's toxic?
     boolean isLegal = false;
 
+    /** The raw data for the various parameters */
+    private String parametersRawData;
+
     /**
      * Constructor - gets a line and extracts the relevant info (name and parameters as variable array)
      * @param functionName - the relevant function name.
@@ -34,6 +37,7 @@ public class MethodCallLine implements SimpleLine{
     public MethodCallLine(String functionName, String parametersRawData, int lineNumber){
         this.functionName = functionName;
         this.lineNumber = lineNumber;
+        this.parametersRawData = parametersRawData;
 
     }
 
