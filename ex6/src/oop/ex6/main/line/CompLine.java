@@ -52,4 +52,12 @@ public class CompLine implements ComplexLine{
     public String getRawData() {
         return rawData;
     }
+
+    /**
+     * A setter function for a specific type.
+     * @param type - the modified type.
+     */
+    public void setType(String type) {
+        this.type = type;
+    }
 }

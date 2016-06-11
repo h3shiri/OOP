@@ -1,14 +1,12 @@
 package oop.ex6.main;
-import com.sun.org.apache.bcel.internal.generic.RETURN;
 import oop.ex6.main.line.*;
 import oop.ex6.main.sJavacUtil.*;
 
 import java.io.*;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.io.File;
 
-
+//TODO: remember to clean up later.
 public class Sjavac {
     /**
      * This method gets a File and returns an array of Strings for each line

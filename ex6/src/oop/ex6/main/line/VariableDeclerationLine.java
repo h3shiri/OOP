@@ -1,6 +1,6 @@
 package oop.ex6.main.line;
 
-public class VariableDecleration implements SimpleLine{
+public class VariableDeclerationLine implements SimpleLine{
 
     private String variablesData;
     private String valueType;
@@ -13,7 +13,7 @@ public class VariableDecleration implements SimpleLine{
      * @param variablesData - the data to parse the variables from.
      * @param lineNumber - the relevant line number.
      */
-    public VariableDecleration(String valueType, String variablesData, int lineNumber){
+    public VariableDeclerationLine(String valueType, String variablesData, int lineNumber){
         this.valueType = valueType;
         this.variablesData = variablesData;
         this.lineNumber = lineNumber;
@@ -27,7 +27,7 @@ public class VariableDecleration implements SimpleLine{
      * @param lineNumber - the relevant line number.
      * @param isFinal - A flag indicating whether the potential values should be set as final.
      */
-    public VariableDecleration(String valueType, String variablesData, int lineNumber, boolean isFinal){
+    public VariableDeclerationLine(String valueType, String variablesData, int lineNumber, boolean isFinal){
         this.valueType = valueType;
         this.variablesData = variablesData;
         this.lineNumber = lineNumber;

@@ -9,10 +9,7 @@ import java.util.ArrayList;
 
 public class UtilityRegex{
 	public final static String[] types = {"int","double","boolean", "string", "char"};
-	/* Note the groups structure spaces (parsing dependent), type, name, value(optional)
-	 * additional legality testing shall be done
-	 * Assuming cut of trailling ; in order to support multi-value declaration in the future.
-	 */
+	/* A useful list of regexes we use in our verifier */
 	public final static String emptyLine = "^(\\s*)$";
 	public final static String commentLine = "//.*";
 	public final static String typesRegex = "(int |double |boolean |String |char )";
@@ -21,12 +18,23 @@ public class UtilityRegex{
 	public final static String substitution = "(?:\\s*=\\s*([^\\s])+)";
 	public final static String variablesDelim = ",";
 	public final static String methodName = "[a-zA-Z]+[\\w]*";
+	//TODO: debug this isn't actually tight multi parameters have to comply with the naming format.
 	public final static String methodParametersForSimpleCall = "[(]([a-zA-Z]+[\\w,\\s]*|_+[a-zA-Z]+[\\w,\\s]*)[)]";
 	public final static String methodCall = methodName+"\\s?"+methodParametersForSimpleCall;
 	public final static String variableRegex =
 			"^\\s*(int|double|boolean|String|char)\\s+((([a-zA-Z]+\\w*|_+[a-zA-Z]+\\w*)+)(?:\\s*=\\s*([^\\s])+)?\\s*,?\\s*)+;\\s*$";
-	public final static String variableSubstitutionRegex = "^"+spaces+variableName+spaces+"="+spaces+variableName+spaces+";"+spaces+"$";
+	public final static String variableSubstitutionRegex = "^"+spaces+variableName+spaces+"="+spaces+"[^\\s]*"+spaces+";"+spaces+"$";
 	public final static String returnLine = "^\\s*(return;)\\s*";
+	public final static String blockCloser = "^\\s*}\\s*$";
+	//TODO: perhaps write with normal substitution aka methodName, variable name..etc
+	public final static String methodOpenner =
+	"^\\s*void\\s+([a-zA-Z]+[\\w]*)[(](\\s*(final\\s*)?(int|char|String|double|boolean)\\s*([a-zA-Z]+[\\w]*|_+[a-zA-Z]+\\w*),?)*[)]\\s*\\{\\s*$";
+	public final static String literal = "(true|false|\\d+|\\d+.\\d+|[a-zA-Z]+[\\w]*|_+[a-zA-Z]+\\w*)";
+	public final static String conditionalExpression =
+	"^\\s*(if|while)\\s*\\("+literal+"(\\s*\\&\\&\\s*"+literal+"|\\s*\\|\\|\\s*"+ literal+")*\\s*\\)\\s*\\{\\s*$";
+
+//	Original_expression =
+//			^\s*(if|while)\s*\(\s*(true|false|\d+|\d+.\d+|[a-zA-Z]+[\w]*|_+[a-zA-Z]+\w*)(\s*\&\&\s*(true|false|\d+|\d+.\d+|[a-zA-Z]+[\w]*|_+[a-zA-Z]+\w*)|\s*\|\|\s*(true|false|\d+|\d+.\d+|[a-zA-Z]+[\w]*|_+[a-zA-Z]+\w*))*\s*\)\s*\{\s*$
 
 	/**
 	 * Get the name and parameters out of a method call line.
@@ -112,6 +120,39 @@ public class UtilityRegex{
      */
 	public static boolean checkLineIsFunctionReturn(String lineInput){
 		Pattern tempVar = Pattern.compile(returnLine);
+		Matcher tempMat = tempVar.matcher(lineInput);
+		return tempMat.matches();
+	}
+
+	/**
+	 * A tester function for the simple closing block.
+	 * @param lineInput - the relevant line input.
+	 * @return true iff the line is a closer (closing a block).
+     */
+	public static boolean checkLineIsBlockCloser(String lineInput){
+		Pattern tempVar = Pattern.compile(blockCloser);
+		Matcher tempMat = tempVar.matcher(lineInput);
+		return tempMat.matches();
+	}
+
+	/**
+	 * A tester function for a complex line checking a clear syntax for method deceleration.
+	 * @param lineInput - the relevant line input.
+	 * @return - true idd the line syntax is correct.
+     */
+	public static boolean checkLineIsMethodOpenner(String lineInput){
+		Pattern tempVar = Pattern.compile(methodOpenner);
+		Matcher tempMat = tempVar.matcher(lineInput);
+		return tempMat.matches();
+	}
+
+	/**
+	 * A tester function for a complex line regarding a conditional expression.
+	 * @param lineInput - the relevant line input.
+	 * @return - true iff the line is a legal conditional expression opening.
+     */
+	public static boolean checkLineIsConditional(String lineInput){
+		Pattern tempVar = Pattern.compile(conditionalExpression);
 		Matcher tempMat = tempVar.matcher(lineInput);
 		return tempMat.matches();
 	}
