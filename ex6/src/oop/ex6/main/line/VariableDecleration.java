@@ -1,18 +1,37 @@
 package oop.ex6.main.line;
 
-/**
- * Created by shiri on 6/9/16.
- */
 public class VariableDecleration implements SimpleLine{
 
     private String variablesData;
     private String valueType;
     private int lineNumber;
+    private boolean isFinal;
 
+    /**
+     * A primary constructor for a variable deceleration.
+     * @param valueType - the spesific type.
+     * @param variablesData - the data to parse the variables from.
+     * @param lineNumber - the relevant line number.
+     */
     public VariableDecleration(String valueType, String variablesData, int lineNumber){
         this.valueType = valueType;
         this.variablesData = variablesData;
         this.lineNumber = lineNumber;
+        this.isFinal = false;
+    }
+
+    /**
+     * A primary constructor for a variable deceleration.
+     * @param valueType - the spesific type.
+     * @param variablesData - the data to parse the variables from.
+     * @param lineNumber - the relevant line number.
+     * @param isFinal - A flag indicating whether the potential values should be set as final.
+     */
+    public VariableDecleration(String valueType, String variablesData, int lineNumber, boolean isFinal){
+        this.valueType = valueType;
+        this.variablesData = variablesData;
+        this.lineNumber = lineNumber;
+        this.isFinal = isFinal;
     }
 
     /**

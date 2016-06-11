@@ -122,9 +122,9 @@ public class SjavacVariable {
                 this.stringValue = value;
                 break;
             case("boolean"):
-                if(value == "true") {
+                if(value.equals("true")) {
                     this.booleanValue = true;
-                }else if(value == "false"){
+                }else if(value.equals("false")){
                     this.booleanValue = false;
                 }else {
                     //ERROR
@@ -156,28 +156,28 @@ public class SjavacVariable {
         if (this.isFinal){
             throw new UnlegalVariableException();
         }else{
-            if(this.type == "int"){
+            if(this.type.equals("int")){
                 try{
                     this.intValue = Integer.parseInt(value);
                 }catch (Exception E){
                     throw new UnlegalVariableException();
                 }
-            }else if(this.type == "double"){
+            }else if(this.type.equals("double")){
                 try{
                     this.intValue = Integer.parseInt(value);
                     this.doubleValue = Double.parseDouble(value);
                 }catch (Exception e){
                     throw new UnlegalVariableException();
                 }
-            }else if(this.type == "char"){
+            }else if(this.type.equals("char")){
                 try{
                     this.charValue = value;
                 }catch(Exception e){
                     throw new UnlegalVariableException();
                 }
-            }else if(this.type == "string"){
+            }else if(this.type.equals("string")){
                 this.stringValue = value;
-            } else if(this.type == "boolean"){
+            } else if(this.type.equals("boolean")){
                 try{
                     this.booleanValue = Boolean.parseBoolean(value);
                 }catch(Exception e){

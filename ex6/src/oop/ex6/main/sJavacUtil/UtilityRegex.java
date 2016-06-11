@@ -26,7 +26,7 @@ public class UtilityRegex{
 	public final static String variableRegex =
 			"^\\s*(int|double|boolean|String|char)\\s+((([a-zA-Z]+\\w*|_+[a-zA-Z]+\\w*)+)(?:\\s*=\\s*([^\\s])+)?\\s*,?\\s*)+;\\s*$";
 	public final static String variableSubstitutionRegex = "^"+spaces+variableName+spaces+"="+spaces+variableName+spaces+";"+spaces+"$";
-
+	public final static String returnLine = "^\\s*(return;)\\s*";
 
 	/**
 	 * Get the name and parameters out of a method call line.
@@ -101,6 +101,17 @@ public class UtilityRegex{
      */
 	public static boolean checkLineIsVariableDeclaration(String lineInput) {
 		Pattern tempVar = Pattern.compile(variableRegex);
+		Matcher tempMat = tempVar.matcher(lineInput);
+		return tempMat.matches();
+	}
+
+	/**
+	 * A tester function for a simple return line.
+	 * @param lineInput - the relevant line input.
+     * @return - true iff the line is return line with the right format.
+     */
+	public static boolean checkLineIsFunctionReturn(String lineInput){
+		Pattern tempVar = Pattern.compile(returnLine);
 		Matcher tempMat = tempVar.matcher(lineInput);
 		return tempMat.matches();
 	}

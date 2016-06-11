@@ -87,7 +87,7 @@ public class MethodCallVariableFactory {
         /* testing for valid variable name on the go */
         else if (part.matches("^[a-zA-Z]+[\\w]*|_+[a-zA-Z]+\\w*$")){
             for (SjavacVariable temp : scopeVars) {
-                if (temp.getName() == part){
+                if (temp.getName().equals(part)){
                     //TODO: test final internal issue, perhaps mend the final field.
                     return new SjavacVariable(temp.getType(), lineNumber);
                 }
