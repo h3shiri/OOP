@@ -21,12 +21,14 @@ public class MethodCallVariableFactory {
         this.scopeVars = scopeVars;
     }
 
-    final static List<String> types = Arrays.asList("int", "double", "char", "String");
+    final static List<String> types = Arrays.asList("int", "double", "char", "String","boolean");
+
     /**
      * Factory method gets the relevant line and create MethodVariables array
      * @param lineToParse - A raw line beginning with type ending with spaces (no semicolon).
      */
-    public ArrayList<SjavacVariable> process(String lineToParse, int lineNumber) throws IllegalMethodCallException{
+    public ArrayList<SjavacVariable> process(String lineToParse, int lineNumber)
+            throws IllegalMethodCallException{
         ArrayList<SjavacVariable> res = new ArrayList<>();
         try{
             String part;

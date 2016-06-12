@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.regex.*;
 
 /** classifying the lines into specific simple lines and openers closers */
+
 public class ThirdOrderProcessor {
 
 	public static ArrayList<SjavacLine> process(ArrayList<SjavacLine> linesOfCode) throws SjavaFormatException {
@@ -30,7 +31,8 @@ public class ThirdOrderProcessor {
 						String funcName = tempMat.group(1);
 						String funcParametersRawData = tempMat.group(2);
 						funcParametersRawData.trim();
-						MethodDefinitionLine temp = new MethodDefinitionLine(funcName, funcParametersRawData, lineNumber);
+						MethodDefinitionLine temp =
+								new MethodDefinitionLine(funcName, funcParametersRawData, lineNumber);
 						res.add(temp);
 					}
 				}
@@ -57,7 +59,8 @@ public class ThirdOrderProcessor {
 							String valueType = tempMat.group(2);
 							String variablesData = tempMat.group(3);
 							variablesData.trim();
-							VariableDeclerationLine temp = new VariableDeclerationLine(valueType, variablesData, lineNumber, true);
+							VariableDeclerationLine temp =
+									new VariableDeclerationLine(valueType, variablesData, lineNumber, true);
 							res.add(temp);
 						}
 						else {
@@ -65,7 +68,8 @@ public class ThirdOrderProcessor {
 							String variablesData = tempMat.group(3);
 							variablesData.trim();
 							//TODO: further processing into new variables, scope context.
-							VariableDeclerationLine temp = new VariableDeclerationLine(valueType, variablesData, lineNumber);
+							VariableDeclerationLine temp =
+									new VariableDeclerationLine(valueType, variablesData, lineNumber);
 							res.add(temp);
 						}
 					}

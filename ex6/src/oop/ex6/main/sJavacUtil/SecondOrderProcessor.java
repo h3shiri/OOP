@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.regex.*;
 
-
 public class SecondOrderProcessor {
     private Pattern simple;
     private Pattern complex;
@@ -28,7 +27,6 @@ public class SecondOrderProcessor {
         }
         return res;
     }
-
     /**
      * A static method for identifying simple lines.
      * @param lineInput - the raw line input

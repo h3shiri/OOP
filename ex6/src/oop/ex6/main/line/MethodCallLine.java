@@ -21,10 +21,6 @@ public class MethodCallLine implements SimpleLine{
     private int lineNumber;
     /** A special string indicating it's a method call. */
     final String type = "METHODCALL";
-    /** A boolean indicating whether its a legal call */
-    // TODO: shouldn't we just throw an exception in case it's toxic?
-    boolean isLegal = false;
-
     /** The raw data for the various parameters */
     private String parametersRawData;
 
@@ -38,19 +34,6 @@ public class MethodCallLine implements SimpleLine{
         this.functionName = functionName;
         this.lineNumber = lineNumber;
         this.parametersRawData = parametersRawData;
-
-    }
-
-    /**
-     * A testing function for the method call.
-     * @param definedMethods - all the method's defined in the Sjava file which complied
-     * successfully.
-     * @return - true iff it has beeen previously defined and all the parameters are legal.
-     */
-
-    public boolean isLegal(ArrayList<SjavacMethod> definedMethods){
-        //Check with all the methods if this line is a legal method call
-        return this.isLegal;
     }
 
     /**

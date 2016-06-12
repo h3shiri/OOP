@@ -2,9 +2,6 @@ package oop.ex6.main.variable;
 
 import java.util.ArrayList;
 
-/**
- * Created by Dell on 07/06/2016.
- */
 public class TestVariables {
 
 

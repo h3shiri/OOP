@@ -20,6 +20,7 @@ public class BooleanFactory {
     public BooleanFactory(String line, ArrayList<SjavacVariable> scopeVars) throws UnlegalBooleanExpression{
         this.line = line;
         this.scopeVars = scopeVars;
+        isLegal();
     }
 
     /**
@@ -27,7 +28,7 @@ public class BooleanFactory {
      * If an exception of boolean is found on the way we throw it further.
      */
     //TODO: has been tested ??
-    public void parseBooleanLine() throws UnlegalBooleanExpression{
+    public void isLegal() throws UnlegalBooleanExpression{
         try{
             String[] booleans = this.line.split("\\s*(&&|\\|\\|)\\s*");
             for(String bool: booleans){
@@ -40,12 +41,5 @@ public class BooleanFactory {
         }catch(UnlegalBooleanExpression e){
             throw new UnlegalBooleanExpression();
         }
-    }
-    /**
-     * This method will determine whether a boolean complex line is legal
-     */
-    //TODO: what is the motivation for this trip?
-    public void isLegal() throws UnlegalBooleanExpression{
-        this.parseBooleanLine();
     }
 }

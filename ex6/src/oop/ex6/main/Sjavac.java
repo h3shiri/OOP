@@ -53,6 +53,8 @@ public class Sjavac {
                     ArrayList<String> codeData = (FirstOrderProcessor.process(fileInArray));
                     ArrayList<SjavacLine> classifiedLines = (SecondOrderProcessor.process(codeData));
                     ArrayList<SjavacLine> processedLines = (ThirdOrderProcessor.process(classifiedLines));
+                    LinkComplexNode genesisNode = new LinkComplexNode(processedLines.size());
+
                     System.out.println(0);
                     return;
                 } catch (SjavaFormatException e) {
