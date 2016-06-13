@@ -20,7 +20,7 @@ public class MethodCallLine implements SimpleLine{
     /** An int tracing the line number */
     private int lineNumber;
     /** A special string indicating it's a method call. */
-    final String type = "METHODCALL";
+    final String type = "MethodCall";
     /** The raw data for the various parameters */
     private String parametersRawData;
 

@@ -54,7 +54,7 @@ public class Sjavac {
                     ArrayList<SjavacLine> classifiedLines = (SecondOrderProcessor.process(codeData));
                     ArrayList<SjavacLine> processedLines = (ThirdOrderProcessor.process(classifiedLines));
                     LinkComplexNode genesisNode = new LinkComplexNode(processedLines.size());
-
+                    ScopeBuilder flowTree = new ScopeBuilder(genesisNode, processedLines);
                     System.out.println(0);
                     return;
                 } catch (SjavaFormatException e) {

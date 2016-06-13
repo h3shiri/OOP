@@ -3,6 +3,7 @@ import java.util.ArrayList;
 
 import oop.ex6.main.line.*;
 import oop.ex6.main.variable.SjavacVariable;
+import sun.plugin.javascript.navig4.Link;
 
 public class LinkComplexNode{
 	/* data members */
@@ -35,6 +36,11 @@ public class LinkComplexNode{
 	/** internal counter for tracing the closing line */
 	private int closingLine;
 
+	/**
+	 * The common constructor for a new node in the tree.
+	 * @param father - A reference to the father node.
+	 * @param currentLine - the current line.
+     */
 	public LinkComplexNode(LinkComplexNode father, int currentLine){
 		this.father = father;
 		this.hasAFather = true;
@@ -67,7 +73,7 @@ public class LinkComplexNode{
 	 */
 	public void counterIncrease(){
 		clausesCounter++;
-		if (hasAFather) {
+		if (!isGenesisBlock()) {
 			father.counterIncrease();
 		}
 	}
@@ -84,7 +90,7 @@ public class LinkComplexNode{
 				setClosingLine(currentLine);
 			}
 		}
-		if (hasAFather) {
+		if (!isGenesisBlock()) {
 			father.counterDecrease(currentLine);
 		}
 	}
@@ -154,6 +160,27 @@ public class LinkComplexNode{
 		}
 		else{
 			throw new NonExistingVariableException();
+		}
+	}
+
+	/**
+	 * A trace function for the current node, flowing from the most outer scope to the most
+	 * inner one that is still open.
+	 * @param currentNode - the current node we are on the tree.
+	 * @return - the most relevant open scope.
+     */
+	public LinkComplexNode traceCurrentNode(LinkComplexNode currentNode){
+		if (currentNode.checkClosure()){
+			if (isGenesisBlock()) {
+				return currentNode;
+			}
+			else {
+				LinkComplexNode predecessor = getFather();
+				return predecessor.traceCurrentNode(predecessor);
+			}
+		}
+		else {
+			return currentNode;
 		}
 	}
 
