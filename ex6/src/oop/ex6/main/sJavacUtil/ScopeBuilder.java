@@ -17,7 +17,7 @@ public class ScopeBuilder {
     private LinkComplexNode genesisNode;
 
     /* The globals */
-    private ArrayList<SjavacVariable> globals = new ArrayList<>();
+    public ArrayList<SjavacVariable> globals = new ArrayList<>();
 
     /* The function decelerations */
     private ArrayList<SjavacMethod> declaredMethods = new ArrayList<>();
@@ -190,13 +190,13 @@ public class ScopeBuilder {
                 String varType = arguments.get(0);
                 String varRawData = arguments.get(1);
                 try {
-                    ArrayList<SjavacVariable> newVariables = new VariableFactory(isFinal, varType, varRawData, lineNumber, currentNode).getVariables();
+                    ArrayList<SjavacVariable> newVariables = new VariableFactory(isFinal, varType, varRawData, lineNumber, genesisNode).getVariables();
                     for (SjavacVariable var : newVariables) {
                         String name = var.getName();
-                        for (int j = 0; i < globals.size(); i++) {
-                            SjavacVariable tempVar = globals.get(i);
+                        for (int l = 0; l < globals.size(); l++) {
+                            SjavacVariable tempVar = globals.get(l);
                             if (tempVar.getType().equals(name)) {
-                                globals.remove(i);
+                                globals.remove(l);
                             }
                         }
                         globals.add(var);

@@ -2,6 +2,7 @@ package oop.ex6.main.variable;
 
 import oop.ex6.main.Sjavac;
 import oop.ex6.main.line.ParametersFormatException;
+import oop.ex6.main.sJavacUtil.UtilityRegex;
 
 import java.util.Arrays;
 import java.util.List;
@@ -29,6 +30,7 @@ public class SjavacVariable {
      * This constructor creates a copy of an existing variable
      * @param isFinal - is final flag.
      * @param type - the variable type.
+     * @param name - the actual name for the variable.
      * @param source - the SjavacVariable we copy from.
     */
     public SjavacVariable(boolean isFinal, String name, String type, SjavacVariable source)
@@ -104,6 +106,14 @@ public class SjavacVariable {
      * @throws UnlegalVariableException - In case of a non valid form.
      */
     private void parseValue(String value) throws UnlegalVariableException{
+        if (value == null) {
+            if (isFinal) {
+                throw new UnlegalVariableException();
+            }
+            else{
+                return;
+            }
+        }
         switch (this.type){
             case("int"):
                 try {
@@ -114,7 +124,6 @@ public class SjavacVariable {
                 break;
             case("double"):
                 try{
-                    this.intValue = Integer.parseInt(value);
                     this.doubleValue = Double.parseDouble(value);
                 }catch (NumberFormatException e){
                     throw new UnlegalVariableException();
@@ -122,7 +131,7 @@ public class SjavacVariable {
                 break;
             case("char"):
                 value = value.trim();
-                if(value.matches("^\"(.*?)\"$")){
+                if(value.matches("^\\s*\'(.)\'\\s*$")){
                     value = value.substring(1,value.length() -1);//remove " "
                 }else{
                     throw new UnlegalVariableException();
@@ -146,8 +155,15 @@ public class SjavacVariable {
                     this.booleanValue = true;
                 }else if(value.equals("false")){
                     this.booleanValue = false;
-                }else {
-                    //ERROR
+                }else if (UtilityRegex.checkArgumentIsANumber(value)) {
+                    if (value.equals("0")){
+                        this.booleanValue = true;
+                    }
+                    else {
+                        this.booleanValue = false;
+                    }
+                }else{
+                     throw new UnlegalVariableException();
                 }
                 break;
             default:
@@ -238,7 +254,10 @@ public class SjavacVariable {
         }
     }
 
-
+    public SjavacVariable cloneVariable() throws UnlegalVariableException{
+        SjavacVariable res = new SjavacVariable(isFinal, name, type, this);
+        return res;
+    }
 
     /**
      * A getter function for the line number.

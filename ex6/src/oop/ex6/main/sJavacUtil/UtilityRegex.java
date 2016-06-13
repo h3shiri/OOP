@@ -13,6 +13,7 @@ public class UtilityRegex{
 	/* A useful list of regexes we use in our verifier */
 	public final static String emptyLine = "^(\\s*)$";
 	public final static String commentLine = "//.*";
+	public final static String number = "^\\s*(\\d+|\\d+.\\d+)\\s*$";
 	public final static String typesRegex = "(int |double |boolean |String |char )";
 	public final static String spaces = "\\s*";
 	public final static String variableName = "([a-zA-Z]+[\\w]*|_+[a-zA-Z]+\\w*)";
@@ -23,7 +24,7 @@ public class UtilityRegex{
 	public final static String methodParametersForSimpleCall = "[(]([a-zA-Z]+[\\w,\\s]*|_+[a-zA-Z]+[\\w,\\s]*)[)]";
 	public final static String methodCall = methodName+"\\s?"+methodParametersForSimpleCall;
 	public final static String variableRegex =
-			"^\\s*(int|double|boolean|String|char)\\s+((([a-zA-Z]+\\w*|_+[a-zA-Z]+\\w*)+)(?:\\s*=\\s*([^\\s])+)?\\s*,?\\s*)+;\\s*$";
+			"^\\s*(final)?\\s*(int|double|boolean|String|char)\\s+((([a-zA-Z]+\\w*|_+[a-zA-Z]+\\w*)+)(?:\\s*=\\s*([^\\s])+)?\\s*,?\\s*)+;\\s*$";
 	public final static String variableSubstitutionRegex = "^"+spaces+variableName+spaces+"="+spaces+"[^\\s]*"+spaces+";"+spaces+"$";
 	public final static String returnLine = "^\\s*(return;)\\s*";
 	public final static String blockCloser = "^\\s*}\\s*$";
@@ -165,6 +166,17 @@ public class UtilityRegex{
      */
 	public static boolean checkArgumentIsVariable(String lineInput){
 		Pattern tempVar = Pattern.compile(variableName);
+		Matcher tempMat = tempVar.matcher(lineInput);
+		return tempMat.matches();
+	}
+
+	/**
+	 * A tester function checking a value is an int or a double.
+	 * @param lineInput - the actual argument.
+     * @return true iff the argument is a number.
+     */
+	public static boolean checkArgumentIsANumber(String lineInput){
+		Pattern tempVar = Pattern.compile(number);
 		Matcher tempMat = tempVar.matcher(lineInput);
 		return tempMat.matches();
 	}

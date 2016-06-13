@@ -7,7 +7,7 @@ public class LinkComplexNode{
 	/* data members */
 
 	/** An array holding the scope variables */
-	private ArrayList<SjavacVariable> scopeVars = new ArrayList<>();
+	public ArrayList<SjavacVariable> scopeVars = new ArrayList<>();
 
 	/** An array holding all the children */
 	private ArrayList<LinkComplexNode> children = new ArrayList<>();
@@ -151,7 +151,6 @@ public class LinkComplexNode{
 	public ArrayList<SjavacVariable> getScopeVars() {
 		return scopeVars;
 	}
-
 	/**
 	 * Adding a new variable to this scope.
 	 * it takes into account shadowing.
