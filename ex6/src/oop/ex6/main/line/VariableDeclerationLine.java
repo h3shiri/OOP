@@ -1,5 +1,7 @@
 package oop.ex6.main.line;
 
+import java.util.ArrayList;
+
 public class VariableDeclerationLine implements SimpleLine{
 
     private String variablesData;
@@ -7,9 +9,12 @@ public class VariableDeclerationLine implements SimpleLine{
     private int lineNumber;
     private boolean isFinal;
 
+    /* The arguments holding all the actual data */
+    private ArrayList<String> arguments = new ArrayList<>();
+
     /**
      * A primary constructor for a variable deceleration.
-     * @param valueType - the spesific type.
+     * @param valueType - the specific type.
      * @param variablesData - the data to parse the variables from.
      * @param lineNumber - the relevant line number.
      */
@@ -18,11 +23,13 @@ public class VariableDeclerationLine implements SimpleLine{
         this.variablesData = variablesData;
         this.lineNumber = lineNumber;
         this.isFinal = false;
+        arguments.add(valueType);
+        arguments.add(variablesData);
     }
 
     /**
-     * A primary constructor for a variable deceleration.
-     * @param valueType - the spesific type.
+     * A Secondary constructor for a variable deceleration in case of final flag
+     * @param valueType - the specific type.
      * @param variablesData - the data to parse the variables from.
      * @param lineNumber - the relevant line number.
      * @param isFinal - A flag indicating whether the potential values should be set as final.
@@ -32,6 +39,10 @@ public class VariableDeclerationLine implements SimpleLine{
         this.variablesData = variablesData;
         this.lineNumber = lineNumber;
         this.isFinal = isFinal;
+        arguments.add(valueType);
+        arguments.add(variablesData);
+        arguments.add("IsFinal");
+
     }
 
     /**
@@ -76,5 +87,14 @@ public class VariableDeclerationLine implements SimpleLine{
     @Override
     public String getRawData() {
         return null;
+    }
+
+    /**
+     * A getter function for the acutual data.
+     * @return - the relevant data target, source.
+     */
+    @Override
+    public ArrayList<String> getArguments() {
+        return arguments;
     }
 }

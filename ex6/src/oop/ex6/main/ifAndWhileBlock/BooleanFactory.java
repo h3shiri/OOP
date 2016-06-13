@@ -1,8 +1,7 @@
 package oop.ex6.main.ifAndWhileBlock;
 
-import oop.ex6.main.variable.SjavacVariable;
+import oop.ex6.main.sJavacUtil.LinkComplexNode;
 
-import java.util.ArrayList;
 
 //TODO: test and consider scoping affect from the inside on the outside.
 /**
@@ -10,16 +9,19 @@ import java.util.ArrayList;
  */
 public class BooleanFactory {
     /*Class members*/
+    /** The raw data to build booleans from */
     String line;
-    ArrayList<SjavacVariable> scopeVars;
+
+    /** A reference tot he actual node */
+    LinkComplexNode currentNode;
     /**
      * Primal constructor.
      * @param line - the target string for the boolean expressions.
-     * @param scopeVars - the relevant scope variables.
+     * @param currentNode - the relevant scope.
      */
-    public BooleanFactory(String line, ArrayList<SjavacVariable> scopeVars) throws UnlegalBooleanExpression{
+    public BooleanFactory(String line, LinkComplexNode currentNode) throws UnlegalBooleanExpression{
         this.line = line;
-        this.scopeVars = scopeVars;
+        this.currentNode = currentNode;
         isLegal();
     }
 
@@ -28,18 +30,15 @@ public class BooleanFactory {
      * If an exception of boolean is found on the way we throw it further.
      */
     //TODO: has been tested ??
-    public void isLegal() throws UnlegalBooleanExpression{
-        try{
-            String[] booleans = this.line.split("\\s*(&&|\\|\\|)\\s*");
-            for(String bool: booleans){
-                bool = bool.replaceAll("\\s*","");
-                /* now check if this bool is a legit boolean value, by calling the BooleanValue class
-                Which will throw a UnlegalBooleanExpression if its not legit
-                 */
-                new BooleanValue(scopeVars,bool);
-            }
-        }catch(UnlegalBooleanExpression e){
-            throw new UnlegalBooleanExpression();
+    public void isLegal() throws UnlegalBooleanExpression {
+
+        String[] booleans = this.line.split("\\s*(&&|\\|\\|)\\s*");
+        for (String bool : booleans) {
+            bool = bool.replaceAll("\\s*", "");
+            /* now check if this bool is a legit boolean value, by calling the BooleanValue class
+             * Which will throw a UnlegalBooleanExpression if its not legit
+             */
+            new BooleanValue(currentNode, bool);
         }
     }
 }

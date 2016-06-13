@@ -1,7 +1,10 @@
 package oop.ex6.main.line;
 
+import java.util.ArrayList;
+
 public class MethodDefinitionLine implements ComplexLine {
     /* data members */
+
     /* the function name */
     private String funcName;
     /* The parameters raw data */
@@ -11,6 +14,7 @@ public class MethodDefinitionLine implements ComplexLine {
     /* The specific type indicator */
     private final String TYPE = "functionDeclare";
 
+    private ArrayList<String> arguments = new ArrayList<>();
     /**
      * The primary constructor.
      * @param funcName - the functions actual name.
@@ -21,6 +25,8 @@ public class MethodDefinitionLine implements ComplexLine {
         this.funcName = funcName;
         this.parametersRawData = parametersRawData;
         this.lineNumber = lineNumber;
+        arguments.add(funcName);
+        arguments.add(parametersRawData);
     }
 
     /**
@@ -64,5 +70,14 @@ public class MethodDefinitionLine implements ComplexLine {
     @Override
     public String getRawData() {
         return null;
+    }
+
+    /**
+     * A getter function for the actual important arguments.
+     * @return
+     */
+    @Override
+    public ArrayList<String> getArguments() {
+        return arguments;
     }
 }

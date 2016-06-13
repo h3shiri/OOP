@@ -1,5 +1,7 @@
 package oop.ex6.main.line;
 
+import java.util.ArrayList;
+
 public class LiteralOpeningLine implements ComplexLine{
     /* data members */
     /* the literals raw data */
@@ -9,6 +11,9 @@ public class LiteralOpeningLine implements ComplexLine{
     /* The specific type */
     private final String TYPE = "literalOpening";
 
+    /* The arguments for the data extraction */
+    private ArrayList<String> arguments = new ArrayList<>();
+
     /**
      * A primal constructor for the if/while block
      * @param literalsRawData - the raw data for the while/if processing.
@@ -17,6 +22,7 @@ public class LiteralOpeningLine implements ComplexLine{
     public LiteralOpeningLine(String literalsRawData, int lineNumber) {
         this.literalsRawData = literalsRawData;
         this.lineNumber = lineNumber;
+        arguments.add(literalsRawData);
     }
 
     /**
@@ -44,5 +50,14 @@ public class LiteralOpeningLine implements ComplexLine{
     @Override
     public String getRawData() {
         return null;
+    }
+
+    /**
+     * A getter for the actual arguments in the literal.
+     * @return - the raw data.
+     */
+    @Override
+    public ArrayList<String> getArguments() {
+        return arguments;
     }
 }

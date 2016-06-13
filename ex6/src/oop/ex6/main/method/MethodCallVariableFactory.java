@@ -2,6 +2,8 @@ package oop.ex6.main.method;
 import java.lang.reflect.Array;
 import java.util.regex.*;
 
+import oop.ex6.main.sJavacUtil.LinkComplexNode;
+import oop.ex6.main.sJavacUtil.NonExistingVariableException;
 import oop.ex6.main.variable.SjavacVariable;
 import oop.ex6.main.line.*;
 
@@ -10,47 +12,33 @@ import java.util.*;
  * This class creates instances of method variables in a method call given a single line (param1, param2..)
  */
 public class MethodCallVariableFactory {
-    private ArrayList<SjavacVariable> scopeVars;
-
+    /**class members*/
+    private LinkComplexNode currentNode;
+    final static List<String> types = Arrays.asList("int", "double", "char", "String","boolean");
     /**
      * A constructor only for the sake of passing the relevant scope variables.
-     * @param scopeVars - the relevent scope variables.
+     * @param currentNode - the relevant scope.
      */
-    public MethodCallVariableFactory(ArrayList<SjavacVariable> scopeVars){
-//        TODO: test it's kosher
-        this.scopeVars = scopeVars;
+    public MethodCallVariableFactory(LinkComplexNode currentNode){
+        this.currentNode = currentNode;
     }
-
-    final static List<String> types = Arrays.asList("int", "double", "char", "String","boolean");
-
     /**
-     * Factory method gets the relevant line and create MethodVariables array
+     * Factory method gets the relevant line and create ArrayList of SjavacVariables
      * @param lineToParse - A raw line beginning with type ending with spaces (no semicolon).
      */
     public ArrayList<SjavacVariable> process(String lineToParse, int lineNumber)
             throws IllegalMethodCallException{
         ArrayList<SjavacVariable> res = new ArrayList<>();
         try{
-            String part;
-            while(lineToParse.length() > 0){
-                //TODO: test for null aka method call with no params.
-                if(!lineToParse.contains(",")){
-                    part = lineToParse;
-                    res.add(parsePart(part, lineNumber));
-                    lineToParse = "";
-                }else{
-                    part = lineToParse.substring(lineToParse.lastIndexOf(",") + 1);
-                    lineToParse = lineToParse.substring(0,lineToParse.lastIndexOf(","));
-                    res.add(parsePart(part, lineNumber));
-                }
+            String[] parts = lineToParse.split(",");
+            for(String part: parts){
+                res.add(parsePart(part,lineNumber));
             }
-            Collections.reverse(res);
             return res;
         }catch(ParametersFormatException e){
             throw new IllegalMethodCallException();
         }
     }
-
     /**
      * This method gets a part (a parameter for the method call)
      * @param part - the slice of parameters call between the commas.
@@ -88,11 +76,14 @@ public class MethodCallVariableFactory {
         }
         /* testing for valid variable name on the go */
         else if (part.matches("^[a-zA-Z]+[\\w]*|_+[a-zA-Z]+\\w*$")){
-            for (SjavacVariable temp : scopeVars) {
-                if (temp.getName().equals(part)){
+            try {
+                SjavacVariable temp = currentNode.getVariable(part);
+                if (temp.getName().equals(part)) {
                     //TODO: test final internal issue, perhaps mend the final field.
                     return new SjavacVariable(temp.getType(), lineNumber);
                 }
+            } catch (NonExistingVariableException e){
+                throw new ParametersFormatException();
             }
         }
         else{

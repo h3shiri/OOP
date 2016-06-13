@@ -1,5 +1,7 @@
 package oop.ex6.main.method;
 
+import oop.ex6.main.variable.SjavacVariable;
+
 /**
  * This class represents a method parameters aka (final int a, String b)
  * thus each instant is simply an indication og type and flag used for initializing
@@ -19,7 +21,6 @@ public class MethodVariable {
     public MethodVariable (boolean isFinal, String type){
         this.isFinal = isFinal;
         this.type = type;
-
     }
 
     /**
@@ -34,26 +35,38 @@ public class MethodVariable {
      */
     public String getType(){return this.type;}
 
-    public void checkVar(String value) throws IllegalMethodCallException, Exception{
+    /**
+     * This method gets a SjavacVariable and will throw an exception if the types could not be matched.
+     * @param var - the SjavacVariable that we will check
+     * @throws IllegalMethodCallException
+     * @throws Exception
+     */
+    public void checkVar(SjavacVariable var) throws IllegalMethodCallException{
         try {
             switch (this.type) {
                 case "String":
-                    break;
+                    if(!(var.getType().equals("String") || var.getType().equals("char"))){
+                        throw new IllegalMethodCallException();
+                    } break;
                 case "int":
-                    Integer.parseInt(value);
-                    break;
+                    if(!var.getType().equals("int")){
+                        throw new IllegalMethodCallException();
+                    } break;
                 case "double":
-                    Double.parseDouble(value);
-                    break;
+                    if(!(var.getType().equals("int") || var.getType().equals("double")) ){
+                        throw new IllegalMethodCallException();
+                    }break;
                 case "char":
-                    if(value.length() != 1) {
-                        throw new Exception();
-                    }
-                    break;
+                    if(!var.getType().equals("char")) {
+                        throw new IllegalMethodCallException();
+                    }break;
                 case "boolean":
-                    Boolean.parseBoolean(value);
+                    if(!(var.getType().equals("boolean") || var.getType().equals("int")
+                            || var.getType().equals("double"))){
+                        throw new IllegalMethodCallException();
+                    }break;
                 default:
-                    throw new Exception();
+                    throw new IllegalMethodCallException();
             }
         }catch(Exception e){
                 throw new IllegalMethodCallException();

@@ -13,8 +13,7 @@ import java.util.ArrayList;
  */
 public class MethodCallLine implements SimpleLine{
     /*data members fro the function call */
-    /** An array holding all the parameters */
-    ArrayList<SjavacVariable> variablesForMethod = new ArrayList<>();
+
     /** A string for the function's name */
     private String functionName;
     /** An int tracing the line number */
@@ -23,6 +22,9 @@ public class MethodCallLine implements SimpleLine{
     final String type = "MethodCall";
     /** The raw data for the various parameters */
     private String parametersRawData;
+
+    /** The argumets retrived for the factory in the future */
+    private ArrayList<String> arguments = new ArrayList<>();
 
     /**
      * Constructor - gets a line and extracts the relevant info (name and parameters as variable array)
@@ -34,6 +36,8 @@ public class MethodCallLine implements SimpleLine{
         this.functionName = functionName;
         this.lineNumber = lineNumber;
         this.parametersRawData = parametersRawData;
+        arguments.add(functionName);
+        arguments.add(parametersRawData);
     }
 
     /**
@@ -62,5 +66,14 @@ public class MethodCallLine implements SimpleLine{
     @Override
     public int getLineNumber() {
         return lineNumber;
+    }
+
+    /**
+     * A getter function for the actual arguments.
+     * @return - the relevant data.
+     */
+    @Override
+    public ArrayList<String> getArguments() {
+        return arguments;
     }
 }

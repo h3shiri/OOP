@@ -3,17 +3,26 @@ package oop.ex6.main.variable;
 import oop.ex6.main.Sjavac;
 import oop.ex6.main.line.ParametersFormatException;
 
-public class SjavacVariable {
-    final String[] types = {"int","double","boolean", "string", "char"};
+import java.util.Arrays;
+import java.util.List;
 
-    boolean isFinal = false;
-    String name;
-    String type;
-    int intValue;
-    double doubleValue;
-    String stringValue;
-    boolean booleanValue;
-    String charValue;
+public class SjavacVariable {
+    /** class members*/
+    final String[] types = {"int","double","boolean", "string", "char"};
+    /**IMPORTANT REMARK: All these are public for a reason.
+     * If you want to get the value, you need to ask for the specific type. This is OK because we have exceptions
+     * that handles situation when someone tries using the wrong type. The point is that a getter function is not
+     * Going to work because its return type can be only 1 type, when we have several types of data.
+     */
+    public boolean isFinal = false;
+    public String unParsedValue;
+    public String name;
+    public String type;
+    public int intValue;
+    public double doubleValue;
+    public String stringValue;
+    public boolean booleanValue;
+    public String charValue;
     private int lineNumber;
 
     /**
@@ -23,16 +32,15 @@ public class SjavacVariable {
      * @param source - the SjavacVariable we copy from.
     */
     public SjavacVariable(boolean isFinal, String name, String type, SjavacVariable source)
-            /* Notice that factory can also call this constructor when a line like this is found : int a = b;*/
             throws UnlegalVariableException{
         try{
             this.isFinal = isFinal;
             this.name = name;
             this.type = type;
             this.lineNumber = source.getLineNumber();
-            this.stringValue = source.getValue();
+            this.stringValue = source.unParsedValue;
             this.parseValue(this.stringValue);
-        }catch(Exception e){
+        }catch(UnlegalVariableException e){
             throw new UnlegalVariableException();
         }
     }
@@ -47,6 +55,7 @@ public class SjavacVariable {
      */
     public SjavacVariable(boolean isFinal, String type, String name, String value, int lineNumber) throws
     UnlegalVariableException{
+        this.unParsedValue = value;
         this.isFinal = isFinal;
         this.lineNumber = lineNumber;
         this.name = name;
@@ -100,7 +109,7 @@ public class SjavacVariable {
                 try {
                     this.intValue = Integer.parseInt(value);
                 }catch (NumberFormatException e){
-                    //NOT A VALID VALUE FOR INT
+                    throw new UnlegalVariableException();
                 }
                 break;
             case("double"):
@@ -108,18 +117,29 @@ public class SjavacVariable {
                     this.intValue = Integer.parseInt(value);
                     this.doubleValue = Double.parseDouble(value);
                 }catch (NumberFormatException e){
-                    //ERROR
+                    throw new UnlegalVariableException();
                 }
                 break;
             case("char"):
+                value = value.trim();
+                if(value.matches("^\"(.*?)\"$")){
+                    value = value.substring(1,value.length() -1);//remove " "
+                }else{
+                    throw new UnlegalVariableException();
+                }
                 if (value.length() != 1){
-                    //NOT A VALID CHAR
+                    throw new UnlegalVariableException();
                 }else{
                     this.charValue = value;
                 }
                 break;
-            case("String"): //Need to check if this needs to be String or string
-                this.stringValue = value;
+            case("String"):
+                if(value.matches("^\"(.*?)\"$")) {
+                    value = value.trim();// remove the spaces (only before and after , not between words in string)
+                    this.stringValue = value.substring(1,value.length() -1); //remove the  " "
+                }else{
+                    throw new UnlegalVariableException();
+                }
                 break;
             case("boolean"):
                 if(value.equals("true")) {
@@ -134,6 +154,7 @@ public class SjavacVariable {
                 throw new UnlegalVariableException();
         }
     }
+
     /**
      * get the type of the variable
      * @return
@@ -159,14 +180,14 @@ public class SjavacVariable {
             if(this.type.equals("int")){
                 try{
                     this.intValue = Integer.parseInt(value);
-                }catch (Exception E){
+                }catch (NumberFormatException e){
                     throw new UnlegalVariableException();
                 }
             }else if(this.type.equals("double")){
                 try{
                     this.intValue = Integer.parseInt(value);
                     this.doubleValue = Double.parseDouble(value);
-                }catch (Exception e){
+                }catch (NumberFormatException e){
                     throw new UnlegalVariableException();
                 }
             }else if(this.type.equals("char")){
@@ -186,15 +207,38 @@ public class SjavacVariable {
             }
         }
     }
-    //TODO: I'm not sure it is the best way to actually retrieve, data type consideration is crucial.
-    /**
-     * A getter function.
-     * @return - the value of this variable in a String format.
-     */
-    public String getValue(){
 
-        return this.stringValue;
+    /**
+     * A morphing process from one variable to another.
+     * @param source - the SjavacVariable we try to insert.
+     * @throws NonCompatibleTypes - In case of a non matching type
+     */
+    public void morph(SjavacVariable source) throws NonCompatibleTypes{
+        String sourceType = source.getType();
+        if (sourceType != getType()){
+            /* Note the exercise specification is an equal time */
+            throw new NonCompatibleTypes();
+        }
+        switch (getType()) {
+            case ("int"):
+                intValue = source.intValue;
+                break;
+            case ("double"):
+                doubleValue = source.doubleValue;
+                break;
+            case ("String"):
+                stringValue = source.stringValue;
+                break;
+            case ("char"):
+                charValue = source.charValue;
+                break;
+            case ("boolean"):
+                booleanValue = source.booleanValue;
+                break;
+        }
     }
+
+
 
     /**
      * A getter function for the line number.

@@ -1,5 +1,7 @@
 package oop.ex6.main.line;
 
+import java.util.ArrayList;
+
 public class VariableSubstitutionLine implements SimpleLine {
 
     /* data members */
@@ -10,12 +12,16 @@ public class VariableSubstitutionLine implements SimpleLine {
     /* Appropriate line number */
     private int lineNumber;
 
+    private ArrayList<String> arguments = new ArrayList<>();
+
     private final String type = "Substitution";
 
     public VariableSubstitutionLine(String target, String source, int lineNumber) {
         this.target = target;
         this.source = source;
         this.lineNumber = lineNumber;
+        arguments.add(target);
+        arguments.add(source);
     }
 
     /**
@@ -59,5 +65,14 @@ public class VariableSubstitutionLine implements SimpleLine {
     @Override
     public String getRawData() {
         return null;
+    }
+
+    /**
+     * A getter function for actual arguments data.
+     * @return - the relevant data.
+     */
+    @Override
+    public ArrayList<String> getArguments() {
+        return arguments;
     }
 }

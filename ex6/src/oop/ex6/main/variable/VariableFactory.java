@@ -1,4 +1,7 @@
 package oop.ex6.main.variable;
+import oop.ex6.main.sJavacUtil.LinkComplexNode;
+import oop.ex6.main.sJavacUtil.NonExistingVariableException;
+
 import java.util.*;
 /**
  * This class gets a type of variable, and creates instances of SjavacVariable
@@ -7,19 +10,19 @@ public class VariableFactory {
     String line;
     String type;
     boolean isFinal;
-    ArrayList<SjavacVariable> scopeVars;
+    LinkComplexNode currentNode;
     ArrayList<SjavacVariable> variables = new ArrayList<>();
-
     int lineNumber;
+
     /**
-     * Constructor
+     * primary Constructor for variables using this factory.
      * @param type - the specific type of this variable.
-     * @param lineWithoutType
+     * @param lineWithoutType - the actual arguments raw data.
      */
-    public VariableFactory(boolean isFinal,String type, String lineWithoutType, int lineNumber,
-                           ArrayList<SjavacVariable> scopeVars) throws UnlegalVariableException{
+    public VariableFactory(boolean isFinal, String type, String lineWithoutType, int lineNumber,
+                           LinkComplexNode currentNode) throws UnlegalVariableException{
         try {
-            this.scopeVars = scopeVars;
+            this.currentNode = currentNode;
             this.isFinal = isFinal;
             this.type = type;
             this.line = lineWithoutType;
@@ -79,18 +82,16 @@ public class VariableFactory {
 
     /**
      * This is a helper method for cases like int a = b;
-     * @param name
+     * @param name - target of variable name.
      * @return the variable if its found, if not return null
      */
     private SjavacVariable isAnExistingVar (String name){
-        if (scopeVars == null) {
+        try {
+            return currentNode.getVariable(name);
+        }
+        catch (NonExistingVariableException e){
             return null;
         }
-        for (SjavacVariable var: this.scopeVars){
-            if(var.getName().equals(name)){
-                return var;
-            }
-        }return null;
     }
 
 }

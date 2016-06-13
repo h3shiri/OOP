@@ -1,6 +1,7 @@
 package oop.ex6.main.sJavacUtil;
 import oop.ex6.main.line.IllegalMethodCallException;
 
+import javax.naming.PartialResultException;
 import java.util.regex.*;
 import java.util.ArrayList;
 
@@ -153,6 +154,17 @@ public class UtilityRegex{
      */
 	public static boolean checkLineIsConditional(String lineInput){
 		Pattern tempVar = Pattern.compile(conditionalExpression);
+		Matcher tempMat = tempVar.matcher(lineInput);
+		return tempMat.matches();
+	}
+
+	/**
+	 * A tester function for a String argument checking whether it is a variable.
+	 * @param lineInput - the actual argument.
+	 * @return true - iff it has an actual variable name.
+     */
+	public static boolean checkArgumentIsVariable(String lineInput){
+		Pattern tempVar = Pattern.compile(variableName);
 		Matcher tempMat = tempVar.matcher(lineInput);
 		return tempMat.matches();
 	}

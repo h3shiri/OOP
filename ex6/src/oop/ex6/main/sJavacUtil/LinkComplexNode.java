@@ -1,9 +1,7 @@
 package oop.ex6.main.sJavacUtil;
 import java.util.ArrayList;
 
-import oop.ex6.main.line.*;
 import oop.ex6.main.variable.SjavacVariable;
-import sun.plugin.javascript.navig4.Link;
 
 public class LinkComplexNode{
 	/* data members */
@@ -20,18 +18,15 @@ public class LinkComplexNode{
 	/** boolean indicating if the node has a father similar to non-empty */
 	private final boolean hasAFather;
 
-	/** holding the line data */
-	private ArrayList<SjavacLine> dataSet = new ArrayList<>();
-
 	/** important string holding the clause type (method Decleration/if/while) */
 	private String type;
 
-	// TODO: check u support max.Integer depth functionallity
+	// TODO: check u support max.Integer depth functionality
 	/** The Openning/Closing internal counter */
 	private int clausesCounter;
 
 	/** internal counterer for tracing the openning line */
-	private final int openningLine;
+	private final int openingLine;
 
 	/** internal counter for tracing the closing line */
 	private int closingLine;
@@ -44,7 +39,7 @@ public class LinkComplexNode{
 	public LinkComplexNode(LinkComplexNode father, int currentLine){
 		this.father = father;
 		this.hasAFather = true;
-		this.openningLine = currentLine;
+		this.openingLine = currentLine;
 		father.addChild(this);
 		counterIncrease();
 	}
@@ -55,9 +50,26 @@ public class LinkComplexNode{
      */
 	public LinkComplexNode(int numberOfLines){
 		this.hasAFather = false;
-		this.openningLine = -1; /* prior to any code being read */
+		this.father = null;
+		this.openingLine = -1; /* prior to any code being read */
 		this.closingLine = numberOfLines;
 		this.type = "GenesisBlock";
+	}
+
+	/**
+	 * A cloning constructor mainly used for the simulation of genesis block
+	 * tracing globals and methods.
+	 * @param source - the source to clone from.
+     */
+	public LinkComplexNode(LinkComplexNode source){
+		this.hasAFather = !(source.isGenesisBlock());
+		this.openingLine = source.getOpeningLine();
+		this.closingLine = getClosingLine();
+		this.father = source.getFather();
+		this.type = source.getType();
+		this.children = source.getChildren();
+		this.scopeVars = source.getScopeVars();
+		this.clausesCounter = source.getClausesCounter();
 	}
 
 	/**
@@ -93,6 +105,20 @@ public class LinkComplexNode{
 		if (!isGenesisBlock()) {
 			father.counterDecrease(currentLine);
 		}
+	}
+
+	/**
+	 * A utillity function for adding new variables to this scope.
+	 * @param newVar - the new var that shall be added to this scope.
+     */
+	public void addNewVariable(SjavacVariable newVar){
+		String name = newVar.getName();
+		for (SjavacVariable var : scopeVars){
+			if (var.getName().equals(name)){
+				scopeVars.remove(var);
+			}
+		}
+		scopeVars.add(newVar);
 	}
 
 	/**
@@ -224,5 +250,21 @@ public class LinkComplexNode{
      */
 	public String getType() {
 		return type;
+	}
+
+	/**
+	 * A getter function for the openning line.
+	 * @return - the relevant opening line.
+     */
+	public int getOpeningLine() {
+		return openingLine;
+	}
+
+	/**
+	 * A getter function for the the clauses counter.
+	 * @return - the appropriate int.
+     */
+	public int getClausesCounter() {
+		return clausesCounter;
 	}
 }
