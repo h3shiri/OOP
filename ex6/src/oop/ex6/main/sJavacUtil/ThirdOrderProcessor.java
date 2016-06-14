@@ -24,7 +24,7 @@ public class ThirdOrderProcessor {
 					res.add(temp);
 				}
 				else if(UtilityRegex.checkLineIsMethodOpenner(code.getRawData())){
-					final String separator = "^\\s*void\\s*([^\\(\\s]*)\\(([^\\)]*)\\)\\s*\\{\\s*$";
+					final String separator = "^\\s*void\\s*([^\\(\\s]*)\\s*\\(([^\\)]*)\\)\\s*\\{\\s*$";
 					Pattern tempVar = Pattern.compile(separator);
 					Matcher tempMat = tempVar.matcher(code.getRawData());
 					if (tempMat.matches()){

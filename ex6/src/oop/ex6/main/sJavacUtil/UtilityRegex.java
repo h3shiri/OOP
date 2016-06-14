@@ -29,8 +29,9 @@ public class UtilityRegex{
 	public final static String returnLine = "^\\s*(return;)\\s*";
 	public final static String blockCloser = "^\\s*}\\s*$";
 	//TODO: perhaps write with normal substitution aka methodName, variable name..etc
+	public final static String arg = "\\s*(final)?\\s*(int|char|String|double|boolean)\\s*([a-zA-Z]+[\\w]*|_+[a-zA-Z]+\\w*)\\s*";
 	public final static String methodOpenner =
-	"^\\s*void\\s+([a-zA-Z]+[\\w]*)[(](\\s*(final\\s*)?(int|char|String|double|boolean)\\s*([a-zA-Z]+[\\w]*|_+[a-zA-Z]+\\w*),?)*[)]\\s*\\{\\s*$";
+	"^\\s*void\\s+([a-zA-Z][\\w]*)\\s*[(]\\s*(("+arg+",\\s*)*"+arg+")?[)]\\s*\\{\\s*$";
 	public final static String literal = "(true|false|\\d+|\\d+.\\d+|[a-zA-Z]+[\\w]*|_+[a-zA-Z]+\\w*)";
 	public final static String conditionalExpression =
 	"^\\s*(if|while)\\s*\\("+literal+"(\\s*\\&\\&\\s*"+literal+"|\\s*\\|\\|\\s*"+ literal+")*\\s*\\)\\s*\\{\\s*$";
