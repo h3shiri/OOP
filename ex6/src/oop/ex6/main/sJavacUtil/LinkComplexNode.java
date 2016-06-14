@@ -114,7 +114,7 @@ public class LinkComplexNode{
 	 * A utillity function for adding new variables to this scope.
 	 * @param newVar - the new var that shall be added to this scope.
      */
-	public void addNewVariable(SjavacVariable newVar){
+	public void addNewVariable(SjavacVariable newVar) throws SjavaFormatException{
 		String name = newVar.getName();
 		SjavacVariable potentialyRemove = newVar;
 		boolean flag = false;
@@ -127,7 +127,39 @@ public class LinkComplexNode{
 		if (flag){
 			scopeVars.remove(potentialyRemove);
 		}
+		if (!this.isGenesisBlock() && flag){
+			throw new SjavaFormatException();
+		}
 		scopeVars.add(newVar);
+	}
+
+	public void testOverLoadingName(String name) throws SjavaFormatException{
+		if (scopeVars.size() <= 1){
+			return;
+		}
+		for(int i=0; i<scopeVars.size(); i++){
+			if (scopeVars.get(i).getName().equals(name)){
+				throw new SjavaFormatException();
+			}
+		}
+	}
+
+
+	/**
+	 * A tester function for an overloading names in the same scope.
+	 * @throws SjavaFormatException - in case of an illegal overloading of variables names.
+     */
+	public void testOverLoading() throws SjavaFormatException{
+		if (scopeVars.size() <= 1){
+			return;
+		}
+		for (int i=0; i<scopeVars.size(); i++){
+			for (int j=(++i); j<scopeVars.size(); j++){
+				if ((scopeVars.get(i).getName()).equals(scopeVars.get(j).getName())){
+					throw new SjavaFormatException();
+				}
+			}
+		}
 	}
 
 	/**

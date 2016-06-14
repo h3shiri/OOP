@@ -117,6 +117,7 @@ public class ScopeBuilder {
                 } catch (UnlegalVariableException e){
                     throw new SjavaFormatException();
                 }
+//                currentNode.testOverLoading();
             }
             else if (type == "MethodCall"){
                 String nameOfFunc = temp.getArguments().get(0);
@@ -222,8 +223,9 @@ public class ScopeBuilder {
                         String name = var.getName();
                         for (int l = 0; l < globals.size(); l++) {
                             SjavacVariable tempVar = globals.get(l);
-                            if (tempVar.getType().equals(name)) {
-                                globals.remove(l);
+                            if (tempVar.getName().equals(name)) {
+//                                globals.remove(l);
+                                throw new SjavaFormatException();
                             }
                         }
                         globals.add(var);
