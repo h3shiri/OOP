@@ -68,7 +68,8 @@ public class LinkComplexNode{
 		this.father = source.getFather();
 		this.type = source.getType();
 		this.children = source.getChildren();
-		this.scopeVars = source.getScopeVars();
+		for (SjavacVariable x: source.getScopeVars())
+			this.scopeVars.add(x);
 		this.clausesCounter = source.getClausesCounter();
 	}
 
@@ -113,10 +114,16 @@ public class LinkComplexNode{
      */
 	public void addNewVariable(SjavacVariable newVar){
 		String name = newVar.getName();
+		SjavacVariable potentialyRemove = newVar;
+		boolean flag = false;
 		for (SjavacVariable var : scopeVars){
 			if (var.getName().equals(name)){
-				scopeVars.remove(var);
+				potentialyRemove = var;
+				flag = true;
 			}
+		}
+		if (flag){
+			scopeVars.remove(potentialyRemove);
 		}
 		scopeVars.add(newVar);
 	}

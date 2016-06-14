@@ -2,6 +2,7 @@ package oop.ex6.main.variable;
 
 import oop.ex6.main.Sjavac;
 import oop.ex6.main.line.ParametersFormatException;
+import oop.ex6.main.method.MethodVariable;
 import oop.ex6.main.sJavacUtil.UtilityRegex;
 
 import java.util.Arrays;
@@ -15,6 +16,7 @@ public class SjavacVariable {
      * that handles situation when someone tries using the wrong type. The point is that a getter function is not
      * Going to work because its return type can be only 1 type, when we have several types of data.
      */
+    public boolean initialized = false;
     public boolean isFinal = false;
     public String unParsedValue;
     public String name;
@@ -41,6 +43,7 @@ public class SjavacVariable {
             this.type = type;
             this.lineNumber = source.getLineNumber();
             this.stringValue = source.unParsedValue;
+            this.initialized = true;
             this.parseValue(this.stringValue);
         }catch(UnlegalVariableException e){
             throw new UnlegalVariableException();
@@ -57,6 +60,7 @@ public class SjavacVariable {
      */
     public SjavacVariable(boolean isFinal, String type, String name, String value, int lineNumber) throws
     UnlegalVariableException{
+        this.initialized = true;
         this.unParsedValue = value;
         this.isFinal = isFinal;
         this.lineNumber = lineNumber;
@@ -70,6 +74,14 @@ public class SjavacVariable {
         }
     }
 
+    public SjavacVariable(MethodVariable param, int lineNumber){
+        this.lineNumber = lineNumber;
+        this.isFinal = param.getIsFinal();
+        this.name = param.getName();
+        this.type = param.getType();
+        this.initialized = true;
+//        TODO: inserting dummy values perhaps?
+    }
     /**
      * An autoboxing constructor for the primitives.
      * @param typeOfConst - the required type.
@@ -78,6 +90,7 @@ public class SjavacVariable {
      */
     public SjavacVariable(String typeOfConst, int lineNumber) throws ParametersFormatException{
         this.isFinal = true;
+        this.initialized = true;
         this.lineNumber = lineNumber;
         this.name = "CONST";
         switch (typeOfConst) {
@@ -111,6 +124,7 @@ public class SjavacVariable {
                 throw new UnlegalVariableException();
             }
             else{
+                initialized = false;
                 return;
             }
         }

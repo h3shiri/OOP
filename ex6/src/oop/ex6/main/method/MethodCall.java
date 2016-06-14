@@ -32,7 +32,12 @@ public class MethodCall{
         this.name = name;
         this.rawData = rawData;
         this.currentNode = currentNode;
-        this.parsedVariables = new MethodCallVariableFactory(currentNode).process(rawData, lineNumber);
+        if (!UtilityRegex.checkLineIsEmpty(rawData)) {
+            this.parsedVariables = new MethodCallVariableFactory(currentNode).process(rawData, lineNumber);
+        }
+        else {
+            parsedVariables = null;
+        }
     }
     /**
      * This method gets all the Methods that were defined during the Sjava file reading, and return true if
@@ -46,7 +51,9 @@ public class MethodCall{
             if(method == null){ //THERE IS NO SUCH METHOD WITH THIS NAME! ERROR
                 throw new IllegalMethodCallException();
             }else{
-                method.checkVars(this.parsedVariables);
+                if (parsedVariables != null) {
+                    method.checkVars(this.parsedVariables);
+                }
             }
         }catch (IllegalMethodCallException e){//THE PARAMETERS DO NOT MATCH! ERROR
             throw new IllegalMethodCallException();

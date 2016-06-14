@@ -1,4 +1,5 @@
 package oop.ex6.main.variable;
+import oop.ex6.main.Sjavac;
 import oop.ex6.main.sJavacUtil.LinkComplexNode;
 import oop.ex6.main.sJavacUtil.NonExistingVariableException;
 
@@ -7,12 +8,13 @@ import java.util.*;
  * This class gets a type of variable, and creates instances of SjavacVariable
  */
 public class VariableFactory {
-    String line;
-    String type;
-    boolean isFinal;
-    LinkComplexNode currentNode;
-    ArrayList<SjavacVariable> variables = new ArrayList<>();
-    int lineNumber;
+    public ArrayList<SjavacVariable> extraGlobalVariables = new ArrayList<>();
+    public String line;
+    public String type;
+    public boolean isFinal;
+    public LinkComplexNode currentNode;
+    public ArrayList<SjavacVariable> variables = new ArrayList<>();
+    public int lineNumber;
 
     /**
      * primary Constructor for variables using this factory.
@@ -27,6 +29,29 @@ public class VariableFactory {
             this.type = type;
             this.line = lineWithoutType;
             this.lineNumber = lineNumber;
+            this.breakLineToVariables();
+        }catch(Exception e){
+            throw new UnlegalVariableException();
+        }
+    }
+
+    /**
+     * Secondary Constructor for variables using this factory.
+     * @param type - the specific type of this variable.
+     * @param lineWithoutType - the actual arguments raw data.
+     * @param currentNode - A reference to the current scope.
+     * @param extraGlobalVariables - variables ot be fed into the globals field.
+     * @param lineNumber - the current line number.
+     */
+    public VariableFactory(boolean isFinal, String type, String lineWithoutType, int lineNumber,
+                           LinkComplexNode currentNode, ArrayList<SjavacVariable> extraGlobalVariables) throws UnlegalVariableException{
+        try {
+            this.currentNode = currentNode;
+            this.isFinal = isFinal;
+            this.type = type;
+            this.line = lineWithoutType;
+            this.lineNumber = lineNumber;
+            feedGlobals(extraGlobalVariables);
             this.breakLineToVariables();
         }catch(Exception e){
             throw new UnlegalVariableException();
@@ -53,7 +78,11 @@ public class VariableFactory {
                 if (part.contains("=")) {
                     name = part.substring(0, part.indexOf("=")).replaceAll("\\s", "");
                     value = part.substring(part.lastIndexOf("=") + 1).replaceAll("\\s", "");
-                    if (this.isAnExistingVar(value) != null) {
+                    SjavacVariable temp = this.isAnExistingVar(value);
+                    if (temp != null) {
+                        if (!temp.initialized){
+                            throw new UnlegalVariableException();
+                        }
                         SjavacVariable newVar =
                                 new SjavacVariable(this.isFinal,name,this.type,this.isAnExistingVar(value));
                     }else{
@@ -90,7 +119,23 @@ public class VariableFactory {
             return currentNode.getVariable(name);
         }
         catch (NonExistingVariableException e){
+            for (SjavacVariable x: extraGlobalVariables){
+                if (x.getName().equals(name)){
+                    return x;
+                }
+            }
+
             return null;
+        }
+    }
+
+    /**
+     * A messy patch for the globals assignments.
+     * @param variables - various variables that should be added.
+     */
+    public void feedGlobals(ArrayList<SjavacVariable> variables){
+        for (SjavacVariable var : variables){
+            extraGlobalVariables.add(var);
         }
     }
 

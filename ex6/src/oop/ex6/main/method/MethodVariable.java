@@ -9,18 +9,22 @@ import oop.ex6.main.variable.SjavacVariable;
  */
 public class MethodVariable {
     /** A flag indicating whether it's final */
-    boolean isFinal;
+    private boolean isFinal;
     /** The argument type */
-    String type;
+    private String type;
+
+    /** The argument name */
+    private String name;
 
     /**
      * constructor for the methods parameters.
      * @param isFinal - A flag indicting whether its final.
      * @param type - the parameter type.
      */
-    public MethodVariable (boolean isFinal, String type){
+    public MethodVariable (boolean isFinal, String type, String name){
         this.isFinal = isFinal;
         this.type = type;
+        this.name = name;
     }
 
     /**
@@ -34,6 +38,22 @@ public class MethodVariable {
      * @return - A string representing the type in question.
      */
     public String getType(){return this.type;}
+
+    /**
+     * A getter function for the actual name.
+     * @return - the relevant name.
+     */
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * A getter function for the final field
+     * @return true - iff the parameter is final.
+     */
+    public boolean isFinal() {
+        return isFinal;
+    }
 
     /**
      * This method gets a SjavacVariable and will throw an exception if the types could not be matched.

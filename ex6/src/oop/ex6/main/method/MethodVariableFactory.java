@@ -19,9 +19,10 @@ public class MethodVariableFactory {
         try {
             String[] parsed = parameters.split(",");
             for (String x : parsed) {
-                x.trim();
+                x = x.trim();
                 methodVars.add(this.stringToMethodVar(x));
             }
+            testOverLoadingNames();
         }catch(IllegalMethodDeclerationException e){
             throw new IllegalMethodDeclerationException();
         }
@@ -36,13 +37,14 @@ public class MethodVariableFactory {
     private MethodVariable stringToMethodVar(String x) throws IllegalMethodDeclerationException {
         String[] wordsInX = x.split("\\s+");
         String type;
+        String name;
         /**we expect either this format: type name or final type name.
          * So if wordsInX is length 2, we expect type name, if its 3, we expect final type name otherwise
          * It is not a legal method declaration.
          */
         if (wordsInX.length == 2) {
             if (types.contains(wordsInX[0]) && isLegalName(wordsInX[1])) {
-                return new MethodVariable(false, wordsInX[0]);
+                return new MethodVariable(false, wordsInX[0], wordsInX[1]);
             } else { // either not legal type or not legal name
                 throw new IllegalMethodDeclerationException();
             }//Finished the case of type name, starting to check final type name:
@@ -51,7 +53,7 @@ public class MethodVariableFactory {
                 throw new IllegalMethodDeclerationException();
             } else if (types.contains(wordsInX[1])) {
                 if(isLegalName(wordsInX[2])) {
-                    return new MethodVariable(true, wordsInX[1]);
+                    return new MethodVariable(true, wordsInX[1], wordsInX[2]);
                 }else { //not a legal variable name
                     throw new IllegalMethodDeclerationException();
                 }
@@ -80,5 +82,23 @@ public class MethodVariableFactory {
      */
     ArrayList<MethodVariable> getVariables(){
         return this.methodVars;
+    }
+
+    private void testOverLoadingNames() throws IllegalMethodDeclerationException{
+        if (methodVars.size() <= 1){
+            return;
+        }
+        ArrayList<String> names = new ArrayList<>();
+        for(MethodVariable mVar : methodVars){
+            names.add(mVar.getName());
+        }
+        for (int i=0; i<names.size(); i++){
+            for (int j=i+1; j<names.size(); j++){
+                if (names.get(i).equals(names.get(j))){
+                    /* Due to actually an overloading in names */
+                    throw new IllegalMethodDeclerationException();
+                }
+            }
+        }
     }
 }

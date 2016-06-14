@@ -4,6 +4,7 @@ package oop.ex6.main.sJavacUtil;
 import oop.ex6.main.ifAndWhileBlock.BooleanFactory;
 import oop.ex6.main.line.SjavacLine;
 import oop.ex6.main.method.MethodCall;
+import oop.ex6.main.method.MethodVariable;
 import oop.ex6.main.method.SjavacMethod;
 import oop.ex6.main.variable.NonCompatibleTypes;
 import oop.ex6.main.variable.SjavacVariable;
@@ -51,7 +52,18 @@ public class ScopeBuilder {
                 else {
                     currentNode = new LinkComplexNode(genesisNode, lineNumber);
                     currentNode.setType("function");
-                    /* The real declaration processing has been done already */
+                    String funcName = temp.getArguments().get(0);
+                    for (SjavacMethod funcTarget : declaredMethods){
+                        if (funcTarget.getMethodName().equals(funcName)){
+                            ArrayList<MethodVariable> params = funcTarget.getParameters();
+                            if (params != null) {
+                                for (MethodVariable par : params) {
+                                    SjavacVariable newVar = new SjavacVariable(par, lineNumber);
+                                    currentNode.addNewVariable(newVar);
+                                }
+                            }
+                        }
+                    }
                 }
             }
             else if (type == "literalOpening"){
@@ -76,8 +88,8 @@ public class ScopeBuilder {
                 }
             }
             else if (type == "Return"){
-                if (currentNode.getType() != "function"){
-                    /* In case we reached a return within an inner scope */
+                if (currentNode.isGenesisBlock()){
+                    /* In case we reached a return within an the most outer scope scope */
                     throw new SjavaFormatException();
                 }
             }
@@ -190,7 +202,12 @@ public class ScopeBuilder {
                 String varType = arguments.get(0);
                 String varRawData = arguments.get(1);
                 try {
-                    ArrayList<SjavacVariable> newVariables = new VariableFactory(isFinal, varType, varRawData, lineNumber, genesisNode).getVariables();
+                    ArrayList<SjavacVariable> cloneGlobals = new ArrayList<>();
+                    for (SjavacVariable x : globals){
+                        cloneGlobals.add(x);
+                    }
+                    VariableFactory Factory = new VariableFactory(isFinal, varType, varRawData, lineNumber, currentNode, cloneGlobals);
+                    ArrayList<SjavacVariable> newVariables = Factory.getVariables();
                     for (SjavacVariable var : newVariables) {
                         String name = var.getName();
                         for (int l = 0; l < globals.size(); l++) {
@@ -236,6 +253,9 @@ public class ScopeBuilder {
                         }
                     }
                 }
+            }
+            for (SjavacVariable x: globals){
+                genesisNode.addNewVariable(x);
             }
         }
     }

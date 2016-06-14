@@ -1,5 +1,6 @@
 package oop.ex6.main.method;
 
+import oop.ex6.main.sJavacUtil.UtilityRegex;
 import oop.ex6.main.variable.SjavacVariable;
 
 import java.util.ArrayList;
@@ -20,7 +21,9 @@ public class SjavacMethod {
      */
     public SjavacMethod(String methodName, String parameters) throws IllegalMethodDeclerationException{
         try {
-            this.parameters = new MethodVariableFactory(parameters).getVariables();
+            if (!UtilityRegex.checkLineIsEmpty(parameters)) {
+                this.parameters = new MethodVariableFactory(parameters).getVariables();
+            }
             this.methodName = methodName;
 
         }catch (Exception e){
@@ -47,5 +50,18 @@ public class SjavacMethod {
             }
         }
     }
+
+    /**
+     * A getter function for the method name.
+     * @return - the relevant method name.
+     */
     public String getMethodName(){return this.methodName;}
+
+    /**
+     * A getter function for the parameters.
+     * @return - the relevant parameters.
+     */
+    public ArrayList<MethodVariable> getParameters() {
+        return parameters;
+    }
 }

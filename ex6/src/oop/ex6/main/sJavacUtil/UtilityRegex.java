@@ -21,8 +21,8 @@ public class UtilityRegex{
 	public final static String variablesDelim = ",";
 	public final static String methodName = "[a-zA-Z]+[\\w]*";
 	//TODO: debug this isn't actually tight multi parameters have to comply with the naming format.
-	public final static String methodParametersForSimpleCall = "[(]([a-zA-Z]+[\\w,\\s]*|_+[a-zA-Z]+[\\w,\\s]*)[)]";
-	public final static String methodCall = methodName+"\\s?"+methodParametersForSimpleCall;
+	public final static String methodParametersForSimpleCall = "[(]\\s*([a-zA-Z]+[\\w,\\s]*|_+[a-zA-Z]+[\\w,\\s]*)?[)]";
+	public final static String methodCall = "^"+spaces+methodName+spaces+methodParametersForSimpleCall+spaces+"[;]"+spaces+"$";
 	public final static String variableRegex =
 			"^\\s*(final)?\\s*(int|double|boolean|String|char)\\s+((([a-zA-Z]+\\w*|_+[a-zA-Z]+\\w*)+)(?:\\s*=\\s*([^\\s])+)?\\s*,?\\s*)+;\\s*$";
 	public final static String variableSubstitutionRegex = "^"+spaces+variableName+spaces+"="+spaces+"[^\\s]*"+spaces+";"+spaces+"$";
