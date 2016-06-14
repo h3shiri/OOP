@@ -1,5 +1,6 @@
 package oop.ex6.main.variable;
 import oop.ex6.main.Sjavac;
+import oop.ex6.main.method.MethodVariable;
 import oop.ex6.main.sJavacUtil.LinkComplexNode;
 import oop.ex6.main.sJavacUtil.NonExistingVariableException;
 
@@ -8,6 +9,7 @@ import java.util.*;
  * This class gets a type of variable, and creates instances of SjavacVariable
  */
 public class VariableFactory {
+    ArrayList<MethodVariable> methodVars;
     public ArrayList<SjavacVariable> extraGlobalVariables = new ArrayList<>();
     public String line;
     public String type;
@@ -22,8 +24,10 @@ public class VariableFactory {
      * @param lineWithoutType - the actual arguments raw data.
      */
     public VariableFactory(boolean isFinal, String type, String lineWithoutType, int lineNumber,
-                           LinkComplexNode currentNode) throws UnlegalVariableException{
+                           LinkComplexNode currentNode,ArrayList<MethodVariable> methodVars)
+            throws UnlegalVariableException{
         try {
+            this.methodVars = methodVars;
             this.currentNode = currentNode;
             this.isFinal = isFinal;
             this.type = type;
@@ -44,8 +48,11 @@ public class VariableFactory {
      * @param lineNumber - the current line number.
      */
     public VariableFactory(boolean isFinal, String type, String lineWithoutType, int lineNumber,
-                           LinkComplexNode currentNode, ArrayList<SjavacVariable> extraGlobalVariables) throws UnlegalVariableException{
+                           LinkComplexNode currentNode,
+                           ArrayList<SjavacVariable> extraGlobalVariables,
+                           ArrayList<MethodVariable> methodVars) throws UnlegalVariableException{
         try {
+            this.methodVars = methodVars;
             this.currentNode = currentNode;
             this.isFinal = isFinal;
             this.type = type;
@@ -69,6 +76,15 @@ public class VariableFactory {
             while (this.line.length() != 0) {
                 if (!this.line.contains(",")) {
                     part = this.line;
+                    part = part.replaceAll("=", " = ");
+                    String[] partInArray = part.split("\\s+");
+                    if(partInArray.length == 1){
+                        part = partInArray[0];
+                    } else if(partInArray.length == 3){
+                        if(!partInArray[1].equals("=")) {
+                            throw new UnlegalVariableException();
+                        }
+                    }else{throw new UnlegalVariableException();}
                     this.line = "";
                 } else {
                     part = this.line.substring(this.line.lastIndexOf(",") + 1);
@@ -84,15 +100,19 @@ public class VariableFactory {
                             throw new UnlegalVariableException();
                         }
                         SjavacVariable newVar =
-                                new SjavacVariable(this.isFinal,name,this.type,this.isAnExistingVar(value));
+                                new SjavacVariable
+                                        (this.isFinal,name,this.type,this.isAnExistingVar(value),this.methodVars);
                     }else{
                         SjavacVariable newVar =
-                                new SjavacVariable(this.isFinal, this.type, name, value, this.lineNumber);
+                                new SjavacVariable
+                                        (this.isFinal, this.type, name, value, this.lineNumber, this.methodVars);
                         this.variables.add(newVar);
                     }
                 }else{
                     name = part.replaceAll("\\s", "");
-                    SjavacVariable newVar = new SjavacVariable(this.isFinal, this.type, name, null, this.lineNumber);
+                    SjavacVariable newVar =
+                            new SjavacVariable
+                                    (this.isFinal, this.type, name, null, this.lineNumber,this.methodVars);
                     this.variables.add(newVar);
                 }
             }

@@ -1,6 +1,7 @@
 package oop.ex6.main.sJavacUtil;
 import java.util.ArrayList;
 
+import oop.ex6.main.method.MethodVariable;
 import oop.ex6.main.variable.SjavacVariable;
 
 public class LinkComplexNode{
@@ -8,7 +9,8 @@ public class LinkComplexNode{
 
 	/** An array holding the scope variables */
 	public ArrayList<SjavacVariable> scopeVars = new ArrayList<>();
-
+	/** An array holding the MethodVariable (null if the scope is not SjavacMethod*/
+	public ArrayList<MethodVariable> methodVars = new ArrayList<>();
 	/** An array holding all the children */
 	private ArrayList<LinkComplexNode> children = new ArrayList<>();
 
@@ -273,4 +275,9 @@ public class LinkComplexNode{
 	public int getClausesCounter() {
 		return clausesCounter;
 	}
+
+	/**
+	 * A getter function for the MethodVariables
+	 */
+	public ArrayList<MethodVariable> getMethodVars(){ return this.methodVars;}
 }

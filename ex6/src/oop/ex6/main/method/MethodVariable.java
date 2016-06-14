@@ -15,7 +15,6 @@ public class MethodVariable {
 
     /** The argument name */
     private String name;
-
     /**
      * constructor for the methods parameters.
      * @param isFinal - A flag indicting whether its final.
@@ -26,7 +25,6 @@ public class MethodVariable {
         this.type = type;
         this.name = name;
     }
-
     /**
      * A getter function for the final flag.
      * @return - true iff the final flag is on.
