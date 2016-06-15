@@ -22,7 +22,7 @@ public class UtilityRegex{
 	public final static String methodName = "[a-zA-Z]+[\\w]*";
 	public final static String methoCallArgument = "([a-zA-Z]+[\\w]*|_+[a-zA-Z]+\\w*|\\d+|\\d+\\.\\d+|\"\\w*\"|\'\\w\')";
 	public final static String methodParametersForSimpleCall =
-			"[(]"+"\\s*"+"("+spaces+"("+"\\s*"+methoCallArgument+"\\s*"+","+spaces+")*"+spaces+methoCallArgument+spaces+")"+spaces+"[)]"+spaces;
+			"[(]"+"\\s*"+"("+spaces+"("+"\\s*"+methoCallArgument+"\\s*"+","+spaces+")*"+spaces+methoCallArgument+spaces+")?"+spaces+"[)]"+spaces;
 	public final static String methodCall = "^"+spaces+methodName+spaces+methodParametersForSimpleCall+spaces+"[;]"+spaces+"$";
 	public final static String variableRegex =
 			"^\\s*(final)?\\s*(int|double|boolean|String|char)\\s+" +
