@@ -20,13 +20,10 @@ public class UtilityRegex{
 	public final static String substitution = "(?:\\s*=\\s*([^\\s])+)";
 	public final static String variablesDelim = ",";
 	public final static String methodName = "[a-zA-Z]+[\\w]*";
-	public final static String methoCallArgument =
-			"([a-zA-Z]+[\\w]*|_+[a-zA-Z]+\\w*|\\d+|\\d+\\.\\d+|\"\\w*\"|\'\\w\')";
+	public final static String methoCallArgument = "([a-zA-Z]+[\\w]*|_+[a-zA-Z]+\\w*|\\d+|\\d+\\.\\d+|\"\\w*\"|\'\\w\')";
 	public final static String methodParametersForSimpleCall =
-			"[(]"+"\\s*"+"("+spaces+"("+"\\s*"+methoCallArgument+"\\s*"+","+spaces+")*"
-					+spaces+methoCallArgument+spaces+")?"+spaces+"[)]"+spaces;
-	public final static String methodCall = "^"
-			+spaces+methodName+spaces+methodParametersForSimpleCall+spaces+"[;]"+spaces+"$";
+			"[(]"+"\\s*"+"("+spaces+"("+"\\s*"+methoCallArgument+"\\s*"+","+spaces+")*"+spaces+methoCallArgument+spaces+")"+spaces+"[)]"+spaces;
+	public final static String methodCall = "^"+spaces+methodName+spaces+methodParametersForSimpleCall+spaces+"[;]"+spaces+"$";
 	public final static String variableRegex =
 			"^\\s*(final)?\\s*(int|double|boolean|String|char)\\s+" +
 					"((([a-zA-Z]+\\w*|_+[a-zA-Z]+\\w*)+)(?:\\s*=\\s*([^\\s])+)?\\s*,?\\s*)+;\\s*$";
@@ -34,17 +31,12 @@ public class UtilityRegex{
 			"^"+spaces+variableName+spaces+"="+spaces+"[^\\s]*"+spaces+";"+spaces+"$";
 	public final static String returnLine = "^\\s*(return;)\\s*";
 	public final static String blockCloser = "^\\s*}\\s*$";
-	public final static String arg =
-			"\\s*(final)?\\s*(int|char|String|double|boolean)\\s*([a-zA-Z]+[\\w]*|_+[a-zA-Z]+\\w*)\\s*";
+	public final static String arg = "\\s*(final)?\\s*(int|char|String|double|boolean)\\s*([a-zA-Z]+[\\w]*|_+[a-zA-Z]+\\w*)\\s*";
 	public final static String methodOpenner =
 	"^\\s*void\\s+([a-zA-Z][\\w]*)\\s*[(]\\s*(("+arg+",\\s*)*"+arg+")?[)]\\s*\\{\\s*$";
 	public final static String literal = "(true|false|\\d+|\\d+.\\d+|[a-zA-Z]+[\\w]*|_+[a-zA-Z]+\\w*)";
 	public final static String conditionalExpression =
 	"^\\s*(if|while)\\s*\\("+spaces+literal+"(\\s*\\&\\&\\s*"+literal+"|\\s*\\|\\|\\s*"+ literal+")*\\s*\\)\\s*\\{\\s*$";
-
-//	Original_expression =
-//			^\s*(if|while)\s*\(\s*(true|false|\d+|\d+.\d+|[a-zA-Z]+[\w]*|_+[a-zA-Z]+\w*)(\s*\&\&\s*(true|false|\d+|\d+.\d+|[a-zA-Z]+[\w]*|_+[a-zA-Z]+\w*)|\s*\|\|\s*(true|false|\d+|\d+.\d+|[a-zA-Z]+[\w]*|_+[a-zA-Z]+\w*))*\s*\)\s*\{\s*$
-
 	/**
 	 * Get the name and parameters out of a method call line.
 	 * @param line - the line input for the method call parsing.
