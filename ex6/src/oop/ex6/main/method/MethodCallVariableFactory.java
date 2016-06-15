@@ -4,6 +4,7 @@ import java.util.regex.*;
 
 import oop.ex6.main.sJavacUtil.LinkComplexNode;
 import oop.ex6.main.sJavacUtil.NonExistingVariableException;
+import oop.ex6.main.sJavacUtil.UtilityRegex;
 import oop.ex6.main.variable.SjavacVariable;
 import oop.ex6.main.line.*;
 
@@ -49,20 +50,38 @@ public class MethodCallVariableFactory {
         part.trim(); // removes trailing/preceding spaces.
         SjavacVariable res;
         /* In case of a literal string/char */
-        List<String> lst = Arrays.asList(part.split("\\s"));
+        List<String> lst = Arrays.asList(part.split("\\s+"));
         /* test parameters format is legal no spaces within an argument */
-        if (lst.size() > 1){
+        int length = lst.size();
+        ArrayList<String> lst2 = new ArrayList<String>();
+        for(int i = 0; i < length; i++ ){
+            if(!UtilityRegex.checkLineIsEmpty(lst.get(i))){
+                lst2.add(lst.get(i));
+            }
+        }
+        if (lst2.size() > 1){
             throw new ParametersFormatException();
         }
+        part = part.replaceAll(" ", "");
         if (part.matches("^\"(.*?)\"$")){
             Pattern tempPat = Pattern.compile("\"(.*?)\"");
             Matcher mat = tempPat.matcher(part);
-            String temp = mat.group(1);
-            if (temp.length() == 1){
-                return new SjavacVariable("char", lineNumber);
-            }
-            else{
-                return new SjavacVariable("String", lineNumber);
+            try{
+                String temp;
+                if (mat.matches()) {
+                    temp = mat.group(1);
+                }
+                else {
+                    throw new ParametersFormatException();
+                }
+                if (temp.length() == 1){
+                    return new SjavacVariable("char", lineNumber);
+                }
+                else{
+                    return new SjavacVariable("String", lineNumber);
+                }
+            }catch(Exception e){
+                throw new ParametersFormatException();
             }
         }
         else if (part.matches("^\\d+$")){

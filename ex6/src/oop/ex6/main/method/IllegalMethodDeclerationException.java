@@ -6,4 +6,7 @@ import oop.ex6.main.sJavacUtil.SjavaFormatException;
  * This exception is thrown when error occurs creating a method.
  */
 public class IllegalMethodDeclerationException extends SjavaFormatException {
+    public IllegalMethodDeclerationException(){
+        System.err.println("Illegal method declaration");
+    }
 }

@@ -61,8 +61,6 @@ public class Sjavac {
                     System.out.println("1");
                 }
             } catch (IOException e) {
-                //TODO: remove should only print out 0,1 or 2.
-                System.err.print("There was an I/O problem, terminating.\n");
                 System.out.println("2");
                 return;
             }

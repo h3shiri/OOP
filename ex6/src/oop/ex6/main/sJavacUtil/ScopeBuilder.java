@@ -27,7 +27,8 @@ public class ScopeBuilder {
      * A basic constructor.
      * @param genesisNode - the node representing the whole file.
      */
-    public ScopeBuilder(LinkComplexNode genesisNode, ArrayList<SjavacLine> classifiedLines) throws SjavaFormatException{
+    public ScopeBuilder(LinkComplexNode genesisNode,
+                        ArrayList<SjavacLine> classifiedLines) throws SjavaFormatException{
         this.genesisNode = genesisNode;
         setGlobalsAndFunctions(classifiedLines);
         buildScopes(classifiedLines);
@@ -56,10 +57,15 @@ public class ScopeBuilder {
                     for (SjavacMethod funcTarget : declaredMethods){
                         if (funcTarget.getMethodName().equals(funcName)){
                             ArrayList<MethodVariable> params = funcTarget.getParameters();
+                            currentNode.methodVars = params;
                             if (params != null) {
                                 for (MethodVariable par : params) {
-                                    SjavacVariable newVar = new SjavacVariable(par, lineNumber);
-                                    currentNode.addNewVariable(newVar);
+                                    try {
+                                        SjavacVariable newVar = new SjavacVariable(par, lineNumber, null );
+                                        currentNode.addNewVariable(newVar);
+                                    }catch (UnlegalVariableException e){
+                                        throw new SjavaFormatException();
+                                    }
                                 }
                             }
                         }
@@ -102,19 +108,27 @@ public class ScopeBuilder {
                 String valueType = arguments.get(0);
                 String rawData = arguments.get(1);
                 try {
-                    ArrayList<SjavacVariable> newVars = new VariableFactory(finalFlag, valueType, rawData, lineNumber, currentNode).getVariables();
+                    ArrayList<SjavacVariable> newVars = new VariableFactory(finalFlag, valueType,
+                            rawData, lineNumber, currentNode, currentNode.getMethodVars()).getVariables();
+
                     for (SjavacVariable newVar : newVars){
                         currentNode.addNewVariable(newVar);
                     }
                 } catch (UnlegalVariableException e){
                     throw new SjavaFormatException();
                 }
+//                currentNode.testOverLoading();
             }
             else if (type == "MethodCall"){
+                if (currentNode.isGenesisBlock()){
+                    /* Calling a function on the global scope is illegal */
+                    throw new SjavaFormatException();
+                }
                 String nameOfFunc = temp.getArguments().get(0);
                 String parametersRawData = temp.getArguments().get(1);
                 try {
-                    MethodCall newMethodCall = new MethodCall(nameOfFunc, parametersRawData, currentNode, lineNumber);
+                    MethodCall newMethodCall =
+                            new MethodCall(nameOfFunc, parametersRawData, currentNode, lineNumber);
                     newMethodCall.isLegal(declaredMethods);
                 } catch (oop.ex6.main.method.IllegalMethodCallException e){
                     throw new SjavaFormatException();
@@ -190,7 +204,7 @@ public class ScopeBuilder {
             } else if (type == "Return") {
                 if (currentNode.getType() != "function") {
                     /* In case we reached a return within an inner scope */
-                    throw new SjavaFormatException();
+                    //throw new SjavaFormatException();
                 }
             /** Setting all the globals properly */
             } else if ((type == "VarDeclare") && (currentNode.isGenesisBlock())) {
@@ -206,14 +220,16 @@ public class ScopeBuilder {
                     for (SjavacVariable x : globals){
                         cloneGlobals.add(x);
                     }
-                    VariableFactory Factory = new VariableFactory(isFinal, varType, varRawData, lineNumber, currentNode, cloneGlobals);
+                    VariableFactory Factory = new VariableFactory
+                            (isFinal, varType, varRawData, lineNumber, currentNode, cloneGlobals,null);
                     ArrayList<SjavacVariable> newVariables = Factory.getVariables();
                     for (SjavacVariable var : newVariables) {
                         String name = var.getName();
                         for (int l = 0; l < globals.size(); l++) {
                             SjavacVariable tempVar = globals.get(l);
-                            if (tempVar.getType().equals(name)) {
-                                globals.remove(l);
+                            if (tempVar.getName().equals(name)) {
+//                                globals.remove(l);
+                                throw new SjavaFormatException();
                             }
                         }
                         globals.add(var);
@@ -234,7 +250,8 @@ public class ScopeBuilder {
                             SjavacVariable tempSource = currentNode.getVariable(source);
                             String targetType = targetVar.getType();
                             try {
-                                SjavacVariable newVar = new SjavacVariable(tempSource.isFinal, target, targetType, tempSource);
+                                SjavacVariable newVar = new SjavacVariable
+                                        (tempSource.isFinal, target, targetType, tempSource,null);
                                 globals.remove(targetVar);
                                 globals.add(newVar);
                             } catch (UnlegalVariableException e){
@@ -244,7 +261,8 @@ public class ScopeBuilder {
                         /* In case of a primitive */
                         else {
                             try {
-                                SjavacVariable newVar = new SjavacVariable(false, targetVar.type, targetVar.name, source, lineNumber);
+                                SjavacVariable newVar = new SjavacVariable
+                                        (false, targetVar.type, targetVar.name, source, lineNumber,null);
                                 globals.remove(targetVar);
                                 globals.add(newVar);
                             } catch (UnlegalVariableException e){

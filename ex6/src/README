@@ -1,24 +1,155 @@
+eyzuky
+
 h3shiri
-Shiri Heffetz
-
-==================================
-= README for ex6 Sjava Verifier  =
-==================================
-
-=================
-=  Description  =
-=================
-
-============
-=  Design  =
-============
 
 =============================
-=  List of submitted files: =
+=      File description     =
 =============================
 
-======================
-=  Special Comments  =
-======================
-Extra comments are inside the classes in order to make to code readability
-better to the naked eye.
+----------PACKAGES-----------
+main:
+Containing Sjavac.java main class of program, and SjavacIOException.java I/O exception
+This main method reads the input file and call processors to arrange the file into nice line types
+
+sJavacUtil:
+Contains All processors. These processors recieve ArrayList<String> and sort the lines to types
+More details in the design part of the readme
+Also contains useful REGEX tools (UtilityRegex.java)
+And contains important ScopeBuilder.java and LinkComplexNode.java which handles all the scopes and memory,
+more details in design.
+
+variable:
+Contains all the relevant classes for variable declaration, variable copy and variable editing.
+More details in the design
+
+method:
+This package contains all the relevant classes for method declaration and method calls.
+
+line:
+Containing all the relevant classes for a line object in Sjava. More details in design
+
+ifAndWhileBlock:
+Package that handles boolean expressions for if and while blocks.
+
+
+=============================
+=          Design           =
+=============================
+
+Our design is based on a modularity principle - break everything to the smallest pieces you can.
+The proccess is like this:
+Sjavac get a file, turn it into a array of strings, each member of the array is a line in the Sjava code.
+The array of string goes through processors objects:
+
+
+UTILITIES:
+FirstOrderProcessor - get the array and remove lines of comments and spaces,
+since they are not relevant for compiling.
+
+SecondOrderProcessor - get the array and create line objects. This brings us to explain the line design:
+
+line is a package that handles the lines in the code. it divides the code to 2 line types - simple and complex.
+A simple line is a line that ends with ";" and a complex line ends with "{" or "}"
+This makes it easier to cut things to little pieces later on when we get to handle these lines.
+
+ThirdOrderProcessor - Create the specific line types. This can be method declare, method call, variable assign,
+a return line and more legal lines. Here we introduce REGEX for handling the specific types.
+
+Once we did the 3rd processing, we know which type of lines we have. Now we can start scoping and create memory
+instances for our data. For this we introduce the ScopeBuilder and LinkComplexNode classes:
+First we initialize a new LinkComplexNode class with our lines as args. This class is a node in a tree
+data structure the tree principle matches the scope. The head node (called "genesis") holds the main scope
+variables, the method
+instances, and each node correspondes to a scope and carries its variables. This lets us create instances and pass
+the correct variables and do checks for legality of actions inside scopes.
+So we created the genesis node and then we call the scope builder which takes the genesis node and lines.
+
+ScopeBuilder:
+This class holds the methods and vars in the highest scope. Methods can only be declared in the highest scope..
+But we keep them in a ScopeBuilder instance. This is like the memory of the program.
+We then iterate through the lines twice. Once for complex lines, creating all the methods and check that the
+openers and closers are balanced. Then we can iterate through the simple lines. This is important because we first
+declare methods and only after we declared them all we turn to check method calls.
+
+Methods:
+When we find a method, we create an instance of it and keep it in ScopeBuilder. A method has a special type of
+variable named MethodVariable, which is an objects that has only a type and name, no value. The purpose here is
+To have an easy check for legal method calls later. A method has a method called check vars, which gets
+SjavacVariable instances and check that they match the method signature.
+MethodCall class is a class that is created when a method call line is found, and it has a function call isLegal
+that gets all the declared methods and check if there is a method that matches this method call in name and params.
+
+SjavacVariable:
+This class handles all the variables. It has 3 constructors:
+1. create a new var from an existing one (e.g int a = b;)
+2. create a new var (int a = 3; , int c;)
+3. an autobox for primitives, when we want to autobox a method call variable, so basically we take every param
+in the method call and create a SjavacVariable autoboxing.
+
+Factories:
+We have 3 factories in this program.
+1. MethodVariableFactory: if we have this line: void foo(type1 name1, .... typeN nameN), we give the factory
+whatever is inside the paramtheses. It will split them into MethodVariable instances and check validaty.
+2. MethodCallVariableFactory: Same principle like the above, just for creating SjavacVariable out of a methodCall
+3. VariableFactory: take a line of var dec and break it into SjavacVariable. (e.g int a = 3, b= c, r;)
+Will be broken into 3 variables, a, b, r.
+4.BooleanFactory: Manage multiple boolean literals, break them into several BooleanValue instances.
+BooleanValue checks that a single literal is a legal boolean value.
+
+================================
+Design thoughts and open questions
+================================
+Some design thoughts we had:
+From the beginning we thought about how to break this problem into the smallest pieces.
+We had another design which was much less files - We did not have processors and line types.
+Very quickly we understood we need to define classes for everything, even for each line type. This gave us much easier approach
+For managing bugs that occured later.
+
+Error handling and design:
+Our main purpose was that since we break things into small pieces, everything can throw an error and that's what
+determines whether we will print 0 or 1 eventually.
+Our main error is SjavacFormatException. This exception is the father of all, and feeds msgs from his sons.
+Every package has its own Exceptions.
+
+6.2:
+For adding an array, we will create a package named array which will have some length field and an api for adding
+removing getting and setting. We will need to create some more regex in UtilityRegex, add some more classes that
+will implement the line interface, and handle errors.
+For adding we will parse the string into a SjavacVarible and hold an ArrayList<SjavacVariable> that will hold it.
+
+Importing - For this we will hold an object that is more global then the ScopeBuilder, it will hold an ArrayList
+of SjavacMethod instances. Every time we define a method we add it there and then if we detect an import line
+We will refer to that array list and search for that method.
+
+Main regular expressions:
+"^(.*)(;)([\\s]*)$" - This one checks for a simple line format, aka start with anything, end with ;
+and then spaces.
+ "^.*[\\{\\}](\\s)*$" - This one checks for a complex line, aka end with { or }.
+
+
+===================
+Submitted Files
+===================
+
+package ifAndWhileBlock:
+BooleanFactory.java | BooleanValue.java | UnlegalBooleanExpression.java
+--------------------------
+package line:
+CommentLine.java | ComplexLine.java | CompLine.java | EmptyLine.java | IllegalLineFormatException.java
+IllegalMethodCallException.java | LiteralOpeningLine.java | MethodCallLine.java | MethodDefinitionLine.java
+ParametersFormatException.java | SimpleLine.java | SimpLine.java | SjavacLine.java | VariableDeclarationLine.java
+VariableSubstitutionLine.java
+--------------------------
+package method:
+IllegalMethodCallException.java | IllegalMethodDeclarationException.java | MethodCall.java | MethodCallVariableFactory.java
+MethodVariable.java | MethodVariableFactory.java | SjavacMethod.java
+--------------------------
+package sJavacUtil:
+FirstOrderProcessor.java | LinkComplexNode.java | NonExistingVariableException.java | ScopeBuilder.java | SecondOrderProcessor.java
+SjavaFormatException.java | ThirdOrderProcessor.java | UtilityRegex.java
+--------------------------
+package variable:
+NonCompatibleTypes.java | SjavacVariable.java | UnlegalVariableException.java | VariableFactory.java
+--------------------------
+package main:
+Sjavac.java | SjavacIOException.java

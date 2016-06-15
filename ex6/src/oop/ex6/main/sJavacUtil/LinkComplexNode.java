@@ -1,6 +1,7 @@
 package oop.ex6.main.sJavacUtil;
 import java.util.ArrayList;
 
+import oop.ex6.main.method.MethodVariable;
 import oop.ex6.main.variable.SjavacVariable;
 
 public class LinkComplexNode{
@@ -8,7 +9,8 @@ public class LinkComplexNode{
 
 	/** An array holding the scope variables */
 	public ArrayList<SjavacVariable> scopeVars = new ArrayList<>();
-
+	/** An array holding the MethodVariable (null if the scope is not SjavacMethod*/
+	public ArrayList<MethodVariable> methodVars = new ArrayList<>();
 	/** An array holding all the children */
 	private ArrayList<LinkComplexNode> children = new ArrayList<>();
 
@@ -18,10 +20,9 @@ public class LinkComplexNode{
 	/** boolean indicating if the node has a father similar to non-empty */
 	private final boolean hasAFather;
 
-	/** important string holding the clause type (method Decleration/if/while) */
+	/** important string holding <></>he clause type (method Decleration/if/while) */
 	private String type;
 
-	// TODO: check u support max.Integer depth functionality
 	/** The Openning/Closing internal counter */
 	private int clausesCounter;
 
@@ -112,7 +113,7 @@ public class LinkComplexNode{
 	 * A utillity function for adding new variables to this scope.
 	 * @param newVar - the new var that shall be added to this scope.
      */
-	public void addNewVariable(SjavacVariable newVar){
+	public void addNewVariable(SjavacVariable newVar) throws SjavaFormatException{
 		String name = newVar.getName();
 		SjavacVariable potentialyRemove = newVar;
 		boolean flag = false;
@@ -125,7 +126,39 @@ public class LinkComplexNode{
 		if (flag){
 			scopeVars.remove(potentialyRemove);
 		}
+		if (!this.isGenesisBlock() && flag){
+			throw new SjavaFormatException();
+		}
 		scopeVars.add(newVar);
+	}
+
+	public void testOverLoadingName(String name) throws SjavaFormatException{
+		if (scopeVars.size() <= 1){
+			return;
+		}
+		for(int i=0; i<scopeVars.size(); i++){
+			if (scopeVars.get(i).getName().equals(name)){
+				throw new SjavaFormatException();
+			}
+		}
+	}
+
+
+	/**
+	 * A tester function for an overloading names in the same scope.
+	 * @throws SjavaFormatException - in case of an illegal overloading of variables names.
+     */
+	public void testOverLoading() throws SjavaFormatException{
+		if (scopeVars.size() <= 1){
+			return;
+		}
+		for (int i=0; i<scopeVars.size(); i++){
+			for (int j=(++i); j<scopeVars.size(); j++){
+				if ((scopeVars.get(i).getName()).equals(scopeVars.get(j).getName())){
+					throw new SjavaFormatException();
+				}
+			}
+		}
 	}
 
 	/**
@@ -273,4 +306,9 @@ public class LinkComplexNode{
 	public int getClausesCounter() {
 		return clausesCounter;
 	}
+
+	/**
+	 * A getter function for the MethodVariables
+	 */
+	public ArrayList<MethodVariable> getMethodVars(){ return this.methodVars;}
 }

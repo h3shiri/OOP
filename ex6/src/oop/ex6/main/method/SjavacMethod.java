@@ -22,6 +22,7 @@ public class SjavacMethod {
     public SjavacMethod(String methodName, String parameters) throws IllegalMethodDeclerationException{
         try {
             if (!UtilityRegex.checkLineIsEmpty(parameters)) {
+
                 this.parameters = new MethodVariableFactory(parameters).getVariables();
             }
             this.methodName = methodName;

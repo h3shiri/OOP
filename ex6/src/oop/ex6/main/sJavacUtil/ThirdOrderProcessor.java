@@ -24,7 +24,7 @@ public class ThirdOrderProcessor {
 					res.add(temp);
 				}
 				else if(UtilityRegex.checkLineIsMethodOpenner(code.getRawData())){
-					final String separator = "^\\s*void\\s*([^\\(\\s]*)\\(([^\\)]*)\\)\\s*\\{\\s*$";
+					final String separator = "^\\s*void\\s*([^\\(\\s]*)\\s*\\(([^\\)]*)\\)\\s*\\{\\s*$";
 					Pattern tempVar = Pattern.compile(separator);
 					Matcher tempMat = tempVar.matcher(code.getRawData());
 					if (tempMat.matches()){
@@ -67,7 +67,6 @@ public class ThirdOrderProcessor {
 							String valueType = tempMat.group(2);
 							String variablesData = tempMat.group(3);
 							variablesData.trim();
-							//TODO: further processing into new variables, scope context.
 							VariableDeclerationLine temp =
 									new VariableDeclerationLine(valueType, variablesData, lineNumber);
 							res.add(temp);

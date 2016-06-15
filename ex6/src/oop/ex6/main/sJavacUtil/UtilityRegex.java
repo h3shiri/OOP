@@ -20,20 +20,27 @@ public class UtilityRegex{
 	public final static String substitution = "(?:\\s*=\\s*([^\\s])+)";
 	public final static String variablesDelim = ",";
 	public final static String methodName = "[a-zA-Z]+[\\w]*";
-	//TODO: debug this isn't actually tight multi parameters have to comply with the naming format.
-	public final static String methodParametersForSimpleCall = "[(]\\s*([a-zA-Z]+[\\w,\\s]*|_+[a-zA-Z]+[\\w,\\s]*)?[)]";
-	public final static String methodCall = "^"+spaces+methodName+spaces+methodParametersForSimpleCall+spaces+"[;]"+spaces+"$";
+	public final static String methoCallArgument =
+			"([a-zA-Z]+[\\w]*|_+[a-zA-Z]+\\w*|\\d+|\\d+\\.\\d+|\"\\w*\"|\'\\w\')";
+	public final static String methodParametersForSimpleCall =
+			"[(]"+"\\s*"+"("+spaces+"("+"\\s*"+methoCallArgument+"\\s*"+","+spaces+")*"
+					+spaces+methoCallArgument+spaces+")?"+spaces+"[)]"+spaces;
+	public final static String methodCall = "^"
+			+spaces+methodName+spaces+methodParametersForSimpleCall+spaces+"[;]"+spaces+"$";
 	public final static String variableRegex =
-			"^\\s*(final)?\\s*(int|double|boolean|String|char)\\s+((([a-zA-Z]+\\w*|_+[a-zA-Z]+\\w*)+)(?:\\s*=\\s*([^\\s])+)?\\s*,?\\s*)+;\\s*$";
-	public final static String variableSubstitutionRegex = "^"+spaces+variableName+spaces+"="+spaces+"[^\\s]*"+spaces+";"+spaces+"$";
+			"^\\s*(final)?\\s*(int|double|boolean|String|char)\\s+" +
+					"((([a-zA-Z]+\\w*|_+[a-zA-Z]+\\w*)+)(?:\\s*=\\s*([^\\s])+)?\\s*,?\\s*)+;\\s*$";
+	public final static String variableSubstitutionRegex =
+			"^"+spaces+variableName+spaces+"="+spaces+"[^\\s]*"+spaces+";"+spaces+"$";
 	public final static String returnLine = "^\\s*(return;)\\s*";
 	public final static String blockCloser = "^\\s*}\\s*$";
-	//TODO: perhaps write with normal substitution aka methodName, variable name..etc
+	public final static String arg =
+			"\\s*(final)?\\s*(int|char|String|double|boolean)\\s*([a-zA-Z]+[\\w]*|_+[a-zA-Z]+\\w*)\\s*";
 	public final static String methodOpenner =
-	"^\\s*void\\s+([a-zA-Z]+[\\w]*)[(](\\s*(final\\s*)?(int|char|String|double|boolean)\\s*([a-zA-Z]+[\\w]*|_+[a-zA-Z]+\\w*),?)*[)]\\s*\\{\\s*$";
+	"^\\s*void\\s+([a-zA-Z][\\w]*)\\s*[(]\\s*(("+arg+",\\s*)*"+arg+")?[)]\\s*\\{\\s*$";
 	public final static String literal = "(true|false|\\d+|\\d+.\\d+|[a-zA-Z]+[\\w]*|_+[a-zA-Z]+\\w*)";
 	public final static String conditionalExpression =
-	"^\\s*(if|while)\\s*\\("+literal+"(\\s*\\&\\&\\s*"+literal+"|\\s*\\|\\|\\s*"+ literal+")*\\s*\\)\\s*\\{\\s*$";
+	"^\\s*(if|while)\\s*\\("+spaces+literal+"(\\s*\\&\\&\\s*"+literal+"|\\s*\\|\\|\\s*"+ literal+")*\\s*\\)\\s*\\{\\s*$";
 
 //	Original_expression =
 //			^\s*(if|while)\s*\(\s*(true|false|\d+|\d+.\d+|[a-zA-Z]+[\w]*|_+[a-zA-Z]+\w*)(\s*\&\&\s*(true|false|\d+|\d+.\d+|[a-zA-Z]+[\w]*|_+[a-zA-Z]+\w*)|\s*\|\|\s*(true|false|\d+|\d+.\d+|[a-zA-Z]+[\w]*|_+[a-zA-Z]+\w*))*\s*\)\s*\{\s*$

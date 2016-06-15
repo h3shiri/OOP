@@ -28,7 +28,6 @@ public class MethodCall{
      */
     public MethodCall(String name, String rawData, LinkComplexNode currentNode, int lineNumber)
         throws IllegalMethodCallException{
-
         this.name = name;
         this.rawData = rawData;
         this.currentNode = currentNode;

@@ -5,9 +5,8 @@ import oop.ex6.main.line.ParametersFormatException;
 import oop.ex6.main.method.MethodVariable;
 import oop.ex6.main.sJavacUtil.UtilityRegex;
 
-import java.util.Arrays;
-import java.util.List;
 
+import java.util.*;
 public class SjavacVariable {
     /** class members*/
     final String[] types = {"int","double","boolean", "string", "char"};
@@ -27,6 +26,7 @@ public class SjavacVariable {
     public boolean booleanValue;
     public String charValue;
     private int lineNumber;
+    ArrayList<MethodVariable> methodVars;
 
     /**
      * This constructor creates a copy of an existing variable
@@ -35,9 +35,11 @@ public class SjavacVariable {
      * @param name - the actual name for the variable.
      * @param source - the SjavacVariable we copy from.
     */
-    public SjavacVariable(boolean isFinal, String name, String type, SjavacVariable source)
+    public SjavacVariable(boolean isFinal, String name, String type, SjavacVariable source,
+    ArrayList<MethodVariable> methodVars)
             throws UnlegalVariableException{
         try{
+            this.methodVars = methodVars;
             this.isFinal = isFinal;
             this.name = name;
             this.type = type;
@@ -58,8 +60,10 @@ public class SjavacVariable {
      * @param value - the actual value.
      * @param lineNumber - the relevant line number.
      */
-    public SjavacVariable(boolean isFinal, String type, String name, String value, int lineNumber) throws
+    public SjavacVariable(boolean isFinal, String type, String name, String value, int lineNumber,
+                          ArrayList<MethodVariable> methodVars) throws
     UnlegalVariableException{
+        this.methodVars = methodVars;
         this.initialized = true;
         this.unParsedValue = value;
         this.isFinal = isFinal;
@@ -67,6 +71,7 @@ public class SjavacVariable {
         this.name = name;
         this.type = type;
         this.stringValue = value;
+        this.checkMethodVars();
         try {
             this.parseValue(this.stringValue);
         }catch(Exception e){
@@ -74,13 +79,19 @@ public class SjavacVariable {
         }
     }
 
-    public SjavacVariable(MethodVariable param, int lineNumber){
-        this.lineNumber = lineNumber;
-        this.isFinal = param.getIsFinal();
-        this.name = param.getName();
-        this.type = param.getType();
-        this.initialized = true;
-//        TODO: inserting dummy values perhaps?
+    public SjavacVariable(MethodVariable param, int lineNumber, ArrayList<MethodVariable> methodVars)
+    throws UnlegalVariableException{
+        try {
+            this.methodVars = methodVars;
+            this.lineNumber = lineNumber;
+            this.isFinal = param.getIsFinal();
+            this.name = param.getName();
+            this.type = param.getType();
+            this.initialized = true;
+            this.checkMethodVars();
+        }catch (UnlegalVariableException e){
+            throw new UnlegalVariableException();
+        }
     }
     /**
      * An autoboxing constructor for the primitives.
@@ -108,6 +119,7 @@ public class SjavacVariable {
                 break;
             case "boolean":
                 this.type = typeOfConst;
+                break;
             default:
                 throw new ParametersFormatException();
         }
@@ -185,6 +197,17 @@ public class SjavacVariable {
         }
     }
 
+    /**
+     * return true if the value was initialized
+     * @return
+     */
+    public boolean isInit(){
+        if(this.unParsedValue != null){
+            return true;
+        }else{
+            return false;
+        }
+    }
     /**
      * get the type of the variable
      * @return
@@ -269,10 +292,23 @@ public class SjavacVariable {
     }
 
     public SjavacVariable cloneVariable() throws UnlegalVariableException{
-        SjavacVariable res = new SjavacVariable(isFinal, name, type, this);
+        SjavacVariable res = new SjavacVariable(isFinal, name, type, this, this.methodVars);
         return res;
     }
 
+    /**
+     * This function checks if a declaration of var is possible comparing to the method vars
+     */
+    private void checkMethodVars() throws UnlegalVariableException{
+        if (methodVars == null){
+            return;
+        }
+        for(MethodVariable methodVar: this.methodVars){
+            if(this.name.equals(methodVar.getName())){
+                throw new UnlegalVariableException();
+            }
+        }
+    }
     /**
      * A getter function for the line number.
      * @return - the relevant lineNumber.

@@ -64,7 +64,9 @@ public class BooleanValue {
         if(varInScope != null){
             if(varInScope.getType().equals("boolean") || varInScope.getType().equals("int")
                     ||varInScope.getType().equals("double")){
-                return true;
+                if(varInScope.isInit()) {
+                    return true;
+                }else{return false;}
             }else{
                 return false;
             }
